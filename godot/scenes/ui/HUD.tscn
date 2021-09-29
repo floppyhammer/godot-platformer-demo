@@ -1,0 +1,312 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://assets/ui/joystick.png" type="Texture" id=1]
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=2]
+[ext_resource path="res://scenes/ui/HUD.gd" type="Script" id=3]
+[ext_resource path="res://scenes/ui/ResultPanel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/items/item_2.png" type="Texture" id=5]
+[ext_resource path="res://scenes/ui/InventoryItem.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/items/item_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/icon_heart.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0, 0, 0, 0.588235 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 1.3, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 1, 32, 30 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 1, 32, 30 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 1, 32, 30 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 1, 32, 30 )
+
+[sub_resource type="StreamTexture" id=4]
+load_path = "res://.import/joystick.png-b41ca8c2cd7f6c03d2c3044cac4eddca.stex"
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = SubResource( 4 )
+region = Rect2( 32, 1, 32, 30 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.894118, 0.290196, 0.290196, 1 )
+corner_radius_bottom_right = 100
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=11]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.752941, 0.796078, 0.862745, 1 )
+corner_radius_bottom_right = 100
+corner_detail = 1
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0, 0, 0, 0.588235 )
+
+[node name="HUD" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapLabel" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -12.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 0, 48 )
+custom_styles/normal = SubResource( 16 )
+text = "Map Name"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MapLabel"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 2 )
+
+[node name="Joystick" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R" type="Control" parent="Joystick"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Crouch" type="TouchScreenButton" parent="Joystick/R"]
+position = Vector2( -304, -168 )
+scale = Vector2( 4, 4 )
+normal = SubResource( 6 )
+action = "ui_down"
+
+[node name="Roll" type="TouchScreenButton" parent="Joystick/R"]
+position = Vector2( -176, -296 )
+scale = Vector2( 4, 4 )
+normal = SubResource( 7 )
+action = "roll"
+
+[node name="Jump" type="TouchScreenButton" parent="Joystick/R"]
+position = Vector2( -176, -168 )
+scale = Vector2( 4, 4 )
+normal = SubResource( 8 )
+action = "jump"
+
+[node name="L" type="Control" parent="Joystick"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="TouchScreenButton" parent="Joystick/L"]
+position = Vector2( 248, -168 )
+scale = Vector2( 4, 4 )
+normal = SubResource( 3 )
+action = "ui_right"
+
+[node name="Left" type="TouchScreenButton" parent="Joystick/L"]
+position = Vector2( 80, -168 )
+scale = Vector2( 4, 4 )
+normal = SubResource( 5 )
+action = "ui_left"
+
+[node name="VBoxC" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="VBoxC"]
+margin_right = 1280.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 0, 64 )
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxC" type="HBoxContainer" parent="VBoxC/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeartIcon" type="TextureRect" parent="VBoxC/Panel/HBoxC"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxC/Panel/HBoxC"]
+margin_left = 68.0
+margin_top = 26.0
+margin_right = 260.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 192, 12 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/fg = SubResource( 10 )
+custom_styles/bg = SubResource( 11 )
+value = 75.0
+percent_visible = false
+
+[node name="Sep" type="Control" parent="VBoxC/Panel/HBoxC"]
+margin_left = 264.0
+margin_right = 288.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 24, 0 )
+
+[node name="ItemsHBoxC" type="HBoxContainer" parent="VBoxC/Panel/HBoxC"]
+margin_left = 292.0
+margin_right = 452.0
+margin_bottom = 64.0
+custom_constants/separation = 8
+
+[node name="InventoryItem" parent="VBoxC/Panel/HBoxC/ItemsHBoxC" instance=ExtResource( 6 )]
+margin_top = 8.0
+margin_right = 48.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 48, 48 )
+texture_normal = ExtResource( 7 )
+
+[node name="InventoryItem2" parent="VBoxC/Panel/HBoxC/ItemsHBoxC" instance=ExtResource( 6 )]
+margin_left = 56.0
+margin_top = 8.0
+margin_right = 104.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 48, 48 )
+texture_normal = ExtResource( 5 )
+
+[node name="InventoryItem3" parent="VBoxC/Panel/HBoxC/ItemsHBoxC" instance=ExtResource( 6 )]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 160.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 48, 48 )
+
+[node name="HBoxC" type="HBoxContainer" parent="VBoxC/Panel/HBoxC"]
+margin_left = 1024.0
+margin_right = 1280.0
+margin_bottom = 64.0
+size_flags_horizontal = 10
+custom_constants/separation = 0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="VBoxC/Panel/HBoxC/HBoxC"]
+margin_right = 128.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 64 )
+text = "Exit"
+
+[node name="Menu" type="Button" parent="VBoxC/Panel/HBoxC/HBoxC"]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 128, 0 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+toggle_mode = true
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuPanel" type="Panel" parent="VBoxC"]
+visible = false
+margin_top = 64.0
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxC/MenuPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "PAUSED"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxC" type="VBoxContainer" parent="VBoxC/MenuPanel"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -144.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResultPanel" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[connection signal="pressed" from="VBoxC/Panel/HBoxC/HBoxC/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="VBoxC/Panel/HBoxC/HBoxC/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="toggled" from="VBoxC/Panel/HBoxC/HBoxC/Menu" to="." method="_on_Menu_toggled"]

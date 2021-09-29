@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/tools/BitmapFontCreater.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/bitmap_texture.png" type="Texture" id=2]
+
+[node name="BitmapFontCreater" type="Sprite"]
+texture = ExtResource( 2 )
+centered = false
+script = ExtResource( 1 )

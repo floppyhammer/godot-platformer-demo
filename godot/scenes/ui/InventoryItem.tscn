@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/items/item_3.png" type="Texture" id=2]
+[ext_resource path="res://tres/default_font_48.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.145098, 0.0745098, 0.101961, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 1
+anti_aliasing = false
+
+[node name="InventoryItem" type="TextureButton"]
+margin_right = 32.0
+margin_bottom = 32.0
+mouse_filter = 1
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = ExtResource( 1 )
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "1"
+align = 1
+valign = 2
+
+[node name="Metadata" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0

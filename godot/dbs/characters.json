@@ -1,0 +1,107 @@
+{
+	"众": {
+		"composition": {
+			"1": ["人", "人", "人"],
+			"2": ["人", "从"]
+		},
+		"pinyin": "zhòng",
+		"texture": "",
+		"description": ""
+	},
+	"雷": {
+		"composition": ["雨", "田"],
+		"pinyin": "léi",
+		"texture": "",
+		"description": ""
+	},
+	"从": {
+		"composition": ["人", "人"],
+		"pinyin": "cóng",
+		"texture": "",
+		"description": ""
+	},
+	"阿": {
+		"composition": ["*阝", "可"],
+		"pinyin": "ā",
+		"texture": "",
+		"description": ""
+	},
+	"啊": {
+		"composition": {
+			"1": ["口", "阿"],
+			"2": ["口", "*阝", "可"]
+		},
+		"pinyin": "ā",
+		"texture": "",
+		"description": ""
+	},
+	"巴": {
+		"composition": [],
+		"pinyin": "bā",
+		"texture": "",
+		"description": ""
+	},
+	"安": {
+		"composition": ["*宀", "女"],
+		"pinyin": "ān",
+		"texture": "",
+		"description": ""
+	},
+	"扒": {
+		"composition": ["*扌", "八"],
+		"pinyin": "bā",
+		"texture": "",
+		"description": ""
+	},
+	"板": {
+		"composition": ["木", "反"],
+		"pinyin": "bǎn",
+		"texture": "",
+		"description": ""
+	},
+	"版": {
+		"composition": ["片", "反"],
+		"pinyin": "bǎn",
+		"texture": "",
+		"description": ""
+	},
+	"爸": {
+		"composition": ["父", "巴"],
+		"pinyin": "bà",
+		"texture": "",
+		"description": ""
+	},
+	"雹": {
+		"composition": ["雨", "包"],
+		"pinyin": "báo",
+		"texture": "",
+		"description": ""
+	},
+	"包": {
+		"composition": [],
+		"pinyin": "bāo",
+		"texture": "",
+		"description": ""
+	},
+	"胞": {
+		"composition": ["月", "包"],
+		"pinyin": "bāo",
+		"texture": "",
+		"description": ""
+	},
+	"暴": {
+		"composition": ["日", "共", "水"],
+		"pinyin": "bào",
+		"texture": "",
+		"description": ""
+	},
+	"爆": {
+		"composition": {
+			"1": ["火", "暴"],
+			"2": ["火", "日", "共", "水"]
+		},
+		"pinyin": "bào",
+		"texture": "",
+		"description": ""
+	},
+}

@@ -1,0 +1,250 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/ui/InventoryItem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/TerminalItems.gd" type="Script" id=2]
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.196078 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 16.0
+content_margin_bottom = 16.0
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+
+[node name="TerminalItems" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 449.0
+margin_top = 166.0
+margin_right = -368.0
+margin_bottom = -182.0
+theme = ExtResource( 6 )
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollC" type="ScrollContainer" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 447.0
+margin_bottom = 356.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridC" type="GridContainer" parent="ScrollC"]
+margin_right = 431.0
+margin_bottom = 448.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 32
+custom_constants/hseparation = 32
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArchiveItem1" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 9.0
+margin_right = 73.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem2" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 124.0
+margin_right = 188.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem3" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 239.0
+margin_right = 303.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem4" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 354.0
+margin_right = 418.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem5" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 9.0
+margin_top = 96.0
+margin_right = 73.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem6" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 124.0
+margin_top = 96.0
+margin_right = 188.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem7" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 239.0
+margin_top = 96.0
+margin_right = 303.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem8" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 354.0
+margin_top = 96.0
+margin_right = 418.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem9" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 9.0
+margin_top = 192.0
+margin_right = 73.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem10" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 124.0
+margin_top = 192.0
+margin_right = 188.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem11" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 239.0
+margin_top = 192.0
+margin_right = 303.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem12" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 354.0
+margin_top = 192.0
+margin_right = 418.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem13" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 9.0
+margin_top = 288.0
+margin_right = 73.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem14" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 124.0
+margin_top = 288.0
+margin_right = 188.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem15" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 239.0
+margin_top = 288.0
+margin_right = 303.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem16" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 354.0
+margin_top = 288.0
+margin_right = 418.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem17" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 9.0
+margin_top = 384.0
+margin_right = 73.0
+margin_bottom = 448.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem18" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 124.0
+margin_top = 384.0
+margin_right = 188.0
+margin_bottom = 448.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem19" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 239.0
+margin_top = 384.0
+margin_right = 303.0
+margin_bottom = 448.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem20" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 354.0
+margin_top = 384.0
+margin_right = 418.0
+margin_bottom = 448.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="InfoPanel" type="Panel" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 447.0
+margin_bottom = 356.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hide" type="Button" parent="InfoPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="RichTextLabel" parent="InfoPanel"]
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 128 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_styles/normal = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Example"
+text = "Example"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="InfoPanel/Hide" to="." method="_on_DescButton_pressed"]

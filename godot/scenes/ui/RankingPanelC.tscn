@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/ui/RankingPanelC.gd" type="Script" id=2]
+[ext_resource path="res://tres/default_font_64.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.588235 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0.670588, 0.596078, 1 )
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+shadow_color = Color( 0, 0, 0, 0.196078 )
+shadow_size = 4
+shadow_offset = Vector2( 0, -4 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[node name="RankingPanelC" type="Panel"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1920.0
+theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxC" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PageTitle" type="Label" parent="Panel/VBoxC"]
+margin_right = 1280.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 128 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Leaderboard"
+align = 1
+valign = 1
+
+[node name="Coin" type="ItemList" parent="Panel/VBoxC"]
+margin_top = 132.0
+margin_right = 1280.0
+margin_bottom = 132.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/bg = SubResource( 4 )
+items = [ "Item 0", null, false, "Item 1", null, false, "Item 2", null, false, "Item 3", null, false ]
+fixed_icon_size = Vector2( 192, 192 )
+
+[connection signal="gui_input" from="." to="." method="_on_RankingPanelC_gui_input"]
+[connection signal="visibility_changed" from="." to="." method="_on_RankingPanelC_visibility_changed"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

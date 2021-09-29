@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Talking-Cute-Chiptune-by-Pro-Sensory.ogg-38bf4407de2e7988dba7fbf7c6131e4b.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Talking-Cute-Chiptune-by-Pro-Sensory.ogg"
+dest_files=[ "res://.import/Talking-Cute-Chiptune-by-Pro-Sensory.ogg-38bf4407de2e7988dba7fbf7c6131e4b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

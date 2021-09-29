@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://tres/number_font_48.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ui/button_level_locked.png" type="Texture" id=2]
+[ext_resource path="res://scenes/ui/LevelButton.gd" type="Script" id=3]
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=4]
+[ext_resource path="res://assets/ui/button_level.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/level_star.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "pressed"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.9, 1.1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="LevelButton" type="TextureButton"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+mouse_filter = 1
+size_flags_horizontal = 6
+theme = ExtResource( 4 )
+texture_normal = ExtResource( 5 )
+texture_disabled = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimPlayer" type="AnimationPlayer" parent="."]
+anims/pressed = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = SubResource( 2 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Star1" type="TextureRect" parent="HBoxContainer"]
+margin_right = 30.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="Star2" type="TextureRect" parent="HBoxContainer"]
+margin_left = 34.0
+margin_right = 65.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="Star3" type="TextureRect" parent="HBoxContainer"]
+margin_left = 69.0
+margin_right = 100.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[connection signal="pressed" from="." to="." method="_on_LevelButton_pressed"]

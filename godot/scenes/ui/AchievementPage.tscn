@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=2]
+[ext_resource path="res://scenes/ui/AchievementPage.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.392157 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="AchievementPage" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelC" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 117.0
+margin_top = 239.0
+margin_right = -67.0
+margin_bottom = -236.0
+theme = ExtResource( 2 )
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginC" type="MarginContainer" parent="PanelC"]
+margin_right = 1096.0
+margin_bottom = 245.0
+custom_constants/margin_right = 64
+custom_constants/margin_top = 0
+custom_constants/margin_left = 64
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollC" type="ScrollContainer" parent="PanelC/MarginC"]
+margin_left = 64.0
+margin_right = 1032.0
+margin_bottom = 245.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxC" type="VBoxContainer" parent="PanelC/MarginC/ScrollC"]
+margin_right = 968.0
+margin_bottom = 5000.0
+rect_min_size = Vector2( 0, 5000 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Achievement" type="Container" parent="PanelC/MarginC/ScrollC/VBoxC"]
+margin_right = 968.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 0, 192 )
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="HBoxC" type="HBoxContainer" parent="PanelC/MarginC/ScrollC/VBoxC/Achievement"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="PanelC/MarginC/ScrollC/VBoxC/Achievement/HBoxC"]
+margin_right = 192.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 192, 192 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelC/MarginC/ScrollC/VBoxC/Achievement/HBoxC"]
+margin_left = 196.0
+margin_right = 868.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "自我管理能力MAX"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="PanelC/MarginC/ScrollC/VBoxC/Achievement/HBoxC"]
+margin_left = 872.0
+margin_top = 48.0
+margin_right = 968.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 0, 96 )
+size_flags_vertical = 4
+text = "领取奖励"
+
+[connection signal="gui_input" from="." to="." method="_on_AchievementPage_gui_input"]

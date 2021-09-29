@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dream Static by symphony.mp3-a73a972acd0f024a0fd6d9f91366e0ab.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Dream Static by symphony.mp3"
+dest_files=[ "res://.import/Dream Static by symphony.mp3-a73a972acd0f024a0fd6d9f91366e0ab.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

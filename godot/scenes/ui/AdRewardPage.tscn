@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://tres/default_font_64.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/ui/AdRewardPage.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.588235 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.972549, 0.956863, 0.929412, 1 )
+shadow_color = Color( 0, 0, 0, 0.588235 )
+shadow_size = 1
+shadow_offset = Vector2( 4, 4 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.576471, 0.768627, 0.415686, 1 )
+
+[node name="AdRewardPage" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -320.0
+margin_right = 320.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 640, 640 )
+rect_pivot_offset = Vector2( 320, 320 )
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxC" type="VBoxContainer" parent="Panel"]
+margin_right = 640.0
+margin_bottom = 640.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PageTitle" type="Label" parent="Panel/VBoxC"]
+margin_right = 640.0
+margin_bottom = 65.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Gifts"
+align = 1
+valign = 1
+
+[node name="VBoxC" type="VBoxContainer" parent="Panel/VBoxC"]
+margin_top = 69.0
+margin_right = 640.0
+margin_bottom = 640.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Item1" type="Button" parent="Panel/VBoxC/VBoxC"]
+margin_left = 192.0
+margin_top = 221.0
+margin_right = 448.0
+margin_bottom = 349.0
+rect_min_size = Vector2( 256, 128 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.556863, 0.298039, 0.235294, 1 )
+text = "x1"
+flat = true
+expand_icon = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="gui_input" from="." to="." method="_on_RewardPage_gui_input"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

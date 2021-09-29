@@ -1,0 +1,54 @@
+# Nakama node name (must be unique) - It will default to nakama.
+name: project_gourmand
+
+# An absolute path to a writeable folder where Nakama will store its data, including logs. Default value is the working directory that Nakama was started on.
+# data_dir: 
+
+metrics:
+    reporting_freq_sec: 60
+    namespace: ""
+    stackdriver_projectid: ""
+    prometheus_port: 0
+
+database:
+    address:
+    #43.249.195.171:26257
+    - "root@cockroachdb:26257"
+    conn_max_lifetime_ms: 0
+    max_open_conns: 0
+    max_idle_conns: 100
+
+runtime:
+    env:
+    - "example_apikey=example_apivalue"
+    - "encryptionkey=hqmDKTUfLdqvC8bL"
+    # Path of modules to scan and load. Defaults to data_dir/modules.
+    # path: 
+    http_key: "EgsKb3UNKrZ4xysp"
+
+socket:
+    server_key: "wT2kpPbvY83Pr8u9"
+    port: 7350
+    max_message_size_bytes: 4096 # bytes
+    read_timeout_ms: 10000
+    write_timeout_ms: 10000
+    idle_timeout_ms: 60000
+    write_wait_ms: 5000
+    pong_wait_ms: 10000
+    ping_period_ms: 8000 # Must be less than pong_wait_ms
+    outgoing_queue_size: 16
+
+session:
+    encryption_key: "SCpjWg5LDVyYnn2M"
+    token_expiry_sec: 3600
+
+social:
+    steam:
+    publisher_key: ""
+    app_id: 0
+
+console:
+    signing_key: "bn79GzVK9uJ4xpnY"
+    port: 7351
+    username: "dev"
+    password: "dev123"

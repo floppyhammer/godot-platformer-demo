@@ -1,0 +1,135 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/ui/LevelButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/LevelMap.gd" type="Script" id=2]
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/ui/background_tiles/Gray.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="LevelMap" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="ScrollC" type="ScrollContainer" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 4
+scroll_horizontal_enabled = false
+
+[node name="VBoxC" type="VBoxContainer" parent="ScrollC"]
+margin_right = 1280.0
+margin_bottom = 3840.0
+mouse_filter = 2
+custom_constants/separation = 0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Map1" type="TextureRect" parent="ScrollC/VBoxC"]
+margin_right = 1280.0
+margin_bottom = 1920.0
+rect_min_size = Vector2( 1280, 1920 )
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
+
+[node name="Map2" type="TextureRect" parent="ScrollC/VBoxC"]
+margin_top = 1920.0
+margin_right = 1280.0
+margin_bottom = 3840.0
+rect_min_size = Vector2( 1280, 1920 )
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
+
+[node name="Decors" type="Control" parent="ScrollC"]
+mouse_filter = 2
+
+[node name="YSort" type="YSort" parent="ScrollC/Decors"]
+
+[node name="Levels" type="Control" parent="ScrollC"]
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton1" parent="ScrollC/Levels" instance=ExtResource( 1 )]
+margin_left = 375.439
+margin_top = 3407.75
+margin_right = 475.439
+margin_bottom = 3507.75
+
+[node name="LevelButton2" parent="ScrollC/Levels" instance=ExtResource( 1 )]
+margin_left = 827.506
+margin_top = 2969.57
+margin_right = 927.506
+margin_bottom = 3069.57
+level_id = "2"
+
+[node name="LevelButton3" parent="ScrollC/Levels" instance=ExtResource( 1 )]
+margin_left = 316.821
+margin_top = 2542.52
+margin_right = 416.821
+margin_bottom = 2642.52
+level_id = "3"
+
+[node name="LevelButton4" parent="ScrollC/Levels" instance=ExtResource( 1 )]
+margin_left = 822.06
+margin_top = 2089.38
+margin_right = 922.06
+margin_bottom = 2189.38
+level_id = "4"
+
+[node name="LevelButton5" parent="ScrollC/Levels" instance=ExtResource( 1 )]
+margin_left = 346.764
+margin_top = 1687.38
+margin_right = 446.764
+margin_bottom = 1787.38
+level_id = "5"
+
+[node name="LevelButton6" parent="ScrollC/Levels" instance=ExtResource( 1 )]
+margin_left = 847.677
+margin_top = 1270.27
+margin_right = 947.677
+margin_bottom = 1370.27
+level_id = "6"
+
+[node name="LevelButton7" parent="ScrollC/Levels" instance=ExtResource( 1 )]
+margin_left = 314.837
+margin_top = 962.71
+margin_right = 414.837
+margin_bottom = 1062.71
+level_id = "7"
+
+[node name="LevelButton8" parent="ScrollC/Levels" instance=ExtResource( 1 )]
+margin_left = 849.719
+margin_top = 580.771
+margin_right = 949.719
+margin_bottom = 680.771
+level_id = "8"
+
+[node name="LevelButton9" parent="ScrollC/Levels" instance=ExtResource( 1 )]
+margin_left = 296.819
+margin_top = 308.99
+margin_right = 396.819
+margin_bottom = 408.99
+level_id = "9"
+
+[node name="LevelButton10" parent="ScrollC/Levels" instance=ExtResource( 1 )]
+margin_left = 806.255
+margin_top = 86.3894
+margin_right = 906.255
+margin_bottom = 186.389
+level_id = "10"

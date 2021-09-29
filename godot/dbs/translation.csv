@@ -1,0 +1,38 @@
+keys,en,zh
+LANGUAGE_NAME,English,简体中文
+TAP_ANYWHERE,Tap anywhere,点击任意位置
+START,Start,开始
+LEVEL_NAME,"Level %s","第%s关"
+TARGET_DESCRIPTION_A,"[center]Reach [color=#ff668c]score %d[/color][/center]","[center]达到[color=#ff668c]%d分[/color][/center]"
+TERMINAL,Terminal,终端
+SETTINGS,Settings,设定
+LANGUAGES,Languages,语言
+ABOUT,About,关于
+TUTORIALS,"Tutorials","教程"
+RANKING,Ranking,排行
+BLOCK_COLLECTION_PROGRESS,"Progress %d/%d","进度 %d/%d"
+OPEN,Open,打开
+GAME_NAME,"Project Gourmand",饕 餮 工 程
+ABOUT_CONTENT,"[center]Made by\n\n[url="https://github.com/floppyhammer"]floppyhammer[/url]\n\nPowered by\n\n[img=256]res://assets/ui/godot_logo.png[/img]\n\nMany thanks to\n\nCleytonKauffman - Children's March Theme\n\nPro Sensory - Talking Cute Chiptune[/center]",[center]制作\n\n[url="https://github.com/floppyhammer"]floppyhammer[/url]\n\n基于\n\n[img=256]res://assets/ui/godot_logo.png[/img]\n\n感谢\n\nCleytonKauffman - Children's March Theme\n\nPro Sensory - Talking Cute Chiptune[/center]
+SELECT_ITEMS_TO_BRING,"Select items to bring","选择携带的道具"
+CLEAR_TITLE,CLEAR,过关
+CLEAR_WORDS,"Good job!","干得漂亮！"
+FAILURE_TITLE,FAILURE,失败
+FAILURE_WORDS,"Better luck next time...","再接再厉……"
+GIFTS,Gifts,礼物
+GOURMANDS,Gourmands,饕餮
+FOOD,Food,美食
+ITEMS,Items,道具
+TUTORIAL_TITLE,Tutorials,教程
+TUTORIAL_1,"[center]Bring your gourmands with you, and start biting around the world![/center]","[center]带上你的饕餮，吃遍全世界！[/center]"
+TUTORIAL_2,"[center]Food appear as their first/second stages, you have to merge them to acquire the third stage before feeding it to your gourmand. Successful feed get you scores.[/center]","[center]食物会以第一、二形态出现，将它们合成为第三形态以喂给你的饕餮。喂食成功会得到分数。[/center]"
+TUTORIAL_3,"[center]Clearing a level requires you to reach a certain [color=#ff668c]score[/color].[/center]","[center]一般关卡需要你达到一定分数才能过关。[/center]"
+TUTORIAL_4,"[center]As the refill timer ticks, you better hurry up feeding. If any food reach the yellow or red zones, you lose 1 or 2 stars, respectively.[/center]","[center]计时器会控制食物下落，要是有任何食物下落到黄区和红区，你会相应地失去一颗和两颗星星。[/center]"
+TUTORIAL_5,"[center][img=128]res://assets/ui/icons/CoinYuan.png[/img]\nEarn coins by clearing levels. Coins can be used to buy items which can help you clear levels in turn.[/center]","[center][img=128]res://assets/ui/icons/CoinYuan.png[/img]\n闯关成功会奖励金币，金币可以用来购买道具，而道具反过来可以帮助你闯关。[/center]"
+TUTORIAL_6,"[center]There are various items that can be used in levels and help you clear levels more efficiently along your adventrue, but that is up to you to find out what all they do![/center]","[center]你会碰到各种各样的道具，它们可以让你的闯关更加高效。[/center]"
+TUTORIAL_7,"[center]At last, have fun![/center]","[center]最后，玩得开心！[/center]"
+SELECT,Select,选择
+SELECTED,Selected,已选择
+NOT_FOUND,"Not found","未发现"
+PRICE,Price,价格
+BUY,Buy,购买

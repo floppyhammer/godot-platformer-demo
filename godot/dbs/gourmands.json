@@ -1,0 +1,32 @@
+{
+	"PUPU": {
+		"name_en": "Pupu",
+		"name_zh": "噗噗",
+		"description_en": "Pupu is a little dragon who aspires to become a chef.\nSkill: Rewarded coins [color=#ec5535]+10[/color] after clearing a level.",
+		"description_zh": "噗噗是一条幼龙，它立志成为一个大厨。\n技能：过关金币奖励[color=#ec5535]+10[/color]",
+		"short_desc_en": "Coins +10",
+		"short_desc_zh": "金币奖励 +10",
+		"texture": "res://assets/items/item_1.png"
+	},
+	"DODO": {
+		"name_en": "Dodo",
+		"name_zh": "嘟嘟",
+		"description_en": "nothing",
+		"description_zh": "没有",
+		"texture": "res://assets/items/item_1.png"
+	},
+	"PURPLE": {
+		"name_en": "Purple",
+		"name_zh": "小紫",
+		"description_en": "nothing",
+		"description_zh": "没有",
+		"texture": "res://assets/items/item_1.png"
+	},
+	"CTHULU": {
+		"name_en": "Cthulu",
+		"name_zh": "克苏鲁",
+		"description_en": "nothing",
+		"description_zh": "没有",
+		"texture": "res://assets/items/item_1.png"
+	}
+}

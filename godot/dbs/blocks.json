@@ -1,0 +1,38 @@
+{
+	"block -3": {
+		"name_code": "TIME_BOMB",
+		"name_en": "Time Bomb",
+		"name_zh": "冰块",
+		"grabbable": false,
+		"texture": "res://assets/items/item_1.png",
+		"description": "Explodes after a while, destroying everything around it. Can be grabbed."
+	},
+	"block -2": {
+		"name_code": "TRAFFIC_CONE",
+		"name_en": "Traffic Cone",
+		"name_zh": "冰块",
+		"grabbable": false,
+		"texture": "res://assets/items/item_2.png",
+		"description": "Attention: Road closed. Cannot be grabbed."
+	},
+	"block -1": {
+		"name_code": "ICE_CUBE",
+		"name_en": "Ice Cube",
+		"name_zh": "冰块",
+		"grabbable": false,
+		"texture": "res://assets/items/item_3.png",
+		"description": "Melts after a while. Can be grabbed."
+	},
+	"block 1": {
+		"name_zh": "可乐1",
+		"texture": "res://assets/items/item_4.png",
+	},
+	"block 2": {
+		"name_zh": "可乐2",
+		"texture": "res://assets/items/item_5.png",
+	},
+	"block 3": {
+		"name_zh": "可乐3",
+		"texture": "res://assets/items/item_6.png",
+	}
+}

@@ -1,0 +1,144 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/ui/TerminalGuardian.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ui/button_guardian.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/button_items.png" type="Texture" id=3]
+[ext_resource path="res://scenes/ui/TerminalAchievements.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/ui/TerminalPanelC.gd" type="Script" id=8]
+[ext_resource path="res://scenes/ui/TerminalItems.tscn" type="PackedScene" id=12]
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=18]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 0.392157 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 16
+corner_radius_bottom_left = 16
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="TerminalPanelC" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 18 )
+custom_styles/panel = SubResource( 6 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="HBoxC" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -307.5
+margin_top = -203.0
+margin_right = 307.5
+margin_bottom = 203.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabC" type="TabContainer" parent="HBoxC"]
+margin_right = 547.0
+margin_bottom = 406.0
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 5 )
+tabs_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TerminalGuardian" parent="HBoxC/TabC" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TerminalItems" parent="HBoxC/TabC" instance=ExtResource( 12 )]
+visible = false
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TerminalAchievements" parent="HBoxC/TabC" instance=ExtResource( 6 )]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxC" type="VBoxContainer" parent="HBoxC"]
+margin_left = 551.0
+margin_right = 615.0
+margin_bottom = 406.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Guardians" type="Button" parent="HBoxC/VBoxC"]
+margin_right = 64.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 7 )
+toggle_mode = true
+pressed = true
+icon = ExtResource( 2 )
+expand_icon = true
+
+[node name="Items" type="Button" parent="HBoxC/VBoxC"]
+margin_top = 135.0
+margin_right = 64.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 7 )
+toggle_mode = true
+icon = ExtResource( 3 )
+expand_icon = true
+
+[node name="Achievements" type="Button" parent="HBoxC/VBoxC"]
+margin_top = 270.0
+margin_right = 64.0
+margin_bottom = 406.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 7 )
+toggle_mode = true
+icon = ExtResource( 2 )
+expand_icon = true
+
+[connection signal="pressed" from="Close" to="." method="_on_Close_pressed"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="pressed" from="HBoxC/VBoxC/Guardians" to="." method="_on_Guardians_pressed"]
+[connection signal="pressed" from="HBoxC/VBoxC/Items" to="." method="_on_Items_pressed"]
+[connection signal="pressed" from="HBoxC/VBoxC/Achievements" to="." method="_on_Achievements_pressed"]

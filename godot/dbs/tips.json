@@ -1,0 +1,13 @@
+{
+	"冰块":{
+		"description":"冻住的食物无法被串起，但是它们依然能够被融合，同时冰块也会融化",
+		"texture":"res://assets/blocks/-1.png",
+	},
+	"慕斯兔":{
+		"description":"慕斯兔被串起的时候会单独融合并且消失，同时产生大量的分数",
+		"texture":"res://assets/blocks/-2.png",
+	},
+	"连续融合":{
+		"description":"连续融合能获得更多的点数",
+	},
+}

@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://shaders/clouds/clouds_noise2.tres" type="Texture" id=1]
+[ext_resource path="res://shaders/clouds/clouds_noise1.tres" type="Texture" id=2]
+[ext_resource path="res://shaders/clouds/clouds.shader" type="Shader" id=3]
+[ext_resource path="res://shaders/clouds/CloudShadows.gd" type="Script" id=4]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.517857, 0.584821 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.82, 0.82, 0.82, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 3 )
+shader_param/tint = Color( 0, 0, 0, 0.392157 )
+shader_param/scroll_direction1 = Vector2( 0.7, -0.7 )
+shader_param/time_scale1 = 0.012
+shader_param/tile_factor1 = 0.243
+shader_param/scroll_direction2 = Vector2( 0.75, 0.25 )
+shader_param/time_scale2 = 0.005
+shader_param/tile_factor2 = 0.1
+shader_param/aspect_ratio = 23.2389
+shader_param/noise_texture2 = ExtResource( 1 )
+shader_param/gradient_texture = SubResource( 2 )
+
+[node name="CloudShadows" type="Sprite"]
+material = SubResource( 3 )
+position = Vector2( 9748.64, 28427.6 )
+scale = Vector2( 14.8047, 50.626 )
+texture = ExtResource( 2 )
+script = ExtResource( 4 )
+[connection signal="item_rect_changed" from="." to="." method="_on_CloudShadows_item_rect_changed"]
