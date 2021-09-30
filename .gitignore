@@ -1,3 +1,4 @@
 export/
 godot/.import/
 godot/android/build
+*.import
