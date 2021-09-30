@@ -7,9 +7,7 @@ var score = 0
 var score2coin_ratio = 1
 var coin_sound_index = 1
 
-onready var panel = $CenterC/PanelC
-onready var main_box = $CenterC/PanelC/VBoxC
-onready var coin = $CenterC/PanelC/VBoxC/Coin
+onready var ok_btn = $OK
 onready var fireworks_left = $Fireworks/CenterLeft/Fireworks
 onready var fireworks_right = $Fireworks/CenterRight/Fireworks
 
@@ -36,9 +34,7 @@ func hide_with_transition():
 
 
 func show_when_level_is_clear(level_name, star_count, coin_count):
-	panel.show()
-	
-	$CenterC/PanelC/VBoxC/Title.text = tr("CLEAR_TITLE")
+	#$CenterC/PanelC/VBoxC/Title.text = tr("CLEAR_TITLE")
 	
 	# Wallet updater payload
 #	var payload = {"coin": coin_got}
@@ -49,7 +45,7 @@ func show_when_level_is_clear(level_name, star_count, coin_count):
 #		print("[Network] An error occured: %s" % wallet_info)
 	
 	# Update offline coin.
-	Global.update_coin(coin_count)
+	#Global.update_coin(coin_count)
 	
 	# Update offline and online progress.
 	Global.update_progress(level_name, star_count)
@@ -62,7 +58,9 @@ func show_when_level_is_clear(level_name, star_count, coin_count):
 	
 	fireworks_left.hide()
 	fireworks_right.hide()
+	
 	yield($AnimPlayer, "animation_finished")
+	
 	fireworks_left.show()
 	fireworks_left.restart()
 	fireworks_right.show()
@@ -73,6 +71,16 @@ func show_when_level_is_clear(level_name, star_count, coin_count):
 	$SFX/Fireworks.play()
 	
 	Global.save_general_save_data()
+	
+	$ReturnTimer.start()
+	yield($ReturnTimer, "timeout")
+	emit_signal("level_quitted")
+	
+	var main_node = get_node_or_null("/root/Main")
+	if main_node:
+		get_node("/root/Main").loading_panel.load_scene("res://scenes/stages/Home.tscn")
+	else:
+		Logger.error('get_node("/root/Main") returned null!', "ResultPanel")
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -86,16 +94,3 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 func _on_ResultPanel_visibility_changed():
 	# Pause the game if the result panel is shown.
 	get_tree().paused = visible
-
-
-func _on_OK_pressed():
-	$CenterC/PanelC/VBoxC/OK.disabled = true
-	$AnimTimer.start()
-	yield($AnimTimer, "timeout")
-	emit_signal("level_quitted")
-	
-	var main_node = get_node_or_null("/root/Main")
-	if main_node:
-		get_node("/root/Main").loading_panel.load_scene("res://scenes/stages/Home.tscn")
-	else:
-		Logger.error('get_node("/root/Main") returned null!', "ResultPanel")

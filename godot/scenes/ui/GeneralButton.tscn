@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/ui/GeneralButton.gd" type="Script" id=1]
 [ext_resource path="res://tres/spring.anim" type="Animation" id=2]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=3]
-[ext_resource path="res://assets/ui/item_box.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/button_bg.png" type="Texture" id=5]
 
 [node name="GeneralButton" type="TextureButton"]
 pause_mode = 2
@@ -11,6 +11,7 @@ modulate = Color( 1, 0.992157, 0.992157, 1 )
 margin_right = 11.0
 margin_bottom = 11.0
 theme = ExtResource( 3 )
+texture_normal = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -20,16 +21,3 @@ __meta__ = {
 
 [node name="AnimPlayer" type="AnimationPlayer" parent="."]
 anims/pressed = ExtResource( 2 )
-
-[node name="TextureRect" type="NinePatchRect" parent="."]
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 4 )
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}

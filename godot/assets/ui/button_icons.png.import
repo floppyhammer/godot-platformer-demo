@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button_level_locked.png-ff15cd2ace00c6077d30761dae47dd33.stex"
+path="res://.import/button_icons.png-ab01cb8b3819e66f2d899863b0be7175.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/button_level_locked.png"
-dest_files=[ "res://.import/button_level_locked.png-ff15cd2ace00c6077d30761dae47dd33.stex" ]
+source_file="res://assets/ui/button_icons.png"
+dest_files=[ "res://.import/button_icons.png-ab01cb8b3819e66f2d899863b0be7175.stex" ]
 
 [params]
 
