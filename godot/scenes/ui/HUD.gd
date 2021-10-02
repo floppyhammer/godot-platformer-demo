@@ -4,7 +4,7 @@ var languages_list = ["zh", "en"]
 var level_progress = 0
 
 onready var menu_btn = $VBoxC/Panel/HBoxC/HBoxC/Menu
-onready var exit_btn = $VBoxC/Panel/HBoxC/HBoxC/Exit
+onready var exit_btn = $VBoxC/MenuPanel/VBoxC/HBoxCButton/Exit
 onready var menu_panel = $VBoxC/MenuPanel
 onready var result_panel = $VBoxC/ResultPanel
 onready var tween = $Tween
@@ -15,15 +15,17 @@ onready var lang_btn = $VBoxC/MenuPanel/VBoxC/HBoxCButton/Languages
 func _ready():
 	Logger.add_module("HUD")
 	
+	$AboutPage.hide()
+	
 	result_panel.hide()
 	Global.hud = self
 	_hide_menu()
 	result_panel.hide()
 	Global.connect("locale_changed", self, "_when_locale_changed")
 	
-	var level_name = get_parent().get_parent().get("level_name")
-	if level_name is String:
-		$MapLabel.text = level_name
+	#var level_name = get_parent().get_parent().get("level_name")
+	#if level_name is String:
+	#	$MapLabel.text = level_name
 
 
 func _process(delta):
@@ -48,6 +50,7 @@ func _show_menu():
 	tween.start()
 	
 	get_tree().paused = true
+	$BlurShader.change_blur_amount(2, 0.5)
 
 
 func _hide_menu():
@@ -60,15 +63,14 @@ func _hide_menu():
 	tween.start()
 	
 	get_tree().paused = false
+	$BlurShader.change_blur_amount(0, 0.5)
 
 
 func _on_Menu_toggled(button_pressed):
 	if button_pressed:
 		_show_menu()
-		menu_btn.text = "Resume"
 	else:
 		_hide_menu()
-		menu_btn.text = "Menu"
 
 
 func _on_Exit_pressed():
@@ -94,7 +96,7 @@ func _on_Languages_pressed():
 
 
 func _on_About_pressed():
-	pass # Replace with function body.
+	$AboutPage.show()
 
 
 func _on_SFX_toggled(button_pressed):

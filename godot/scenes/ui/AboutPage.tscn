@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/ui/AboutPage.gd" type="Script" id=1]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=2]
 [ext_resource path="res://tres/central_panel_style.tres" type="StyleBox" id=3]
 
-[sub_resource type="StyleBoxEmpty" id=1]
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 1, 1, 1, 1 )
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.392157 )
 
 [node name="AboutPage" type="Panel"]
 anchor_right = 1.0
@@ -15,6 +13,14 @@ anchor_bottom = 1.0
 theme = ExtResource( 2 )
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -29,36 +35,20 @@ __meta__ = {
 
 [node name="Panel" type="PanelContainer" parent="CenterC"]
 margin_left = 448.0
-margin_top = 200.0
+margin_top = 168.0
 margin_right = 832.0
-margin_bottom = 520.0
+margin_bottom = 552.0
+rect_min_size = Vector2( 384, 384 )
 custom_styles/panel = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxC" type="VBoxContainer" parent="CenterC/Panel"]
-margin_right = 384.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 384, 320 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PageTitle" type="Label" parent="CenterC/Panel/VBoxC"]
-margin_right = 384.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 0, 64 )
-custom_styles/normal = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "About"
-align = 1
-valign = 1
-
-[node name="ScrollC" type="ScrollContainer" parent="CenterC/Panel/VBoxC"]
-margin_top = 68.0
-margin_right = 384.0
-margin_bottom = 320.0
+[node name="ScrollC" type="ScrollContainer" parent="CenterC/Panel"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 382.0
+margin_bottom = 382.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
@@ -66,9 +56,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC"]
-margin_right = 384.0
-margin_bottom = 252.0
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterC/Panel/ScrollC"]
+margin_right = 380.0
+margin_bottom = 380.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -77,6 +67,6 @@ bbcode_text = "Example text"
 text = "Example text"
 fit_content_height = true
 
-[connection signal="gui_input" from="." to="." method="_on_CreditsPage_gui_input"]
 [connection signal="visibility_changed" from="." to="." method="_on_CreditsPage_visibility_changed"]
-[connection signal="meta_clicked" from="CenterC/Panel/VBoxC/ScrollC/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="pressed" from="Close" to="." method="_on_Close_pressed"]
+[connection signal="meta_clicked" from="CenterC/Panel/ScrollC/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]

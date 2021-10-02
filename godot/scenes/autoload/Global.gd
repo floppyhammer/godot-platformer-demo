@@ -11,6 +11,9 @@ var block_db = {}
 var item_db = {}
 var gourmand_db = {}
 
+# Main node
+var main
+
 # Save data
 var general = {
 	"coin": 0,

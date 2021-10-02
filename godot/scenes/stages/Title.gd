@@ -1,6 +1,5 @@
 extends Control
 
-onready var title_rect = $Title
 onready var start_btn = $Start
 onready var tip_label = $Start/Tip
 

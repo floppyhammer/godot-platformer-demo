@@ -7,9 +7,9 @@ func _ready():
 	# No pause for the title scene
 	get_tree().paused = false
 	
-	var main_node = get_node_or_null("/root/Main")
-	if main_node:
-		main_node.bgm_player.start_bgm("res://assets/music/Dream Static by symphony.mp3")
+	#var main_node = get_node_or_null("/root/Main")
+	#if main_node:
+	#	main_node.bgm_player.start_bgm("res://assets/music/Dream Static by symphony.mp3")
 	
 	# Translation.
 	_when_locale_changed()

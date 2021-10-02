@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://assets/maps/Fantasy Swamp Forest/Terrain_and_Props.png" type="Texture" id=1]
-[ext_resource path="res://assets/maps/Fantasy Swamp Forest/BG_3/BG_3.png" type="Texture" id=2]
-[ext_resource path="res://assets/maps/Fantasy Swamp Forest/BG_2/BG_2.png" type="Texture" id=3]
-[ext_resource path="res://assets/maps/Fantasy Swamp Forest/BG_1/BG_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/levels/Fantasy Swamp Forest/Terrain_and_Props.png" type="Texture" id=1]
+[ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_3/BG_3.png" type="Texture" id=2]
+[ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_2/BG_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_1/BG_1.png" type="Texture" id=4]
 [ext_resource path="res://scenes/core/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ui/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/core/Guardian.tscn" type="PackedScene" id=7]

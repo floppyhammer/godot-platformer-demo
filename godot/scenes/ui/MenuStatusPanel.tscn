@@ -1,0 +1,462 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/items/item_3.png" type="Texture" id=1]
+[ext_resource path="res://tres/default_font_24.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/ui/button_save.png" type="Texture" id=3]
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=4]
+[ext_resource path="res://scenes/ui/InventoryItem.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/ui/button_settings2.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+content_margin_left = 32.0
+content_margin_right = 32.0
+content_margin_top = 32.0
+content_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.0784314 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 16.0
+content_margin_bottom = 16.0
+bg_color = Color( 1, 1, 1, 0.196078 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="MenuStatusPanel" type="HBoxContainer"]
+margin_right = 1248.0
+margin_bottom = 556.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxC" type="VBoxContainer" parent="."]
+margin_right = 944.0
+margin_bottom = 556.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxC1" type="HBoxContainer" parent="VBoxC"]
+margin_right = 944.0
+margin_bottom = 256.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Blueprint" type="TextureRect" parent="VBoxC/HBoxC1"]
+margin_right = 256.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="VBoxC/HBoxC1"]
+margin_left = 260.0
+margin_right = 944.0
+margin_bottom = 256.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 2 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Pupu is a little dragon who aspires to become a chef.
+
+Skill: [color=#8ad8cc]x1.5[/color] earned coins"
+text = "Pupu is a little dragon who aspires to become a chef.
+
+Skill: x1.5 earned coins"
+
+[node name="HBoxC2" type="HBoxContainer" parent="VBoxC"]
+margin_top = 260.0
+margin_right = 944.0
+margin_bottom = 532.0
+alignment = 1
+
+[node name="VBoxCStatus" type="VBoxContainer" parent="VBoxC/HBoxC2"]
+margin_left = 278.0
+margin_right = 534.0
+margin_bottom = 272.0
+custom_constants/separation = 32
+alignment = 1
+
+[node name="Attack" type="Button" parent="VBoxC/HBoxC2/VBoxCStatus"]
+margin_top = 56.0
+margin_right = 256.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 256, 64 )
+mouse_filter = 2
+text = "3+1"
+icon = ExtResource( 3 )
+flat = true
+align = 0
+expand_icon = true
+
+[node name="Power" type="Button" parent="VBoxC/HBoxC2/VBoxCStatus"]
+margin_top = 152.0
+margin_right = 256.0
+margin_bottom = 216.0
+rect_min_size = Vector2( 256, 64 )
+mouse_filter = 2
+text = "3+1"
+icon = ExtResource( 6 )
+flat = true
+align = 0
+expand_icon = true
+
+[node name="VBoxCEquipment" type="VBoxContainer" parent="VBoxC/HBoxC2"]
+margin_left = 538.0
+margin_right = 666.0
+margin_bottom = 272.0
+custom_constants/separation = 16
+alignment = 1
+
+[node name="Weapon" type="TextureRect" parent="VBoxC/HBoxC2/VBoxCEquipment"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="VBoxC/HBoxC2/VBoxCEquipment/Weapon"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Engine" type="TextureRect" parent="VBoxC/HBoxC2/VBoxCEquipment"]
+margin_top = 144.0
+margin_right = 128.0
+margin_bottom = 272.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="VBoxC/HBoxC2/VBoxCEquipment/Engine"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Select" type="Button" parent="VBoxC/HBoxC2/VBoxCEquipment"]
+visible = false
+margin_left = 80.0
+margin_top = 287.0
+margin_right = 208.0
+margin_bottom = 335.0
+rect_min_size = Vector2( 128, 48 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Collections" type="VBoxContainer" parent="."]
+margin_left = 960.0
+margin_right = 1248.0
+margin_bottom = 556.0
+
+[node name="Label" type="Label" parent="Collections"]
+margin_right = 288.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 48 )
+text = "Collections"
+valign = 1
+
+[node name="PanelC" type="PanelContainer" parent="Collections"]
+margin_top = 52.0
+margin_right = 288.0
+margin_bottom = 556.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="ScrollC" type="ScrollContainer" parent="Collections/PanelC"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 272.0
+margin_bottom = 488.0
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridC" type="GridContainer" parent="Collections/PanelC/ScrollC"]
+margin_right = 256.0
+margin_bottom = 1024.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 32
+custom_constants/hseparation = 32
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArchiveItem1" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem2" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 96.0
+margin_right = 160.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem3" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 192.0
+margin_right = 256.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem4" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_top = 96.0
+margin_right = 64.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem5" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 96.0
+margin_top = 96.0
+margin_right = 160.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem6" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 192.0
+margin_top = 96.0
+margin_right = 256.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem7" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_top = 192.0
+margin_right = 64.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem8" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 96.0
+margin_top = 192.0
+margin_right = 160.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem9" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 192.0
+margin_top = 192.0
+margin_right = 256.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem10" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_top = 288.0
+margin_right = 64.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem11" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 96.0
+margin_top = 288.0
+margin_right = 160.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem12" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 192.0
+margin_top = 288.0
+margin_right = 256.0
+margin_bottom = 352.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem13" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_top = 384.0
+margin_right = 64.0
+margin_bottom = 448.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem14" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 96.0
+margin_top = 384.0
+margin_right = 160.0
+margin_bottom = 448.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem15" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 192.0
+margin_top = 384.0
+margin_right = 256.0
+margin_bottom = 448.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem16" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_top = 480.0
+margin_right = 64.0
+margin_bottom = 544.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem17" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 96.0
+margin_top = 480.0
+margin_right = 160.0
+margin_bottom = 544.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem18" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 192.0
+margin_top = 480.0
+margin_right = 256.0
+margin_bottom = 544.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem19" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_top = 576.0
+margin_right = 64.0
+margin_bottom = 640.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem20" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 96.0
+margin_top = 576.0
+margin_right = 160.0
+margin_bottom = 640.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem21" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 192.0
+margin_top = 576.0
+margin_right = 256.0
+margin_bottom = 640.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem22" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_top = 672.0
+margin_right = 64.0
+margin_bottom = 736.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem23" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 96.0
+margin_top = 672.0
+margin_right = 160.0
+margin_bottom = 736.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem24" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 192.0
+margin_top = 672.0
+margin_right = 256.0
+margin_bottom = 736.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem25" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_top = 768.0
+margin_right = 64.0
+margin_bottom = 832.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem26" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 96.0
+margin_top = 768.0
+margin_right = 160.0
+margin_bottom = 832.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem27" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 192.0
+margin_top = 768.0
+margin_right = 256.0
+margin_bottom = 832.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem28" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_top = 864.0
+margin_right = 64.0
+margin_bottom = 928.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem29" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 96.0
+margin_top = 864.0
+margin_right = 160.0
+margin_bottom = 928.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem30" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 192.0
+margin_top = 864.0
+margin_right = 256.0
+margin_bottom = 928.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem31" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_top = 960.0
+margin_right = 64.0
+margin_bottom = 1024.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4
+
+[node name="ArchiveItem32" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
+margin_left = 96.0
+margin_top = 960.0
+margin_right = 160.0
+margin_bottom = 1024.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_vertical = 4

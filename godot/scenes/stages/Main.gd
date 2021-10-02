@@ -6,7 +6,8 @@ onready var bgm_player = $BGMPlayer
 
 
 func _ready():
-	bgm_player.start_bgm("res://assets/music/Caketown-by-Matthew-Pablo.ogg")
+	Global.main = self
+	bgm_player.start_bgm("res://assets/music/Dream Static by symphony.mp3")
 
 
 func _process(delta):
@@ -33,5 +34,5 @@ func _on_AdMob_banner_loaded():
 
 func _on_TitleStage_start_pressed():
 	loading_panel.load_scene("res://scenes/stages/Home.tscn")
-	bgm_player.stop_bgm()
+	#bgm_player.stop_bgm()
 	loadAds()

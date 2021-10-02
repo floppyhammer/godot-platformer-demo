@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/ui/transition_tiles.png" type="Texture" id=1]
-[ext_resource path="res://scenes/ui/Transition.gd" type="Script" id=5]
+[ext_resource path="res://scenes/ui/TransitionEffect.gd" type="Script" id=5]
 
 [node name="Transition" type="Control"]
 anchor_right = 1.0

@@ -1,20 +1,19 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/ui/title_bg.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/stages/Title.gd" type="Script" id=2]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=3]
 [ext_resource path="res://assets/ui/godot_logo.png" type="Texture" id=4]
+[ext_resource path="res://scenes/ui/TitleBg.tscn" type="PackedScene" id=5]
 [ext_resource path="res://tres/default_font_64.tres" type="DynamicFont" id=8]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.209424, 0.781022, 1 )
 colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 0.392157 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "New Anim"
+[sub_resource type="Animation" id=3]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -30,10 +29,10 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Logo:modulate")
@@ -81,17 +80,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Bg" type="TextureRect" parent="."]
+[node name="ViewportC" type="ViewportContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 1 )
-expand = true
-stretch_mode = 7
+stretch = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StarRain" type="CPUParticles2D" parent="."]
+[node name="Viewport" type="Viewport" parent="ViewportC"]
+size = Vector2( 1280, 720 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="TitleBg" parent="ViewportC/Viewport" instance=ExtResource( 5 )]
+
+[node name="Wind" type="CPUParticles2D" parent="."]
 position = Vector2( 0, 360 )
 amount = 20
 lifetime = 5.0
@@ -105,24 +109,43 @@ angular_velocity = 100.0
 angular_velocity_random = 0.5
 linear_accel = 100.0
 linear_accel_random = 1.0
-scale_amount = 10.0
+scale_amount = 5.0
 color_ramp = SubResource( 1 )
 
-[node name="Title" type="Label" parent="."]
+[node name="VBoxC" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -322.5
-margin_top = -32.5
-margin_right = 322.5
-margin_bottom = 32.5
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 8 )
-text = "Auto: Summer Trip"
+margin_left = -560.0
+margin_top = -280.0
+margin_right = -1.0
+margin_bottom = -195.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ColorRect" type="ColorRect" parent="VBoxC"]
+margin_right = 559.0
+margin_bottom = 6.0
+rect_min_size = Vector2( 0, 6 )
+
+[node name="Title" type="Label" parent="VBoxC"]
+margin_top = 10.0
+margin_right = 559.0
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.0784314 )
+text = "A Summer Trip"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxC"]
+margin_top = 79.0
+margin_right = 559.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 0, 6 )
 
 [node name="Start" type="Button" parent="."]
 anchor_right = 1.0
@@ -139,7 +162,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -24.0
-custom_styles/normal = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
 text = "Tap anywhere"
 align = 1
 valign = 2
@@ -149,13 +172,12 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Start/Tip"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 2 )
+"anims/New Anim" = SubResource( 3 )
 
 [node name="Splash" type="Panel" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -179,6 +201,6 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Splash"]
 autoplay = "default"
-anims/default = SubResource( 4 )
+anims/default = SubResource( 5 )
 
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
