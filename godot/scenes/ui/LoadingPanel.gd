@@ -29,7 +29,9 @@ func load_scene(scene_path):
 func _when_loading_completed():
 	var level = thread.wait_to_finish()
 	
-	get_node("/root/Main/Running").add_child(level)
+	var running_node = get_node_or_null("/root/Main/Running")
+	if running_node:
+		running_node.add_child(level)
 	
 	emit_signal("loading_finished")
 
@@ -47,8 +49,10 @@ func _load_scene_in_thread(scene_path):
 
 
 func _on_Transition_appeared():
-	for child in get_node("/root/Main/Running").get_children():
-		child.queue_free()
+	var running_node = get_node_or_null("/root/Main/Running")
+	if running_node:
+		for child in running_node.get_children():
+			child.queue_free()
 
 
 func _on_Transition_disappeared():

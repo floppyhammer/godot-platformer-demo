@@ -1,0 +1,122 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/core/DialogPanel.gd" type="Script" id=1]
+[ext_resource path="res://assets/ui/icon.png" type="Texture" id=2]
+[ext_resource path="res://scenes/vfx/ShaderBlur.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 0.0784314 )
+
+[node name="DialogPanel" type="PanelContainer"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlurShader" parent="." instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="VBoxC" type="VBoxContainer" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+alignment = 2
+
+[node name="ChoicesVBoxC" type="VBoxContainer" parent="VBoxC"]
+margin_top = 524.0
+margin_right = 1280.0
+margin_bottom = 524.0
+
+[node name="Choice1" type="Button" parent="VBoxC/ChoicesVBoxC"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 48 )
+
+[node name="Choice2" type="Button" parent="VBoxC/ChoicesVBoxC"]
+visible = false
+margin_top = 52.0
+margin_right = 1280.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 48 )
+
+[node name="Choice3" type="Button" parent="VBoxC/ChoicesVBoxC"]
+visible = false
+margin_top = 104.0
+margin_right = 1280.0
+margin_bottom = 152.0
+rect_min_size = Vector2( 0, 48 )
+
+[node name="HBoxC" type="HBoxContainer" parent="VBoxC"]
+margin_top = 528.0
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxC" type="VBoxContainer" parent="VBoxC/HBoxC"]
+margin_right = 192.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 192, 192 )
+
+[node name="NameLabel" type="Label" parent="VBoxC/HBoxC/VBoxC"]
+visible = false
+margin_right = 192.0
+margin_bottom = 33.0
+text = "Name"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mugshot" type="TextureRect" parent="VBoxC/HBoxC/VBoxC"]
+margin_right = 192.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 7
+
+[node name="TextLabel" type="RichTextLabel" parent="VBoxC/HBoxC"]
+margin_left = 196.0
+margin_right = 1280.0
+margin_bottom = 192.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Something that has to be said."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" type="Button" parent="VBoxC/HBoxC/TextLabel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 48, 0 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="typing_ended" from="." to="." method="_on_Dialog_typing_ended"]
+[connection signal="pressed" from="VBoxC/ChoicesVBoxC/Choice1" to="." method="_on_Choice1_pressed"]
+[connection signal="pressed" from="VBoxC/ChoicesVBoxC/Choice2" to="." method="_on_Choice2_pressed"]
+[connection signal="pressed" from="VBoxC/ChoicesVBoxC/Choice3" to="." method="_on_Choice3_pressed"]
+[connection signal="pressed" from="VBoxC/HBoxC/TextLabel/Next" to="." method="_on_Next_pressed"]

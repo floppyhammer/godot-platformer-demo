@@ -1,0 +1,25 @@
+{
+  "first": {
+    "type": "text",
+    "char": "",
+    "emotion": 0,
+    "content": "New save point！",
+    "next": "0"
+  },
+  "repeat": {
+    "type": "question",
+    "char": "",
+    "text": "Want to save?",
+    "options": ["Yes", "No"],
+    "funcs": ["save", ""],
+    "next": ["", ""]
+  },
+  "0": {
+    "type": "question",
+    "char": "",
+    "text": "Want to save?",
+    "options": ["Yes", "No"],
+    "funcs": ["save", ""],
+    "next": ["", ""]
+  },
+}

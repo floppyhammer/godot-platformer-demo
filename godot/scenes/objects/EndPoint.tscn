@@ -4,56 +4,56 @@
 [ext_resource path="res://scenes/objects/EndPoint.gd" type="Script" id=2]
 [ext_resource path="res://assets/objects/end_point/End (Pressed) (64x64).png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=39]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
 region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=40]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
 region = Rect2( 256, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=41]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
 region = Rect2( 320, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 3 )
 region = Rect2( 384, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=43]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
 region = Rect2( 448, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=34]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 33 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "moving",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=35]
+[sub_resource type="RectangleShape2D" id=11]
 
 [node name="EndPoint" type="Area2D"]
 position = Vector2( 885, 72 )
@@ -61,10 +61,10 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -22 )
-frames = SubResource( 34 )
+frames = SubResource( 10 )
 animation = "moving"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 35 )
+shape = SubResource( 11 )
 
 [connection signal="body_entered" from="." to="." method="_on_EndPoint_body_entered"]

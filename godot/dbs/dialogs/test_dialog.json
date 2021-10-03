@@ -1,0 +1,44 @@
+{
+  "first": {
+    "type": "text",
+    "char": "Unknown Robot",
+    "emotion": 0,
+    "content": "Hello there.",
+    "next": "0"
+  },
+  "repeat": {
+    "type": "text",
+    "char": "Unknown Robot",
+    "emotion": 0,
+    "content": "We met again, mate.",
+    "next": "0"
+  },
+  "0": {
+    "type": "text",
+    "char": "Unknown Robot",
+    "emotion": 1,
+    "content": "It would be dangerous lingering in the forest.",
+    "next": "1"
+  },
+  "1": {
+    "type": "question",
+    "char": "Unknown Robot",
+    "emotion": 2,
+    "text": "Oh by the way, have you ever seen some batteries around here?",
+    "options": ["Yes, I have!", "No, I haven't."],
+    "next": ["2", "3"]
+  },
+
+  "2": {
+    "type": "text",
+    "char": "Unknown Robot",
+    "emotion": 1,
+    "content": "Really?! Wonderful!",
+  },
+  "3": {
+    "type": "text",
+    "char": "Unknown Robot",
+    "emotion": 0,
+    "content": "That's a shame.",
+  },
+}

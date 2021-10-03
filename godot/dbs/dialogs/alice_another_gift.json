@@ -1,0 +1,39 @@
+{
+  "first": {
+    "type": "text",
+    "content": "Hi. If you found my battery, I would pay you.",
+    "next": "0"
+  },
+  "repeat": {
+    "type": "text",
+    "content": "You again? I said you need to bring back my battery.",
+    "next": "0"
+  },
+  "0": {
+    "type": "divert",
+    "condition": "found_battery",
+    "found_battery": 1,
+    "true": "1",
+    "false": "2"
+  },
+  "1": {
+    "type": "question",
+    "text": "Great! You found my battery. What kind of fruit do you prefer?",
+    "options": ["Oranges", "Apples"],
+    "next": ["3", "4"]
+  },
+  "2": {
+    "type": "text",
+    "content":"You don't have my battery. I have NOTHING to talk."
+  },
+  "3": {
+    "type": "action",
+    "text": "Nice.",
+    "value": ["variable", ["oranges","apples"], [true, false]]
+  },
+  "4": {
+    "type": "action",
+    "text": "Very Nice.",
+    "value": ["variable", ["apples","oranges"], [true, false]]
+  }
+}

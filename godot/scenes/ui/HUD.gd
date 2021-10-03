@@ -3,13 +3,13 @@ extends Control
 var languages_list = ["zh", "en"]
 var level_progress = 0
 
-onready var menu_btn = $VBoxC/Panel/HBoxC/HBoxC/Menu
-onready var exit_btn = $VBoxC/MenuPanel/VBoxC/HBoxCButton/Exit
+onready var menu_btn = $VBoxC/Panel/HBoxC/Menu
 onready var menu_panel = $VBoxC/MenuPanel
 onready var result_panel = $VBoxC/ResultPanel
 onready var tween = $Tween
 onready var level_progress_bar = $VBoxC/Panel/HBoxC/LevelProgressBar
 onready var lang_btn = $VBoxC/MenuPanel/VBoxC/HBoxCButton/Languages
+onready var dialog = $DialogPanel
 
 
 func _ready():
@@ -34,14 +34,13 @@ func _process(delta):
 
 func show_result_panel():
 	# Hide menu buttons.
-	$VBoxC/Panel/HBoxC/HBoxC.hide()
+	menu_btn.hide()
 	menu_panel.hide()
 	result_panel.show_when_level_is_clear("Level 1", 10, 10)
 
 
 func _show_menu():
 	$Joystick.hide()
-	exit_btn.show()
 	
 	# Show menu panel with transition.
 	menu_panel.show()
@@ -55,7 +54,6 @@ func _show_menu():
 
 func _hide_menu():
 	$Joystick.show()
-	exit_btn.hide()
 	
 	# Hide menu panel with transition.
 	tween.remove_all()

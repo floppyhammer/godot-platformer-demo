@@ -7,7 +7,6 @@ var score = 0
 var score2coin_ratio = 1
 var coin_sound_index = 1
 
-onready var ok_btn = $OK
 onready var fireworks_left = $Fireworks/CenterLeft/Fireworks
 onready var fireworks_right = $Fireworks/CenterRight/Fireworks
 
@@ -65,10 +64,6 @@ func show_when_level_is_clear(level_name, star_count, coin_count):
 	fireworks_left.restart()
 	fireworks_right.show()
 	fireworks_right.restart()
-	
-	# Sounds.
-	$SFX/LevelClear.play()
-	$SFX/Fireworks.play()
 	
 	Global.save_general_save_data()
 	

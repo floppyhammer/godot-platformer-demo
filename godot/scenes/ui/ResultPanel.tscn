@@ -1,9 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/ui/ResultPanel.gd" type="Script" id=8]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=10]
-[ext_resource path="res://assets/sfx/fireworks-1.ogg" type="AudioStream" id=12]
-[ext_resource path="res://assets/sfx/level_complete.ogg" type="AudioStream" id=13]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.392157 )
@@ -40,14 +38,14 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Curve" id=8]
+[sub_resource type="Curve" id=4]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Gradient" id=7]
+[sub_resource type="Gradient" id=5]
 offsets = PoolRealArray( 0, 0.76129, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="Curve" id=9]
+[sub_resource type="Curve" id=6]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [node name="ResultPanel" type="PanelContainer"]
@@ -64,17 +62,6 @@ __meta__ = {
 [node name="AnimPlayer" type="AnimationPlayer" parent="."]
 anims/appear = SubResource( 2 )
 anims/disappear = SubResource( 3 )
-
-[node name="SFX" type="Node" parent="."]
-
-[node name="LevelClear" type="AudioStreamPlayer" parent="SFX"]
-pause_mode = 2
-stream = ExtResource( 13 )
-volume_db = -10.0
-
-[node name="Fireworks" type="AudioStreamPlayer" parent="SFX"]
-stream = ExtResource( 12 )
-volume_db = 10.0
 
 [node name="Fireworks" type="Control" parent="."]
 margin_right = 1280.0
@@ -105,8 +92,8 @@ angular_velocity_random = 0.5
 angle = 720.0
 angle_random = 1.0
 scale_amount = 10.0
-scale_amount_curve = SubResource( 8 )
-color_ramp = SubResource( 7 )
+scale_amount_curve = SubResource( 4 )
+color_ramp = SubResource( 5 )
 hue_variation = 1.0
 hue_variation_random = 1.0
 
@@ -137,8 +124,8 @@ angular_velocity_random = 0.5
 angle = 720.0
 angle_random = 1.0
 scale_amount = 10.0
-scale_amount_curve = SubResource( 9 )
-color_ramp = SubResource( 7 )
+scale_amount_curve = SubResource( 6 )
+color_ramp = SubResource( 5 )
 hue_variation = 1.0
 hue_variation_random = 1.0
 

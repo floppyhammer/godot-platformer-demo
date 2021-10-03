@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/ui/icon.png" type="Texture" id=1]
+[ext_resource path="res://scenes/characters/NPC.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 13.3633
+
+[node name="NPC" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_InteractionArea_body_entered"]
