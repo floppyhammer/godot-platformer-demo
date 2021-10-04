@@ -6,7 +6,7 @@ export (String) var level_id : String = "1"
 onready var stars_parent = $HBoxContainer
 
 func update_looking(star_number, playable : bool):
-	texture_disabled = load("res://assets/ui/button_locked.png")
+	texture_disabled = load("res://assets/ui/buttons/button_locked.png")
 	
 	# Set stars.
 	for child in stars_parent.get_children():
@@ -19,7 +19,7 @@ func update_looking(star_number, playable : bool):
 		disabled = false
 		$Label.text = str(level_id)
 		
-		texture_normal = load("res://assets/ui/button_bg.png")
+		texture_normal = load("res://assets/ui/buttons/button_bg.png")
 	else: # Locked level.
 		disabled = true
 		$Label.text = ""

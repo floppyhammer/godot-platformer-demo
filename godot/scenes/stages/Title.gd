@@ -15,4 +15,6 @@ func _ready():
 func _on_Start_pressed():
 	start_btn.disabled = true
 	
+	$Start.hide()
+	
 	emit_signal("start_pressed")

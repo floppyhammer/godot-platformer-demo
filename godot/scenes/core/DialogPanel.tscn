@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/core/DialogPanel.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/icon.png" type="Texture" id=2]
@@ -7,9 +7,17 @@
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 1, 1, 0.0980392 )
 
 [sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 0.196078 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxFlat" id=4]
+
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 1, 1, 1, 0.0784314 )
 
 [node name="DialogPanel" type="PanelContainer"]
@@ -44,6 +52,14 @@ visible = false
 margin_right = 1280.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 0, 48 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 
 [node name="Choice2" type="Button" parent="VBoxC/ChoicesVBoxC"]
 visible = false
@@ -51,6 +67,14 @@ margin_top = 52.0
 margin_right = 1280.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 48 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 
 [node name="Choice3" type="Button" parent="VBoxC/ChoicesVBoxC"]
 visible = false
@@ -58,6 +82,14 @@ margin_top = 104.0
 margin_right = 1280.0
 margin_bottom = 152.0
 rect_min_size = Vector2( 0, 48 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 
 [node name="HBoxC" type="HBoxContainer" parent="VBoxC"]
 margin_top = 528.0
@@ -99,8 +131,8 @@ margin_right = 1280.0
 margin_bottom = 192.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/focus = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
 text = "Something that has to be said."
 __meta__ = {
 "_edit_use_anchors_": false

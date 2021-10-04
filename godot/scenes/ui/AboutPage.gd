@@ -1,6 +1,7 @@
 extends Panel
 
 onready var text_label = $CenterC/Panel/ScrollC/RichTextLabel
+onready var blur_effect = $BlurShader
 
 
 func _ready():

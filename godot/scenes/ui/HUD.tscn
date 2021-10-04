@@ -1,20 +1,18 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://assets/ui/joystick.png" type="Texture" id=1]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=2]
 [ext_resource path="res://scenes/ui/HUD.gd" type="Script" id=3]
 [ext_resource path="res://scenes/ui/ResultPanel.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/items/item_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/icons/item_2.png" type="Texture" id=5]
 [ext_resource path="res://scenes/ui/InventoryItem.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/items/item_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/icons/item_1.png" type="Texture" id=7]
 [ext_resource path="res://scenes/ui/LevelProgressBar.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/ui/buttons/blank.png" type="Texture" id=9]
 [ext_resource path="res://assets/ui/buttons/sfx_on.png" type="Texture" id=10]
 [ext_resource path="res://assets/ui/buttons/music_off.png" type="Texture" id=11]
 [ext_resource path="res://assets/ui/buttons/sfx_off.png" type="Texture" id=12]
-[ext_resource path="res://assets/ui/buttons/about.png" type="Texture" id=13]
 [ext_resource path="res://assets/ui/flags/zh.png" type="Texture" id=14]
-[ext_resource path="res://assets/ui/buttons/about_pressed.png" type="Texture" id=15]
 [ext_resource path="res://scenes/ui/MenuStatusPanel.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/vfx/ShaderBlur.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/ui/level_label.png" type="Texture" id=18]
@@ -24,7 +22,6 @@
 [ext_resource path="res://assets/ui/buttons/home.png" type="Texture" id=22]
 [ext_resource path="res://assets/ui/buttons/home_pressed.png" type="Texture" id=23]
 [ext_resource path="res://assets/ui/buttons/blank_pressed.png" type="Texture" id=24]
-[ext_resource path="res://scenes/ui/AboutPage.tscn" type="PackedScene" id=25]
 [ext_resource path="res://scenes/core/DialogPanel.tscn" type="PackedScene" id=26]
 
 [sub_resource type="Animation" id=1]
@@ -67,7 +64,8 @@ atlas = SubResource( 6 )
 region = Rect2( 32, 1, 32, 30 )
 
 [sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 1, 1, 1, 0.0980392 )
+corner_radius_bottom_right = 8
 
 [sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.894118, 0.290196, 0.290196, 1 )
@@ -81,7 +79,7 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color( 0.752941, 0.796078, 0.862745, 1 )
+border_color = Color( 1, 1, 1, 1 )
 corner_radius_bottom_right = 100
 corner_detail = 1
 expand_margin_left = 2.0
@@ -207,34 +205,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="VBoxC"]
+[node name="PanelC" type="PanelContainer" parent="VBoxC"]
 margin_right = 1280.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 0, 64 )
 custom_styles/panel = SubResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="HBoxC" type="HBoxContainer" parent="VBoxC/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LevelLabel" type="Label" parent="VBoxC/Panel/HBoxC"]
-margin_right = 80.0
+[node name="HBoxC" type="HBoxContainer" parent="VBoxC/PanelC"]
+margin_right = 1280.0
 margin_bottom = 64.0
-rect_min_size = Vector2( 80, 64 )
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LvLabel" type="Label" parent="VBoxC/PanelC/HBoxC"]
+margin_top = 20.0
+margin_right = 80.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 80, 0 )
 text = "Lv.1"
 align = 1
 valign = 1
 
-[node name="ExpBar" type="ProgressBar" parent="VBoxC/Panel/HBoxC"]
-margin_left = 84.0
+[node name="ExpBar" type="ProgressBar" parent="VBoxC/PanelC/HBoxC"]
+margin_left = 96.0
 margin_top = 26.0
-margin_right = 276.0
+margin_right = 288.0
 margin_bottom = 38.0
 rect_min_size = Vector2( 192, 12 )
 size_flags_horizontal = 4
@@ -244,26 +241,20 @@ custom_styles/bg = SubResource( 10 )
 value = 75.0
 percent_visible = false
 
-[node name="Sep" type="Control" parent="VBoxC/Panel/HBoxC"]
-margin_left = 280.0
-margin_right = 304.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 24, 0 )
-
-[node name="HBoxCItems" type="HBoxContainer" parent="VBoxC/Panel/HBoxC"]
-margin_left = 308.0
-margin_right = 468.0
+[node name="HBoxCItems" type="HBoxContainer" parent="VBoxC/PanelC/HBoxC"]
+margin_left = 304.0
+margin_right = 464.0
 margin_bottom = 64.0
 custom_constants/separation = 8
 
-[node name="Item1" parent="VBoxC/Panel/HBoxC/HBoxCItems" instance=ExtResource( 6 )]
+[node name="Item1" parent="VBoxC/PanelC/HBoxC/HBoxCItems" instance=ExtResource( 6 )]
 margin_top = 8.0
 margin_right = 48.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 48, 48 )
 texture_normal = ExtResource( 7 )
 
-[node name="Item2" parent="VBoxC/Panel/HBoxC/HBoxCItems" instance=ExtResource( 6 )]
+[node name="Item2" parent="VBoxC/PanelC/HBoxC/HBoxCItems" instance=ExtResource( 6 )]
 margin_left = 56.0
 margin_top = 8.0
 margin_right = 104.0
@@ -271,25 +262,19 @@ margin_bottom = 56.0
 rect_min_size = Vector2( 48, 48 )
 texture_normal = ExtResource( 5 )
 
-[node name="Item3" parent="VBoxC/Panel/HBoxC/HBoxCItems" instance=ExtResource( 6 )]
+[node name="Item3" parent="VBoxC/PanelC/HBoxC/HBoxCItems" instance=ExtResource( 6 )]
 margin_left = 112.0
 margin_top = 8.0
 margin_right = 160.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 48, 48 )
 
-[node name="Sep2" type="Control" parent="VBoxC/Panel/HBoxC"]
-margin_left = 472.0
-margin_right = 496.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 24, 0 )
-
-[node name="LevelProgressBar" parent="VBoxC/Panel/HBoxC" instance=ExtResource( 8 )]
-margin_left = 956.0
-margin_right = 1212.0
+[node name="LevelProgressBar" parent="VBoxC/PanelC/HBoxC" instance=ExtResource( 8 )]
+margin_left = 944.0
+margin_right = 1200.0
 size_flags_horizontal = 10
 
-[node name="Menu" type="TextureButton" parent="VBoxC/Panel/HBoxC"]
+[node name="Menu" type="TextureButton" parent="VBoxC/PanelC/HBoxC"]
 margin_left = 1216.0
 margin_right = 1280.0
 margin_bottom = 64.0
@@ -391,18 +376,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="About" type="TextureButton" parent="VBoxC/MenuPanel/VBoxC/HBoxCButton"]
-margin_left = 1088.0
-margin_right = 1152.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_horizontal = 4
-size_flags_vertical = 3
-texture_normal = ExtResource( 13 )
-texture_pressed = ExtResource( 15 )
-expand = true
-stretch_mode = 5
-
 [node name="Exit" type="TextureButton" parent="VBoxC/MenuPanel/VBoxC/HBoxCButton"]
 margin_left = 1184.0
 margin_right = 1248.0
@@ -413,12 +386,9 @@ texture_pressed = ExtResource( 23 )
 expand = true
 stretch_mode = 5
 
-[node name="AboutPage" parent="." instance=ExtResource( 25 )]
-visible = false
-
-[connection signal="toggled" from="VBoxC/Panel/HBoxC/Menu" to="." method="_on_Menu_toggled"]
+[connection signal="pressed" from="VBoxC/PanelC/HBoxC/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="toggled" from="VBoxC/PanelC/HBoxC/Menu" to="." method="_on_Menu_toggled"]
 [connection signal="toggled" from="VBoxC/MenuPanel/VBoxC/HBoxCButton/Music" to="." method="_on_Music_toggled"]
 [connection signal="toggled" from="VBoxC/MenuPanel/VBoxC/HBoxCButton/SFX" to="." method="_on_SFX_toggled"]
 [connection signal="pressed" from="VBoxC/MenuPanel/VBoxC/HBoxCButton/Languages" to="." method="_on_Languages_pressed"]
-[connection signal="pressed" from="VBoxC/MenuPanel/VBoxC/HBoxCButton/About" to="." method="_on_About_pressed"]
 [connection signal="pressed" from="VBoxC/MenuPanel/VBoxC/HBoxCButton/Exit" to="." method="_on_Exit_pressed"]

@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Panel
 
 var level_btn_scene = preload("res://scenes/ui/LevelButton.tscn")
 var level_btn_group = ButtonGroup.new()
@@ -8,15 +8,14 @@ var scroll_ratio = 0
 
 onready var tween = $Tween
 onready var scroll_container = $ScrollC
-onready var scroll_panel = $ScrollC/VBoxC
-onready var levels_parent = $ScrollC/Levels
+onready var scroll_panel = scroll_container.get_node("WorldMap")
 
 signal level_pressed
 
 
 func _ready():
 	# Connect signal and add to group
-	for btn in levels_parent.get_children():
+	for btn in scroll_panel.get_children():
 		btn.connect("pressed", self, "_when_button_pressed")
 		btn.set_button_group(level_btn_group)
 	
@@ -57,9 +56,9 @@ func update_level_buttons():
 	var incomplete_count = 0
 	
 	# Traverse level buttons.
-	for i in range(levels_parent.get_child_count()):
+	for i in range(scroll_panel.get_child_count()):
 		# Get level name from the button.
-		var key = levels_parent.get_child(i).level_id
+		var key = scroll_panel.get_child(i).level_id
 		
 		# Get star number.
 		var star_number = 0
@@ -77,17 +76,21 @@ func update_level_buttons():
 		
 		# Scroll ratio of the current level.
 		if incomplete_count == 1:
-			progress_ratio = 1.0 - (levels_parent.get_child(i).rect_position.y - scroll_container.rect_size.y) / (scroll_panel.rect_size.y)
+			progress_ratio = 1.0 - (scroll_panel.get_child(i).rect_position.y - scroll_container.rect_size.y) / (scroll_panel.rect_size.y)
 		
 		# Update the button
-		levels_parent.get_child(i).update_looking(star_number, playable)
+		scroll_panel.get_child(i).update_looking(star_number, playable)
 
 
 func hide_levels():
-	levels_parent.modulate = Color.transparent
+	scroll_panel.modulate = Color.transparent
 
 
 func show_levels():
 	tween.remove_all()
-	tween.interpolate_property(levels_parent, "modulate", Color.transparent, Color.white, 0.2)
+	tween.interpolate_property(scroll_panel, "modulate", Color.transparent, Color.white, 0.2)
 	tween.start()
+
+
+func _on_Close_pressed():
+	hide()

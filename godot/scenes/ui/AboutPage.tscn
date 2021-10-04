@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/ui/AboutPage.gd" type="Script" id=1]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=2]
-[ext_resource path="res://tres/central_panel_style.tres" type="StyleBox" id=3]
+[ext_resource path="res://scenes/vfx/ShaderBlur.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.392157 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 0.196078 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="AboutPage" type="Panel"]
 anchor_right = 1.0
@@ -16,6 +23,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BlurShader" parent="." instance=ExtResource( 4 )]
 
 [node name="Close" type="Button" parent="."]
 anchor_right = 1.0
@@ -39,16 +48,14 @@ margin_top = 168.0
 margin_right = 832.0
 margin_bottom = 552.0
 rect_min_size = Vector2( 384, 384 )
-custom_styles/panel = ExtResource( 3 )
+custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ScrollC" type="ScrollContainer" parent="CenterC/Panel"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 382.0
-margin_bottom = 382.0
+margin_right = 384.0
+margin_bottom = 384.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
@@ -57,8 +64,8 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CenterC/Panel/ScrollC"]
-margin_right = 380.0
-margin_bottom = 380.0
+margin_right = 384.0
+margin_bottom = 384.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3

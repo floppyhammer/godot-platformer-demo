@@ -43,3 +43,11 @@ func _when_locale_changed():
 	#terminal_btn.text = tr("TERMINAL")
 	#settings_btn.text = tr("SETTINGS")
 	#watch_ads_btn.text = tr("WATCH_ADS")
+
+
+func _on_About_pressed():
+	$AboutPage.show()
+
+
+func _on_Exit_pressed():
+	get_tree().quit()

@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://tres/number_font_48.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/ui/button_locked.png" type="Texture" id=2]
+[ext_resource path="res://tres/default_font_24.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ui/buttons/button_locked.png" type="Texture" id=2]
 [ext_resource path="res://scenes/ui/LevelButton.gd" type="Script" id=3]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=4]
-[ext_resource path="res://assets/ui/button_bg.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/buttons/button_bg.png" type="Texture" id=5]
 [ext_resource path="res://assets/ui/level_star.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
@@ -26,9 +26,9 @@ tracks/0/keys = {
 [sub_resource type="StyleBoxEmpty" id=2]
 
 [node name="LevelButton" type="TextureButton"]
-margin_right = 100.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
 mouse_filter = 1
 size_flags_horizontal = 6
 theme = ExtResource( 4 )
@@ -69,7 +69,7 @@ __meta__ = {
 }
 
 [node name="Star1" type="TextureRect" parent="HBoxContainer"]
-margin_right = 30.0
+margin_right = 13.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 texture = ExtResource( 6 )
@@ -77,8 +77,8 @@ expand = true
 stretch_mode = 6
 
 [node name="Star2" type="TextureRect" parent="HBoxContainer"]
-margin_left = 34.0
-margin_right = 65.0
+margin_left = 17.0
+margin_right = 30.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 texture = ExtResource( 6 )
@@ -86,8 +86,8 @@ expand = true
 stretch_mode = 6
 
 [node name="Star3" type="TextureRect" parent="HBoxContainer"]
-margin_left = 69.0
-margin_right = 100.0
+margin_left = 34.0
+margin_right = 48.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 texture = ExtResource( 6 )

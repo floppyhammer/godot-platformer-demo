@@ -3,19 +3,19 @@ extends Control
 var languages_list = ["zh", "en"]
 var level_progress = 0
 
+var is_menu_shown = false
+
 onready var menu_btn = $VBoxC/Panel/HBoxC/Menu
 onready var menu_panel = $VBoxC/MenuPanel
 onready var result_panel = $VBoxC/ResultPanel
 onready var tween = $Tween
-onready var level_progress_bar = $VBoxC/Panel/HBoxC/LevelProgressBar
+onready var level_progress_bar = $VBoxC/PanelC/HBoxC/LevelProgressBar
 onready var lang_btn = $VBoxC/MenuPanel/VBoxC/HBoxCButton/Languages
 onready var dialog = $DialogPanel
 
 
 func _ready():
 	Logger.add_module("HUD")
-	
-	$AboutPage.hide()
 	
 	result_panel.hide()
 	Global.hud = self
@@ -93,10 +93,6 @@ func _on_Languages_pressed():
 		Logger.error("Failed to change language!", "HUD")
 
 
-func _on_About_pressed():
-	$AboutPage.show()
-
-
 func _on_SFX_toggled(button_pressed):
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), button_pressed)
 
@@ -117,3 +113,7 @@ func _when_locale_changed():
 
 func _update_language():
 	pass
+
+
+func _on_Menu_pressed():
+	pass # Replace with function body.

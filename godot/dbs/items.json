@@ -3,7 +3,7 @@
 		"name_en": "Trach Bin",
 		"name_zh": "厨余垃圾桶",
 		"price": 10,
-		"texture": "res://assets/items/item_1.png",
+		"texture": "res://assets/ui/icons/item_1.png",
 		"description_en": "[center][color=#fd8384]Throw[/color] [color=#5895f5]food on hand[/color] away[/center]",
 		"description_zh": "[center]将[color=#5895f5]手上的食物[/color][color=#fd8384]扔[/color]进垃圾桶[/center]",
 		"scene_path": "res://scenes/gameplay/ItemTrashBin.tscn"
@@ -12,16 +12,16 @@
 		"name_en": "Shopping Cart",
 		"name_zh": "购物车",
 		"price": 10,
-		"texture": "res://assets/items/item_2.png",
+		"texture": "res://assets/ui/icons/item_2.png",
 		"description_en": "[center][color=#fd8384]Remove[/color] any [color=#5895f5]food[/color] in the yellow and red zone[/center]",
 		"description_zh": "[center][color=#fd8384]移除[/color]处于黄区、红区的所有[color=#5895f5]食物[/color][/center]",
-		"scene_path": "res://scenes/gameplay/ItemShoppingCart.tscn"
+		"scene_path": "res://scenes/gameplay/ui/iconshoppingCart.tscn"
 	},
 	"BOMB": {
 		"name_en": "Bomb",
 		"name_zh": "炸弹",
 		"price": 10,
-		"texture": "res://assets/items/item_3.png",
+		"texture": "res://assets/ui/icons/item_3.png",
 		"description_en": "[center][color=#fd8384]Destroy[/color] [color=#5895f5]everything[/color] within one block range[/center]",
 		"description_zh": "[center][color=#fd8384]摧毁[/color]相邻的[color=#5895f5]任何物体[/color][/center]",
 		"scene_path": "res://scenes/gameplay/ItemBomb.tscn"
@@ -30,7 +30,7 @@
 		"name_en": "Dices",
 		"name_zh": "骰子",
 		"price": 10,
-		"texture": "res://assets/items/item_4.png",
+		"texture": "res://assets/ui/icons/item_4.png",
 		"description_en": "[center][color=#fd8384]Shuffle[/color] [color=#5895f5]food blocks[/color] on the board[/center]",
 		"description_zh": "[center][color=#fd8384]打乱[/color][color=#5895f5]食物[/color]分布[/center]",
 		"scene_path": "res://scenes/gameplay/ItemDices.tscn"
@@ -39,7 +39,7 @@
 		"name_en": "Missile",
 		"name_zh": "导弹",
 		"price": 10,
-		"texture": "res://assets/items/item_5.png",
+		"texture": "res://assets/ui/icons/item_5.png",
 		"description_en": "[center][color=#fd8384]Destroy[/color] one block specificlly[/center]",
 		"description_zh": "[center][color=#fd8384]摧毁[/color]特定物体[/center]",
 		"scene_path": "res://scenes/gameplay/ItemMissile.tscn"

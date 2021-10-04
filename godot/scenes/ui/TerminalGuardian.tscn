@@ -2,7 +2,7 @@
 
 [ext_resource path="res://tres/default_font_32.tres" type="DynamicFont" id=1]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=3]
-[ext_resource path="res://assets/items/item_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/icons/item_3.png" type="Texture" id=5]
 [ext_resource path="res://scenes/ui/TerminalGuardian.gd" type="Script" id=6]
 [ext_resource path="res://tres/default_font_24.tres" type="DynamicFont" id=7]
 

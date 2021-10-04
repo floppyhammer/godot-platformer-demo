@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/music/Internationale (8-bit).ogg" type="AudioStream" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 0.392157 )
+bg_color = Color( 0, 0, 0, 0.196078 )
 
 [node name="Main" type="Node"]
 pause_mode = 2
@@ -30,6 +30,7 @@ stream = ExtResource( 7 )
 [node name="LoadingPanel" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [node name="Debug" type="Control" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
