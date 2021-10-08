@@ -10,7 +10,7 @@ func _ready():
 	bgm_player.start_bgm("res://assets/music/Dream Static by symphony.mp3")
 
 
-func _process(delta):
+func _process(_delta):
 	$CanvasLayer/Debug/FPSLabel.text = "FPS %d" % round(Engine.get_frames_per_second())
 
 

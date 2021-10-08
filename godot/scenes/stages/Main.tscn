@@ -44,8 +44,8 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -24.0
 margin_right = 96.0
-custom_styles/normal = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_styles/normal = SubResource( 1 )
 text = "FPS 60"
 __meta__ = {
 "_edit_use_anchors_": false

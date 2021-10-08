@@ -193,9 +193,6 @@ scale = Vector2( 4, 4 )
 normal = SubResource( 7 )
 action = "ui_left"
 
-[node name="DialogPanel" parent="." instance=ExtResource( 26 )]
-visible = false
-
 [node name="VBoxC" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -385,6 +382,9 @@ texture_normal = ExtResource( 22 )
 texture_pressed = ExtResource( 23 )
 expand = true
 stretch_mode = 5
+
+[node name="DialogPanel" parent="." instance=ExtResource( 26 )]
+visible = false
 
 [connection signal="pressed" from="VBoxC/PanelC/HBoxC/Menu" to="." method="_on_Menu_pressed"]
 [connection signal="toggled" from="VBoxC/PanelC/HBoxC/Menu" to="." method="_on_Menu_toggled"]

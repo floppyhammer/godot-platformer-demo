@@ -11,10 +11,14 @@ var typing_speed = DEFAULT_TYPING_SPEED
 var typing_ended = false
 export (bool) var debug = false
 
-onready var choices = $VBoxC/ChoicesVBoxC
-onready var text_label = $VBoxC/HBoxC/TextLabel
-onready var name_label = $VBoxC/HBoxC/VBoxC/NameLabel
-onready var next_btn = $VBoxC/HBoxC/TextLabel/Next
+onready var dialog_c = $VBoxC/VBoxC
+onready var choices = $VBoxC/VBoxC/ChoicesVBoxC
+onready var text_label = $VBoxC/VBoxC/HBoxC/TextLabel
+onready var name_label = $VBoxC/VBoxC/HBoxC/VBoxC/NameLabel
+onready var next_btn = $VBoxC/VBoxC/HBoxC/TextLabel/Next
+onready var tween = $Tween
+onready var top_banner = $VBoxC/Top
+onready var bottom_banner = $VBoxC/Bottom
 
 signal typing_ended
 
@@ -63,8 +67,18 @@ func activate(dialog_name):
 	# Hide choices
 	choices.hide()
 	
-	# Show the dialog
+	dialog_c.modulate = Color.transparent
+	
+	# Show the dialog panel.
 	show()
+	
+	tween.remove_all()
+	tween.interpolate_property(top_banner, "rect_min_size", Vector2.ZERO, Vector2(0, 64), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.interpolate_property(bottom_banner, "rect_min_size", Vector2.ZERO, Vector2(0, 64), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.start()
+	yield(tween, "tween_all_completed")
+	
+	dialog_c.modulate = Color.white
 	
 	print('Activated dialog: ' + dialog_name)
 	
@@ -154,6 +168,14 @@ func next():
 	# If the dialog is finished (no next step)
 	if next_step == "":
 		dialog = null
+		
+		dialog_c.modulate = Color.transparent
+		
+		tween.remove_all()
+		tween.interpolate_property(top_banner, "rect_min_size", Vector2(0, 64), Vector2.ZERO, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		tween.interpolate_property(bottom_banner, "rect_min_size", Vector2(0, 64), Vector2.ZERO, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		tween.start()
+		yield(tween, "tween_all_completed")
 		
 		hide()
 		text_label.text = ""
