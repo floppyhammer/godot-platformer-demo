@@ -1,11 +1,12 @@
 extends TextureRect
 class_name AnimatedTextureRect
-#tool
+tool
 
-export (Texture) var atlas
-export (int, 1, 100) var h_frames := 4
-export (int, 1, 100) var v_frames := 4
-export (int) var fps = 15 setget set_fps
+export (Texture) var atlas setget set_atlas
+export (int, 1, 100) var h_frames := 4 setget set_h_frames
+export (int, 1, 100) var v_frames := 4 setget set_v_frames
+export (int, 0, 100) var current_frame := 0 setget set_frame
+export (int) var fps = 5 setget set_fps
 export (bool) var oneshot = false
 export (bool) var playing = false
 
@@ -18,12 +19,35 @@ signal animation_finished
 signal animation_finished_backwards
 
 
-func _ready():
+func set_atlas(p_atlas):
+	atlas = p_atlas
+	
+	_reload_atlas()
+
+
+func set_h_frames(p_h_frames):
+	h_frames = p_h_frames
+	
+	_reload_atlas()
+
+
+func set_v_frames(p_v_frames):
+	v_frames = p_v_frames
+	
+	_reload_atlas()
+
+
+func set_frame(p_frame):
+	anim_tex.current_frame = clamp(p_frame, 0, anim_tex.frames - 1)
+	current_frame = anim_tex.current_frame
+
+
+func _reload_atlas():
+	if not atlas: return
+	
 	# Single sheet
 	# Do not use Image.new() and Image.load() to create an Image
 	# Otherwise it won't work on export, use this instead
-	if not atlas: return
-	
 	var img = atlas.get_data()
 	
 	var size = img.get_size()
@@ -46,7 +70,13 @@ func _ready():
 	last_time = OS.get_ticks_msec()
 
 
+func set_fps(new_fps):
+	fps = clamp(new_fps, 0, 200)
+
+
 func _process(delta):
+	if fps == 0: return
+	
 	if OS.get_ticks_msec() - last_time > 1000.0 / fps and playing:
 		# Do this before updating the frame,
 		# otherwise the last/first frame wouldn't show
@@ -60,11 +90,7 @@ func _process(delta):
 				emit_signal("animation_finished")
 			else:
 				anim_tex.current_frame = 0
-
+		
 		# Animation progress
 		anim_tex.current_frame = clamp(anim_tex.current_frame + play_direction, 0, anim_tex.frames - 1)
 		last_time = OS.get_ticks_msec()
-
-
-func set_fps(new_fps):
-	fps = new_fps
