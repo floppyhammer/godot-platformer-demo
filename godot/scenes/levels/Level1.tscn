@@ -1,6 +1,33 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_1/BG_1.png" type="Texture" id=1]
+[ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_3/BG_3.png" type="Texture" id=2]
+[ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_2/BG_2.png" type="Texture" id=3]
 
 [node name="Level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 2 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.1 )
+motion_mirroring = Vector2( 1817, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource( 3 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 0.2 )
+motion_mirroring = Vector2( 1929, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource( 1 )

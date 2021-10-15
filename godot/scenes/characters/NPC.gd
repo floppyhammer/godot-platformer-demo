@@ -1,22 +1,22 @@
 extends KinematicBody2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Bubble.hide()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _input(event):
+	if Input.is_action_just_pressed("interact"):
+		if $Bubble.visible:
+			if Global.hud:
+				Global.hud.dialog.activate("test_dialog")
 
 
 func _on_InteractionArea_body_entered(body):
 	if body.is_in_group("player"):
-		if Global.hud:
-			Global.hud.dialog.activate("test_dialog")
+		$Bubble.show()
+
+
+func _on_InteractionArea_body_exited(body):
+	if body.is_in_group("player"):
+		$Bubble.hide()

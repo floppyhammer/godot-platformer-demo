@@ -57,7 +57,11 @@ func _reload_atlas():
 		var frame_pos = Vector2(frame % h_frames, floor(float(frame) / h_frames))
 		
 		var itex = ImageTexture.new()
+		
 		itex.create_from_image(img.get_rect(Rect2(frame_size * frame_pos, frame_size)))
+		
+		# Disable filters.
+		itex.set_flags(2)
 		
 		anim_tex.set_frame_texture(frame, itex)
 	

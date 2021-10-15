@@ -5,11 +5,11 @@ var level_progress = 0
 
 var is_menu_shown = false
 
-onready var menu_btn = $VBoxC/PanelC/HBoxC/Menu
+onready var menu_btn = $VBoxC/MarginC/HBoxC/Menu
 onready var menu_panel = $VBoxC/MenuPanel
 onready var result_panel = $VBoxC/ResultPanel
 onready var tween = $Tween
-onready var level_progress_bar = $VBoxC/PanelC/HBoxC/LevelProgressBar
+onready var level_progress_bar = $VBoxC/MarginC/HBoxC/LevelProgressBar
 onready var lang_btn = $VBoxC/MenuPanel/VBoxC/HBoxCButton/Languages
 onready var dialog = $DialogPanel
 

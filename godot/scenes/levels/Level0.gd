@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var level_name = "Train"
 var start_pos : float
 var end_pos : float

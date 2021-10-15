@@ -32,8 +32,8 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="MenuStatusPanel" type="HBoxContainer"]
-margin_right = 1248.0
-margin_bottom = 556.0
+margin_right = 1080.0
+margin_bottom = 532.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 4 )
@@ -43,8 +43,8 @@ __meta__ = {
 }
 
 [node name="VBoxC" type="VBoxContainer" parent="."]
-margin_right = 944.0
-margin_bottom = 556.0
+margin_right = 776.0
+margin_bottom = 532.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -52,7 +52,7 @@ __meta__ = {
 }
 
 [node name="HBoxC1" type="HBoxContainer" parent="VBoxC"]
-margin_right = 944.0
+margin_right = 776.0
 margin_bottom = 256.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -65,12 +65,12 @@ rect_min_size = Vector2( 256, 256 )
 
 [node name="DescriptionLabel" type="RichTextLabel" parent="VBoxC/HBoxC1"]
 margin_left = 260.0
-margin_right = 944.0
+margin_right = 776.0
 margin_bottom = 256.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/normal = SubResource( 1 )
 custom_fonts/normal_font = ExtResource( 2 )
+custom_styles/normal = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "Pupu is a little dragon who aspires to become a chef.
 
@@ -81,21 +81,21 @@ Skill: x1.5 earned coins"
 
 [node name="HBoxC2" type="HBoxContainer" parent="VBoxC"]
 margin_top = 260.0
-margin_right = 944.0
-margin_bottom = 532.0
+margin_right = 776.0
+margin_bottom = 468.0
 alignment = 1
 
 [node name="VBoxCStatus" type="VBoxContainer" parent="VBoxC/HBoxC2"]
-margin_left = 278.0
-margin_right = 534.0
-margin_bottom = 272.0
+margin_left = 210.0
+margin_right = 466.0
+margin_bottom = 208.0
 custom_constants/separation = 32
 alignment = 1
 
 [node name="Attack" type="Button" parent="VBoxC/HBoxC2/VBoxCStatus"]
-margin_top = 56.0
+margin_top = 24.0
 margin_right = 256.0
-margin_bottom = 120.0
+margin_bottom = 88.0
 rect_min_size = Vector2( 256, 64 )
 mouse_filter = 2
 text = "3+1"
@@ -105,9 +105,9 @@ align = 0
 expand_icon = true
 
 [node name="Power" type="Button" parent="VBoxC/HBoxC2/VBoxCStatus"]
-margin_top = 152.0
+margin_top = 120.0
 margin_right = 256.0
-margin_bottom = 216.0
+margin_bottom = 184.0
 rect_min_size = Vector2( 256, 64 )
 mouse_filter = 2
 text = "3+1"
@@ -117,16 +117,16 @@ align = 0
 expand_icon = true
 
 [node name="VBoxCEquipment" type="VBoxContainer" parent="VBoxC/HBoxC2"]
-margin_left = 538.0
-margin_right = 666.0
-margin_bottom = 272.0
+margin_left = 470.0
+margin_right = 566.0
+margin_bottom = 208.0
 custom_constants/separation = 16
 alignment = 1
 
 [node name="Weapon" type="TextureRect" parent="VBoxC/HBoxC2/VBoxCEquipment"]
-margin_right = 128.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 128, 128 )
+margin_right = 96.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 96, 96 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource( 1 )
@@ -143,10 +143,10 @@ __meta__ = {
 }
 
 [node name="Engine" type="TextureRect" parent="VBoxC/HBoxC2/VBoxCEquipment"]
-margin_top = 144.0
-margin_right = 128.0
-margin_bottom = 272.0
-rect_min_size = Vector2( 128, 128 )
+margin_top = 112.0
+margin_right = 96.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 96, 96 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource( 1 )
@@ -177,9 +177,9 @@ __meta__ = {
 }
 
 [node name="Collections" type="VBoxContainer" parent="."]
-margin_left = 960.0
-margin_right = 1248.0
-margin_bottom = 556.0
+margin_left = 792.0
+margin_right = 1080.0
+margin_bottom = 532.0
 
 [node name="Label" type="Label" parent="Collections"]
 margin_right = 288.0
@@ -191,7 +191,7 @@ valign = 1
 [node name="PanelC" type="PanelContainer" parent="Collections"]
 margin_top = 52.0
 margin_right = 288.0
-margin_bottom = 556.0
+margin_bottom = 532.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 3 )
@@ -200,7 +200,7 @@ custom_styles/panel = SubResource( 3 )
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 272.0
-margin_bottom = 488.0
+margin_bottom = 464.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 __meta__ = {

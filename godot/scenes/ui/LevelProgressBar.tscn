@@ -29,4 +29,5 @@ position = Vector2( 99, 45.4555 )
 rotate = false
 
 [node name="Marker" type="Sprite" parent="Path2D/PathFollow2D"]
+scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )

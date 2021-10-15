@@ -1,13 +1,15 @@
 [gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://scenes/core/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/chars/Adventurer-1.5/adventurer-v1.5-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://assets/chars/Twiggy/Sleeping_&_Wakeup (32 x 32).png" type="Texture" id=2]
 [ext_resource path="res://assets/chars/Twiggy/Running (32 x 32).png" type="Texture" id=3]
 [ext_resource path="res://assets/chars/Twiggy/Idle (32 x 32).png" type="Texture" id=4]
 [ext_resource path="res://assets/chars/Twiggy/Falling (32 x 32).png" type="Texture" id=5]
 [ext_resource path="res://assets/chars/Twiggy/Jumping (32 x 32).png" type="Texture" id=6]
 [ext_resource path="res://assets/chars/Twiggy/Hurt_&_Recovery (32 x 32).png" type="Texture" id=7]
 [ext_resource path="res://assets/chars/Twiggy/Touch_Ground (32 x 32).png" type="Texture" id=8]
+[ext_resource path="res://assets/chars/Twiggy/Back_Turned (32 x 32).png" type="Texture" id=9]
+[ext_resource path="res://assets/chars/Twiggy/Looking_Upward (32 x 32).png" type="Texture" id=10]
 
 [sub_resource type="AtlasTexture" id=74]
 atlas = ExtResource( 4 )
@@ -29,21 +31,21 @@ region = Rect2( 96, 0, 32, 32 )
 atlas = ExtResource( 4 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=87]
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=85]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=88]
+[sub_resource type="AtlasTexture" id=98]
 atlas = ExtResource( 7 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=89]
+[sub_resource type="AtlasTexture" id=99]
 atlas = ExtResource( 7 )
 region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=86]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=100]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=79]
 atlas = ExtResource( 3 )
@@ -77,53 +79,29 @@ region = Rect2( 0, 0, 32, 32 )
 atlas = ExtResource( 8 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=86]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=103]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=104]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 222, 50, 37 )
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 2 )
-region = Rect2( 50, 222, 50, 37 )
+[sub_resource type="AtlasTexture" id=92]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 2 )
-region = Rect2( 100, 222, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 2 )
-region = Rect2( 150, 222, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
-region = Rect2( 200, 222, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 2 )
-region = Rect2( 250, 222, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 2 )
-region = Rect2( 300, 222, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 259, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 2 )
-region = Rect2( 50, 259, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 2 )
-region = Rect2( 100, 259, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 2 )
-region = Rect2( 150, 259, 50, 37 )
+[sub_resource type="AtlasTexture" id=97]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=34]
 animations = [ {
@@ -132,20 +110,20 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 87 ) ],
-"loop": true,
-"name": "hit",
+"frames": [ SubResource( 98 ), SubResource( 99 ) ],
+"loop": false,
+"name": "crouch",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 85 ) ],
+"frames": [ SubResource( 86 ) ],
 "loop": true,
-"name": "fall",
+"name": "jump",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 88 ), SubResource( 89 ) ],
+"frames": [ SubResource( 100 ) ],
 "loop": true,
-"name": "crouch_loop",
-"speed": 5.0
+"name": "attack",
+"speed": 10.0
 }, {
 "frames": [ SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ) ],
 "loop": true,
@@ -157,20 +135,30 @@ animations = [ {
 "name": "roll",
 "speed": 5.0
 }, {
-"frames": [  ],
-"loop": false,
-"name": "crouch",
+"frames": [ SubResource( 103 ), SubResource( 104 ) ],
+"loop": true,
+"name": "crouch_loop",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 86 ) ],
+"frames": [ SubResource( 85 ) ],
 "loop": true,
-"name": "jump",
+"name": "fall",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"frames": [ SubResource( 87 ) ],
 "loop": true,
-"name": "attack",
-"speed": 10.0
+"name": "hit",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 92 ) ],
+"loop": true,
+"name": "interact",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 97 ) ],
+"loop": true,
+"name": "look_up",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=35]
@@ -182,14 +170,17 @@ height = 16.0
 [sub_resource type="Animation" id=37]
 resource_name = "crouch"
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=105]
 resource_name = "crouch_loop"
-loop = true
 
 [sub_resource type="Animation" id=39]
 loop = true
 
 [sub_resource type="Animation" id=40]
+loop = true
+
+[sub_resource type="Animation" id=93]
+resource_name = "interact"
 loop = true
 
 [sub_resource type="Animation" id=41]
@@ -203,10 +194,10 @@ loop = true
 [sub_resource type="AnimationNodeAnimation" id=44]
 animation = "attack"
 
-[sub_resource type="AnimationNodeAnimation" id=45]
+[sub_resource type="AnimationNodeAnimation" id=46]
 animation = "crouch"
 
-[sub_resource type="AnimationNodeAnimation" id=46]
+[sub_resource type="AnimationNodeAnimation" id=106]
 animation = "crouch_loop"
 
 [sub_resource type="AnimationNodeAnimation" id=47]
@@ -214,6 +205,9 @@ animation = "fall"
 
 [sub_resource type="AnimationNodeAnimation" id=48]
 animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=94]
+animation = "interact"
 
 [sub_resource type="AnimationNodeAnimation" id=49]
 animation = "jump"
@@ -262,38 +256,44 @@ auto_advance = true
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=67]
+[sub_resource type="AnimationNodeStateMachineTransition" id=95]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=68]
+[sub_resource type="AnimationNodeStateMachineTransition" id=96]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=69]
+[sub_resource type="AnimationNodeStateMachineTransition" id=101]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=102]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=107]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=108]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=109]
 switch_mode = 2
 auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=70]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=71]
 
 [sub_resource type="AnimationNodeStateMachine" id=72]
 states/attack/node = SubResource( 44 )
 states/attack/position = Vector2( 243.333, -102.667 )
-states/crouch/node = SubResource( 45 )
-states/crouch/position = Vector2( 550.333, -89 )
-states/crouch_loop/node = SubResource( 46 )
-states/crouch_loop/position = Vector2( 653, -6.33333 )
+states/crouch/node = SubResource( 46 )
+states/crouch/position = Vector2( 593.667, -59.963 )
+states/crouch_loop/node = SubResource( 106 )
+states/crouch_loop/position = Vector2( 643, 19 )
 states/fall/node = SubResource( 47 )
 states/fall/position = Vector2( 444.333, -17.8889 )
 states/idle/node = SubResource( 48 )
 states/idle/position = Vector2( 229.667, 89 )
+states/interact/node = SubResource( 94 )
+states/interact/position = Vector2( 328.667, 190.333 )
 states/jump/node = SubResource( 49 )
 states/jump/position = Vector2( 308.333, -17.6667 )
 states/roll/node = SubResource( 50 )
 states/roll/position = Vector2( 84.3333, -7.66667 )
 states/run/node = SubResource( 51 )
 states/run/position = Vector2( 407.667, 89.2963 )
-transitions = [ "idle", "run", SubResource( 52 ), "run", "idle", SubResource( 53 ), "idle", "jump", SubResource( 54 ), "jump", "fall", SubResource( 55 ), "fall", "idle", SubResource( 56 ), "run", "jump", SubResource( 57 ), "fall", "run", SubResource( 58 ), "idle", "roll", SubResource( 59 ), "roll", "idle", SubResource( 60 ), "run", "roll", SubResource( 61 ), "roll", "run", SubResource( 62 ), "idle", "attack", SubResource( 63 ), "run", "attack", SubResource( 64 ), "attack", "run", SubResource( 65 ), "attack", "idle", SubResource( 66 ), "idle", "crouch", SubResource( 67 ), "run", "crouch", SubResource( 68 ), "crouch", "crouch_loop", SubResource( 69 ), "crouch_loop", "idle", SubResource( 70 ), "crouch_loop", "run", SubResource( 71 ) ]
+transitions = [ "idle", "run", SubResource( 52 ), "run", "idle", SubResource( 53 ), "idle", "jump", SubResource( 54 ), "jump", "fall", SubResource( 55 ), "fall", "idle", SubResource( 56 ), "run", "jump", SubResource( 57 ), "fall", "run", SubResource( 58 ), "idle", "roll", SubResource( 59 ), "roll", "idle", SubResource( 60 ), "run", "roll", SubResource( 61 ), "roll", "run", SubResource( 62 ), "idle", "attack", SubResource( 63 ), "run", "attack", SubResource( 64 ), "attack", "run", SubResource( 65 ), "attack", "idle", SubResource( 66 ), "idle", "interact", SubResource( 95 ), "interact", "idle", SubResource( 96 ), "idle", "crouch", SubResource( 101 ), "run", "crouch", SubResource( 102 ), "crouch_loop", "run", SubResource( 107 ), "crouch_loop", "idle", SubResource( 108 ), "crouch", "crouch_loop", SubResource( 109 ) ]
 start_node = "idle"
-graph_offset = Vector2( 48, -150 )
+graph_offset = Vector2( 188, -146 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=73]
 
@@ -307,7 +307,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -8 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 34 )
-animation = "hit"
+animation = "crouch_loop"
 playing = true
 
 [node name="GuardianPosition" type="Position2D" parent="Flip"]
@@ -319,9 +319,10 @@ shape = SubResource( 35 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/attack = SubResource( 36 )
 anims/crouch = SubResource( 37 )
-anims/crouch_loop = SubResource( 38 )
+anims/crouch_loop = SubResource( 105 )
 anims/fall = SubResource( 39 )
 anims/idle = SubResource( 40 )
+anims/interact = SubResource( 93 )
 anims/jump = SubResource( 41 )
 anims/roll = SubResource( 42 )
 anims/run = SubResource( 43 )
