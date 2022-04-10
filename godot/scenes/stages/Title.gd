@@ -1,7 +1,7 @@
 extends Control
 
 onready var start_btn = $Start
-onready var tip_label = $Start/Tip
+onready var tip_label = $Tip
 
 signal start_pressed
 

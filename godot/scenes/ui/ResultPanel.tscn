@@ -1,10 +1,38 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
+[ext_resource path="res://assets/fonts/vonwaon-bitmap/VonwaonBitmap-16px.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/ui/background_tiles/Purple.png" type="Texture" id=2]
+[ext_resource path="res://scenes/vfx/UVOffset.gdshader" type="Shader" id=3]
 [ext_resource path="res://scenes/ui/ResultPanel.gd" type="Script" id=8]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.392157 )
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 3 )
+shader_param/direction = Vector2( 1, 1 )
+shader_param/speed = 0.2
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0, 0.76129, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="DynamicFont" id=7]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 96
+outline_size = 4
+outline_color = Color( 1, 1, 1, 0.0980392 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "appear"
@@ -38,16 +66,6 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Curve" id=4]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="Gradient" id=5]
-offsets = PoolRealArray( 0, 0.76129, 1 )
-colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
-
-[sub_resource type="Curve" id=6]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
 [node name="ResultPanel" type="PanelContainer"]
 pause_mode = 2
 anchor_right = 1.0
@@ -59,9 +77,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimPlayer" type="AnimationPlayer" parent="."]
-anims/appear = SubResource( 2 )
-anims/disappear = SubResource( 3 )
+[node name="Bg" type="TextureRect" parent="."]
+material = SubResource( 8 )
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
 
 [node name="Fireworks" type="Control" parent="."]
 margin_right = 1280.0
@@ -128,6 +150,42 @@ scale_amount_curve = SubResource( 6 )
 color_ramp = SubResource( 5 )
 hue_variation = 1.0
 hue_variation_random = 1.0
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Control"]
+color = Color( 0.843137, 0.886275, 0.345098, 1 )
+antialiased = true
+polygon = PoolVector2Array( 0, 0, 0, 184, 320, 0 )
+
+[node name="Label" type="Label" parent="Control/Polygon2D"]
+margin_left = 8.0
+margin_top = 96.0
+margin_right = 200.0
+margin_bottom = 160.0
+rect_rotation = -30.0
+custom_fonts/font = SubResource( 7 )
+text = "RESULT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 832.0
+margin_top = 64.0
+margin_right = 1216.0
+margin_bottom = 160.0
+custom_fonts/font = SubResource( 9 )
+text = "VICTORY!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimPlayer" type="AnimationPlayer" parent="."]
+anims/appear = SubResource( 2 )
+anims/disappear = SubResource( 3 )
 
 [node name="ReturnTimer" type="Timer" parent="."]
 wait_time = 2.0

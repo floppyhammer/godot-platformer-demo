@@ -1,17 +1,18 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://assets/ui/background_tiles/Gray.png" type="Texture" id=1]
 [ext_resource path="res://scenes/stages/Title.gd" type="Script" id=2]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=3]
-[ext_resource path="res://assets/ui/godot_logo.png" type="Texture" id=4]
-[ext_resource path="res://scenes/ui/TitleBg.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/vfx/UVOffset.gdshader" type="Shader" id=5]
 [ext_resource path="res://tres/default_font_64.tres" type="DynamicFont" id=8]
 
-[sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0, 0.209424, 0.781022, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 5 )
+shader_param/direction = Vector2( 1, 1 )
+shader_param/speed = 0.2
 
 [sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0, 0, 0, 0.392157 )
+bg_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="Animation" id=3]
 length = 3.0
@@ -26,49 +27,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="Animation" id=5]
-length = 1.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Logo:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 1, 1.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 0.588235 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="Title" type="Control"]
@@ -80,63 +39,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ViewportC" type="ViewportContainer" parent="."]
+[node name="Bg" type="TextureRect" parent="."]
+material = SubResource( 10 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-stretch = true
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Viewport" type="Viewport" parent="ViewportC"]
-size = Vector2( 1280, 720 )
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="TitleBg" parent="ViewportC/Viewport" instance=ExtResource( 5 )]
-
-[node name="Wind" type="CPUParticles2D" parent="."]
-position = Vector2( 0, 360 )
-amount = 20
-lifetime = 5.0
-emission_shape = 2
-emission_rect_extents = Vector2( 0, 360 )
-spread = 0.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 300.0
-initial_velocity_random = 1.0
-angular_velocity = 100.0
-angular_velocity_random = 0.5
-linear_accel = 100.0
-linear_accel_random = 1.0
-scale_amount = 5.0
-color_ramp = SubResource( 1 )
-
 [node name="Title" type="Label" parent="."]
 margin_left = 80.0
 margin_top = 80.0
-margin_right = 639.0
+margin_right = 897.0
 margin_bottom = 145.0
-custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.0784314 )
 custom_constants/shadow_offset_x = 4
 custom_constants/shadow_offset_y = 4
+custom_fonts/font = ExtResource( 8 )
 text = "A Summer Trip"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Start" type="Button" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 6
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tip" type="Label" parent="Start"]
-self_modulate = Color( 1, 1, 1, 0 )
+[node name="Tip" type="Label" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -149,37 +77,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Start/Tip"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tip"]
 autoplay = "New Anim"
 "anims/New Anim" = SubResource( 3 )
 
-[node name="Splash" type="Panel" parent="."]
+[node name="Start" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 4 )
+size_flags_horizontal = 6
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Logo" type="TextureRect" parent="Splash"]
-modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -176.5
-margin_top = -111.5
-margin_right = 176.5
-margin_bottom = 111.5
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Splash"]
-autoplay = "default"
-anims/default = SubResource( 5 )
 
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]

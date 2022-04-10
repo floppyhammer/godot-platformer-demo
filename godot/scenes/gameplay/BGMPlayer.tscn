@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scenes/gameplay/BGMPlayer.gd" type="Script" id=2]
+[ext_resource path="res://scenes/gameplay/BgmPlayer.gd" type="Script" id=2]
 
-[node name="BGMPlayer" type="AudioStreamPlayer"]
+[node name="BgmPlayer" type="AudioStreamPlayer"]
 volume_db = -80.0
 script = ExtResource( 2 )
 

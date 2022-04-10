@@ -1,9 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/ui/AboutPage.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/ui/LevelMap.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/ui/buttons/about.png" type="Texture" id=3]
-[ext_resource path="res://assets/ui/buttons/about_pressed.png" type="Texture" id=4]
+[ext_resource path="res://scenes/ui/WorldMapPanel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/stages/Home.gd" type="Script" id=5]
 [ext_resource path="res://assets/ui/buttons/exit_pressed.png" type="Texture" id=6]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=7]
@@ -21,7 +18,7 @@ __meta__ = {
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="LevelMap" parent="." instance=ExtResource( 2 )]
+[node name="WorldMapPanel" parent="." instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1280.0
@@ -45,18 +42,6 @@ mouse_filter = 2
 custom_constants/separation = 16
 alignment = 2
 
-[node name="About" type="TextureButton" parent="MarginC/VBoxC"]
-margin_left = 1184.0
-margin_top = 544.0
-margin_right = 1248.0
-margin_bottom = 608.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_horizontal = 8
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 4 )
-expand = true
-stretch_mode = 5
-
 [node name="Exit" type="TextureButton" parent="MarginC/VBoxC"]
 margin_left = 1184.0
 margin_top = 624.0
@@ -69,13 +54,5 @@ texture_pressed = ExtResource( 6 )
 expand = true
 stretch_mode = 5
 
-[node name="AboutPage" parent="." instance=ExtResource( 1 )]
-visible = false
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1280.0
-margin_bottom = 720.0
-
-[connection signal="level_pressed" from="LevelMap" to="." method="_on_LevelsPanelC_level_pressed"]
-[connection signal="pressed" from="MarginC/VBoxC/About" to="." method="_on_About_pressed"]
+[connection signal="level_pressed" from="WorldMapPanel" to="." method="_on_LevelsPanelC_level_pressed"]
 [connection signal="pressed" from="MarginC/VBoxC/Exit" to="." method="_on_Exit_pressed"]

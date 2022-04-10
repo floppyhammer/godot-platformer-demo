@@ -11,11 +11,11 @@ var typing_speed = DEFAULT_TYPING_SPEED
 var typing_ended = false
 export (bool) var debug = false
 
-onready var dialog_c = $VBoxC/VBoxC
-onready var choices = $VBoxC/VBoxC/ChoicesVBoxC
-onready var text_label = $VBoxC/VBoxC/HBoxC/TextLabel
-onready var name_label = $VBoxC/VBoxC/HBoxC/PanelC/VBoxC/NameLabel
-onready var next_btn = $VBoxC/VBoxC/HBoxC/TextLabel/Next
+onready var dialog_c = $VBoxC/MarginC
+onready var choices = $VBoxC/MarginC/VBoxC/ChoicesVBoxC
+onready var text_label = $VBoxC/MarginC/VBoxC/HBoxC/BgPanel/TextLabel
+onready var name_label = $VBoxC/MarginC/VBoxC/HBoxC/PanelC/VBoxC/NameLabel
+onready var next_btn = $VBoxC/MarginC/VBoxC/HBoxC/BgPanel/TextLabel/Next
 onready var tween = $Tween
 onready var top_banner = $VBoxC/Top
 onready var bottom_banner = $VBoxC/Bottom

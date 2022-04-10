@@ -7,11 +7,11 @@ var is_menu_shown = false
 
 onready var menu_btn = $VBoxC/MarginC/HBoxC/Menu
 onready var menu_panel = $VBoxC/MenuPanel
-onready var result_panel = $VBoxC/ResultPanel
+onready var result_panel = $ResultPanel
 onready var tween = $Tween
-onready var level_progress_bar = $VBoxC/MarginC/HBoxC/LevelProgressBar
 onready var lang_btn = $VBoxC/MenuPanel/VBoxC/HBoxCButton/Languages
 onready var dialog = $DialogPanel
+onready var notification_c = $VBoxC/NotificationContainer
 
 
 func _ready():
@@ -28,8 +28,8 @@ func _ready():
 	#	$MapLabel.text = level_name
 
 
-func _process(delta):
-	level_progress_bar.update_progress(level_progress)
+func add_notification(p_text : String):
+	notification_c.add_notification(p_text)
 
 
 func show_result_panel():

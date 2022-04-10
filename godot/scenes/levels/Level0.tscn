@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/levels/Fantasy Swamp Forest/Terrain_and_Props.png" type="Texture" id=1]
 [ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_3/BG_3.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://scenes/core/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ui/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/core/Guardian.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/objects/StartPoint.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/objects/EndPoint.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/objects/Checkpoint.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/levels/Level0.gd" type="Script" id=11]
@@ -43,9 +42,6 @@
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 364, 12 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 88, 12 )
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 15 )
@@ -116,26 +112,11 @@ polygon = PoolVector2Array( -363.395, -10.973, 364.605, -10.973, 364.605, 13.027
 position = Vector2( 0.60498, 1.02699 )
 shape = SubResource( 2 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="FixedBack"]
-position = Vector2( 668.605, 40 )
-
-[node name="Polygon2D" type="Polygon2D" parent="FixedBack/StaticBody2D2"]
-position = Vector2( 56, 1.52588e-05 )
-color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( -64, -8, 112, -8, 112, 16, -64, 16 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FixedBack/StaticBody2D2"]
-position = Vector2( 80, 4.00002 )
-shape = SubResource( 3 )
-
 [node name="Checkpoint" parent="FixedBack" instance=ExtResource( 10 )]
-position = Vector2( 602, 94 )
-
-[node name="StartPoint" parent="FixedBack" instance=ExtResource( 8 )]
-position = Vector2( 267, 94 )
+position = Vector2( 521, 94 )
 
 [node name="EndPoint" parent="FixedBack" instance=ExtResource( 9 )]
-position = Vector2( 878, 94 )
+position = Vector2( 268, 94 )
 
 [node name="NPC" parent="FixedBack" instance=ExtResource( 12 )]
 position = Vector2( 476, 95 )
@@ -143,11 +124,11 @@ position = Vector2( 476, 95 )
 [node name="Dynamic" type="Node2D" parent="."]
 
 [node name="Player" parent="Dynamic" instance=ExtResource( 5 )]
-position = Vector2( 267, 84 )
+position = Vector2( 742, 86 )
 
 [node name="Camera2D" type="Camera2D" parent="Dynamic/Player"]
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.4, 0.4 )
 offset_v = -0.5
 
 [node name="Guardian" parent="Dynamic" instance=ExtResource( 7 )]

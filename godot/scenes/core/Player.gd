@@ -3,13 +3,15 @@ extends KinematicBody2D
 # Player does't attack. It's like playing Celeste.
 # Attack is done by her guardian. It's like playing bullet hell games.
 
-const SPEED = 100.0
+const SPEED = 70.0
 const IN_WATER_SPEED = SPEED / 2
-const JUMP_SPEED = 200.0
+const JUMP_SPEED = 150.0
 const GRAVITY = 500.0
 const ACCEL = 10.0
 
 var grav = GRAVITY
+var is_lifting : bool = false
+var guardian_lift : float = 0.01
 
 var max_hp = 100.0
 var hp = max_hp
@@ -55,7 +57,10 @@ func _physics_process(delta):
 	linear_velocity.x = lerp(linear_velocity.x, velx2reach * face2, delta * ACCEL)
 	
 	if linear_velocity.y > 0:
-		linear_velocity.y += grav * delta
+		if not is_lifting:
+			linear_velocity.y += grav * delta
+		else:
+			linear_velocity.y += grav * guardian_lift * delta
 	else:
 		if is_self_jumped and Input.is_action_pressed("ui_accept"):
 			linear_velocity.y += grav * 0.5 * delta
@@ -105,11 +110,18 @@ func _control():
 			velx2reach = SPEED
 		
 		# ACT: Jump
-		if is_on_floor() and Input.is_action_just_pressed('jump'):
-			linear_velocity.y -= JUMP_SPEED
-			#$SFX/Jump.play()
-			is_self_jumped = true
-			# Reset jump state
+		if is_on_floor():
+			is_lifting = false
+			
+			if Input.is_action_just_pressed('jump'):
+				linear_velocity.y -= JUMP_SPEED
+				#$SFX/Jump.play()
+				is_self_jumped = true
+				# Reset jump state
+		else:
+			if Input.is_action_just_pressed('jump'):
+				is_lifting = not is_lifting
+				
 		if linear_velocity.y > 0 and is_self_jumped:
 			is_self_jumped = false
 	

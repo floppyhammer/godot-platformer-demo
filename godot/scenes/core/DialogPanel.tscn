@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/core/DialogPanel.gd" type="Script" id=1]
-[ext_resource path="res://assets/ui/icon.png" type="Texture" id=2]
 [ext_resource path="res://scenes/vfx/ShaderBlur.tscn" type="PackedScene" id=3]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=4]
 
@@ -17,10 +16,6 @@ bg_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
 border_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
@@ -29,10 +24,6 @@ content_margin_right = 16.0
 content_margin_top = 16.0
 content_margin_bottom = 16.0
 bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
 border_color = Color( 1, 1, 1, 1 )
 
 [node name="DialogPanel" type="PanelContainer"]
@@ -61,22 +52,36 @@ custom_constants/separation = 0
 margin_right = 1280.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="VBoxC" type="VBoxContainer" parent="VBoxC"]
+[node name="MarginC" type="MarginContainer" parent="VBoxC"]
 margin_right = 1280.0
 margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+
+[node name="VBoxC" type="VBoxContainer" parent="VBoxC/MarginC"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1264.0
+margin_bottom = 704.0
 size_flags_vertical = 3
 alignment = 2
 
-[node name="ChoicesVBoxC" type="VBoxContainer" parent="VBoxC/VBoxC"]
-margin_top = 520.0
-margin_right = 1280.0
-margin_bottom = 520.0
+[node name="ChoicesVBoxC" type="VBoxContainer" parent="VBoxC/MarginC/VBoxC"]
+margin_top = 340.0
+margin_right = 1248.0
+margin_bottom = 492.0
+alignment = 1
 
-[node name="Choice1" type="Button" parent="VBoxC/VBoxC/ChoicesVBoxC"]
-visible = false
-margin_right = 1280.0
+[node name="Choice1" type="Button" parent="VBoxC/MarginC/VBoxC/ChoicesVBoxC"]
+margin_left = 1248.0
+margin_right = 1248.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 0, 48 )
+size_flags_horizontal = 8
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
@@ -86,12 +91,13 @@ custom_styles/focus = SubResource( 2 )
 custom_styles/disabled = SubResource( 2 )
 custom_styles/normal = SubResource( 6 )
 
-[node name="Choice2" type="Button" parent="VBoxC/VBoxC/ChoicesVBoxC"]
-visible = false
+[node name="Choice2" type="Button" parent="VBoxC/MarginC/VBoxC/ChoicesVBoxC"]
+margin_left = 1248.0
 margin_top = 52.0
-margin_right = 1280.0
+margin_right = 1248.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 48 )
+size_flags_horizontal = 8
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
@@ -101,12 +107,13 @@ custom_styles/focus = SubResource( 2 )
 custom_styles/disabled = SubResource( 2 )
 custom_styles/normal = SubResource( 6 )
 
-[node name="Choice3" type="Button" parent="VBoxC/VBoxC/ChoicesVBoxC"]
-visible = false
+[node name="Choice3" type="Button" parent="VBoxC/MarginC/VBoxC/ChoicesVBoxC"]
+margin_left = 1248.0
 margin_top = 104.0
-margin_right = 1280.0
+margin_right = 1248.0
 margin_bottom = 152.0
 rect_min_size = Vector2( 0, 48 )
+size_flags_horizontal = 8
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
@@ -116,61 +123,69 @@ custom_styles/focus = SubResource( 2 )
 custom_styles/disabled = SubResource( 2 )
 custom_styles/normal = SubResource( 6 )
 
-[node name="HBoxC" type="HBoxContainer" parent="VBoxC/VBoxC"]
-margin_top = 524.0
-margin_right = 1280.0
-margin_bottom = 720.0
+[node name="HBoxC" type="HBoxContainer" parent="VBoxC/MarginC/VBoxC"]
+margin_top = 496.0
+margin_right = 1248.0
+margin_bottom = 688.0
+custom_constants/separation = 16
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PanelC" type="PanelContainer" parent="VBoxC/VBoxC/HBoxC"]
-margin_right = 196.0
-margin_bottom = 196.0
+[node name="PanelC" type="PanelContainer" parent="VBoxC/MarginC/VBoxC/HBoxC"]
+margin_right = 192.0
+margin_bottom = 192.0
 custom_styles/panel = SubResource( 7 )
 
-[node name="VBoxC" type="VBoxContainer" parent="VBoxC/VBoxC/HBoxC/PanelC"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 194.0
-margin_bottom = 194.0
-rect_min_size = Vector2( 192, 192 )
-
-[node name="NameLabel" type="Label" parent="VBoxC/VBoxC/HBoxC/PanelC/VBoxC"]
-visible = false
+[node name="VBoxC" type="VBoxContainer" parent="VBoxC/MarginC/VBoxC/HBoxC/PanelC"]
 margin_right = 192.0
-margin_bottom = 33.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 192, 192 )
+custom_constants/separation = 0
+
+[node name="Mugshot" type="TextureRect" parent="VBoxC/MarginC/VBoxC/HBoxC/PanelC/VBoxC"]
+margin_right = 192.0
+margin_bottom = 168.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+stretch_mode = 7
+
+[node name="NameLabel" type="Label" parent="VBoxC/MarginC/VBoxC/HBoxC/PanelC/VBoxC"]
+margin_top = 168.0
+margin_right = 192.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 0, 24 )
 text = "Name"
 align = 1
 valign = 1
+autowrap = true
 clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Mugshot" type="TextureRect" parent="VBoxC/VBoxC/HBoxC/PanelC/VBoxC"]
-margin_right = 192.0
+[node name="BgPanel" type="PanelContainer" parent="VBoxC/MarginC/VBoxC/HBoxC"]
+margin_left = 208.0
+margin_right = 1248.0
 margin_bottom = 192.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 2 )
-expand = true
-stretch_mode = 7
+custom_styles/panel = SubResource( 5 )
 
-[node name="TextLabel" type="RichTextLabel" parent="VBoxC/VBoxC/HBoxC"]
-margin_left = 200.0
-margin_right = 1280.0
-margin_bottom = 196.0
+[node name="TextLabel" type="RichTextLabel" parent="VBoxC/MarginC/VBoxC/HBoxC/BgPanel"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1024.0
+margin_bottom = 176.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/focus = SubResource( 5 )
-custom_styles/normal = SubResource( 5 )
 text = "Something that has to be said."
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Next" type="Button" parent="VBoxC/VBoxC/HBoxC/TextLabel"]
+[node name="Next" type="Button" parent="VBoxC/MarginC/VBoxC/HBoxC/BgPanel/TextLabel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 48, 0 )
@@ -188,7 +203,7 @@ color = Color( 0, 0, 0, 1 )
 [node name="Tween" type="Tween" parent="."]
 
 [connection signal="typing_ended" from="." to="." method="_on_Dialog_typing_ended"]
-[connection signal="pressed" from="VBoxC/VBoxC/ChoicesVBoxC/Choice1" to="." method="_on_Choice1_pressed"]
-[connection signal="pressed" from="VBoxC/VBoxC/ChoicesVBoxC/Choice2" to="." method="_on_Choice2_pressed"]
-[connection signal="pressed" from="VBoxC/VBoxC/ChoicesVBoxC/Choice3" to="." method="_on_Choice3_pressed"]
-[connection signal="pressed" from="VBoxC/VBoxC/HBoxC/TextLabel/Next" to="." method="_on_Next_pressed"]
+[connection signal="pressed" from="VBoxC/MarginC/VBoxC/ChoicesVBoxC/Choice1" to="." method="_on_Choice1_pressed"]
+[connection signal="pressed" from="VBoxC/MarginC/VBoxC/ChoicesVBoxC/Choice2" to="." method="_on_Choice2_pressed"]
+[connection signal="pressed" from="VBoxC/MarginC/VBoxC/ChoicesVBoxC/Choice3" to="." method="_on_Choice3_pressed"]
+[connection signal="pressed" from="VBoxC/MarginC/VBoxC/HBoxC/BgPanel/TextLabel/Next" to="." method="_on_Next_pressed"]
