@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/ui/LevelButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/WorldMapPanel.gd" type="Script" id=2]
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/levels/water_surface.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/world_map.png" type="Texture" id=5]
+[ext_resource path="res://scenes/vfx/UVOffset.gdshader" type="Shader" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 6 )
+shader_param/direction = Vector2( 1, 0 )
+shader_param/speed = 0.2
+
+[node name="WorldMapPanel" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="ScrollC" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Water" type="TextureRect" parent="ScrollC"]
+material = SubResource( 3 )
+margin_right = 1280.0
+margin_bottom = 1280.0
+rect_min_size = Vector2( 1280, 1280 )
+texture = ExtResource( 4 )
+stretch_mode = 2
+
+[node name="WorldMap" type="TextureRect" parent="ScrollC"]
+margin_right = 1280.0
+margin_bottom = 1280.0
+rect_min_size = Vector2( 1280, 1280 )
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="LevelButton1" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
+margin_left = 330.0
+margin_top = 342.0
+margin_right = 378.0
+margin_bottom = 390.0
+
+[node name="LevelButton2" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
+margin_left = 353.0
+margin_top = 423.0
+margin_right = 401.0
+margin_bottom = 471.0
+level_id = "2"
+
+[node name="LevelButton3" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
+margin_left = 420.0
+margin_top = 701.0
+margin_right = 468.0
+margin_bottom = 749.0
+level_id = "3"
+
+[node name="LevelButton4" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
+margin_left = 408.504
+margin_top = 829.746
+margin_right = 456.504
+margin_bottom = 877.746
+level_id = "4"
+
+[node name="LevelButton5" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
+margin_left = 644.005
+margin_top = 880.835
+margin_right = 692.005
+margin_bottom = 928.835
+level_id = "5"
+
+[node name="LevelButton6" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
+margin_left = 720.679
+margin_top = 687.029
+margin_right = 768.679
+margin_bottom = 735.029
+level_id = "6"
+
+[node name="LevelButton7" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
+margin_left = 731.871
+margin_top = 478.272
+margin_right = 779.871
+margin_bottom = 526.272
+level_id = "7"
+
+[node name="LevelButton8" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
+margin_left = 888.268
+margin_top = 702.056
+margin_right = 936.268
+margin_bottom = 750.056
+level_id = "8"
+
+[node name="Objects" type="Control" parent="ScrollC"]
+
+[node name="YSort" type="YSort" parent="ScrollC/Objects"]
+
+[node name="Tween" type="Tween" parent="."]

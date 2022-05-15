@@ -11,12 +11,13 @@ onready var result_panel = $ResultPanel
 onready var tween = $Tween
 onready var lang_btn = $VBoxC/MenuPanel/VBoxC/HBoxCButton/Languages
 onready var dialog = $DialogPanel
-onready var notification_c = $VBoxC/NotificationContainer
+onready var notification_c = $NotificationContainer
 
 
 func _ready():
 	Logger.add_module("HUD")
 	
+	show()
 	result_panel.hide()
 	Global.hud = self
 	_hide_menu()
@@ -36,7 +37,7 @@ func show_result_panel():
 	# Hide menu buttons.
 	menu_btn.hide()
 	menu_panel.hide()
-	result_panel.show_when_level_is_clear("Level 1", 10, 10)
+	result_panel.show_when_level_is_clear("Level 0", 10, 10)
 
 
 func _show_menu():

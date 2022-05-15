@@ -68,14 +68,12 @@ tracks/0/keys = {
 
 [node name="ResultPanel" type="PanelContainer"]
 pause_mode = 2
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 10 )
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Bg" type="TextureRect" parent="."]
 material = SubResource( 8 )
@@ -93,9 +91,6 @@ mouse_filter = 2
 [node name="CenterLeft" type="Control" parent="Fireworks"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Fireworks" type="CPUParticles2D" parent="Fireworks/CenterLeft"]
 emitting = false
@@ -124,9 +119,6 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Fireworks" type="CPUParticles2D" parent="Fireworks/CenterRight"]
 emitting = false
@@ -168,20 +160,14 @@ margin_bottom = 160.0
 rect_rotation = -30.0
 custom_fonts/font = SubResource( 7 )
 text = "RESULT"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="Control"]
-margin_left = 832.0
-margin_top = 64.0
-margin_right = 1216.0
-margin_bottom = 160.0
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -288.0
+margin_bottom = 96.0
 custom_fonts/font = SubResource( 9 )
-text = "VICTORY!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "CLEAR!"
 
 [node name="AnimPlayer" type="AnimationPlayer" parent="."]
 anims/appear = SubResource( 2 )

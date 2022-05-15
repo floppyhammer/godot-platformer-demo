@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/stages/Title.tscn" type="PackedScene" id=2]
@@ -6,15 +6,6 @@
 [ext_resource path="res://scenes/ui/LoadingPanel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/stages/Main.gd" type="Script" id=6]
 [ext_resource path="res://assets/music/Internationale (8-bit).ogg" type="AudioStream" id=7]
-
-[sub_resource type="ParticlesMaterial" id=2]
-flag_disable_z = true
-gravity = Vector3( 0, 98, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 1 )
 
 [node name="Main" type="Node"]
 pause_mode = 2
@@ -27,10 +18,6 @@ stream = ExtResource( 7 )
 
 [node name="Title" parent="Running" instance=ExtResource( 2 )]
 
-[node name="Particles2D" type="Particles2D" parent="Running/Title"]
-position = Vector2( 403, 295 )
-process_material = SubResource( 2 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LoadingPanel" parent="CanvasLayer" instance=ExtResource( 4 )]
@@ -40,18 +27,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 theme = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="FpsLabel" type="Label" parent="CanvasLayer/Debug"]
 margin_right = 96.0
 margin_bottom = 24.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_styles/normal = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "FPS 60"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="start_pressed" from="Running/Title" to="." method="_on_TitleStage_start_pressed"]
