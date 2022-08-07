@@ -12,9 +12,6 @@ anchor_bottom = 1.0
 mouse_filter = 2
 theme = ExtResource( 7 )
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Tween" type="Tween" parent="."]
 

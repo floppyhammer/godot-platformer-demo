@@ -22,7 +22,7 @@
 [ext_resource path="res://assets/ui/buttons/home_pressed.png" type="Texture" id=23]
 [ext_resource path="res://assets/ui/buttons/blank_pressed.png" type="Texture" id=24]
 [ext_resource path="res://assets/ui/joystick/square.png" type="Texture" id=25]
-[ext_resource path="res://scenes/core/DialogPanel.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/ui/DialogPanel.tscn" type="PackedScene" id=26]
 [ext_resource path="res://assets/ui/joystick/square_pressed.png" type="Texture" id=27]
 [ext_resource path="res://assets/ui/joystick/circle.png" type="Texture" id=28]
 [ext_resource path="res://assets/ui/joystick/circle_pressed.png" type="Texture" id=29]
@@ -154,9 +154,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BlurShader" parent="." instance=ExtResource( 17 )]
 
@@ -311,7 +308,7 @@ script = ExtResource( 39 )
 atlas = ExtResource( 40 )
 h_frames = 5
 v_frames = 1
-current_frame = 4
+current_frame = 3
 fps = 0
 
 [node name="Menu" type="TextureButton" parent="VBoxC/MarginC/HBoxC"]

@@ -53,8 +53,8 @@ __meta__ = {
 margin_right = 384.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 0, 64 )
-custom_styles/normal = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/normal = SubResource( 2 )
 text = "Tutorials"
 align = 1
 valign = 1
@@ -62,7 +62,7 @@ valign = 1
 [node name="ScrollC" type="ScrollContainer" parent="CenterC/Panel/VBoxC"]
 margin_top = 68.0
 margin_right = 384.0
-margin_bottom = 292.0
+margin_bottom = 280.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -73,14 +73,14 @@ __meta__ = {
 
 [node name="HBoxC" type="HBoxContainer" parent="CenterC/Panel/VBoxC/ScrollC"]
 margin_right = 2688.0
-margin_bottom = 224.0
+margin_bottom = 212.0
 mouse_filter = 2
 size_flags_vertical = 3
 custom_constants/separation = 0
 
 [node name="RichTextLabel1" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_right = 384.0
-margin_bottom = 224.0
+margin_bottom = 212.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -93,7 +93,7 @@ __meta__ = {
 [node name="RichTextLabel2" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_left = 384.0
 margin_right = 768.0
-margin_bottom = 224.0
+margin_bottom = 212.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -106,7 +106,7 @@ __meta__ = {
 [node name="RichTextLabel3" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_left = 768.0
 margin_right = 1152.0
-margin_bottom = 224.0
+margin_bottom = 212.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -119,7 +119,7 @@ __meta__ = {
 [node name="RichTextLabel4" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_left = 1152.0
 margin_right = 1536.0
-margin_bottom = 224.0
+margin_bottom = 212.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -132,7 +132,7 @@ __meta__ = {
 [node name="RichTextLabel5" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_left = 1536.0
 margin_right = 1920.0
-margin_bottom = 224.0
+margin_bottom = 212.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -145,7 +145,7 @@ __meta__ = {
 [node name="RichTextLabel6" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_left = 1920.0
 margin_right = 2304.0
-margin_bottom = 224.0
+margin_bottom = 212.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -158,7 +158,7 @@ __meta__ = {
 [node name="RichTextLabel7" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_left = 2304.0
 margin_right = 2688.0
-margin_bottom = 224.0
+margin_bottom = 212.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -169,7 +169,7 @@ __meta__ = {
 }
 
 [node name="PageNumber" type="Label" parent="CenterC/Panel/VBoxC"]
-margin_top = 296.0
+margin_top = 284.0
 margin_right = 384.0
 margin_bottom = 320.0
 text = "1/7"

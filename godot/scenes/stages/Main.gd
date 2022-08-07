@@ -4,6 +4,7 @@ onready var loading_panel = $CanvasLayer/LoadingPanel
 onready var bgm_player = $BgmPlayer
 onready var debug = $CanvasLayer/Debug
 
+
 func _ready():
 	Global.main = self
 	bgm_player.start_bgm("res://assets/music/Dream Static by symphony.mp3")

@@ -1,133 +1,118 @@
 [gd_scene load_steps=78 format=2]
 
-[ext_resource path="res://scenes/core/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/chars/Twiggy/Sleeping_&_Wakeup (32 x 32).png" type="Texture" id=2]
-[ext_resource path="res://assets/chars/Twiggy/Running (32 x 32).png" type="Texture" id=3]
-[ext_resource path="res://assets/chars/Twiggy/Idle (32 x 32).png" type="Texture" id=4]
-[ext_resource path="res://assets/chars/Twiggy/Falling (32 x 32).png" type="Texture" id=5]
-[ext_resource path="res://assets/chars/Twiggy/Jumping (32 x 32).png" type="Texture" id=6]
-[ext_resource path="res://assets/chars/Twiggy/Hurt_&_Recovery (32 x 32).png" type="Texture" id=7]
-[ext_resource path="res://assets/chars/Twiggy/Touch_Ground (32 x 32).png" type="Texture" id=8]
-[ext_resource path="res://assets/chars/Twiggy/Back_Turned (32 x 32).png" type="Texture" id=9]
-[ext_resource path="res://assets/chars/Twiggy/Looking_Upward (32 x 32).png" type="Texture" id=10]
-
-[sub_resource type="AtlasTexture" id=74]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=75]
-atlas = ExtResource( 4 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=76]
-atlas = ExtResource( 4 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=77]
-atlas = ExtResource( 4 )
-region = Rect2( 96, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=78]
-atlas = ExtResource( 4 )
-region = Rect2( 128, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=87]
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=85]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=90]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=91]
-atlas = ExtResource( 8 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=86]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=103]
-atlas = ExtResource( 7 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=104]
-atlas = ExtResource( 7 )
-region = Rect2( 64, 0, 32, 32 )
+[ext_resource path="res://scenes/characters/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/chars/Twiggy/Hurt_&_Recovery (32 x 32).png" type="Texture" id=2]
+[ext_resource path="res://assets/chars/Twiggy/Looking_Upward (32 x 32).png" type="Texture" id=3]
+[ext_resource path="res://assets/chars/Twiggy/Back_Turned (32 x 32).png" type="Texture" id=4]
+[ext_resource path="res://assets/chars/Twiggy/Idle (32 x 32).png" type="Texture" id=5]
+[ext_resource path="res://assets/chars/Twiggy/Touch_Ground (32 x 32).png" type="Texture" id=6]
+[ext_resource path="res://assets/chars/Twiggy/Falling (32 x 32).png" type="Texture" id=7]
+[ext_resource path="res://assets/chars/Twiggy/Sleeping_&_Wakeup (32 x 32).png" type="Texture" id=8]
+[ext_resource path="res://assets/chars/Twiggy/Jumping (32 x 32).png" type="Texture" id=9]
+[ext_resource path="res://assets/chars/Twiggy/Running (32 x 32).png" type="Texture" id=10]
 
 [sub_resource type="AtlasTexture" id=100]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=79]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=80]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=81]
-atlas = ExtResource( 3 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=82]
-atlas = ExtResource( 3 )
-region = Rect2( 96, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=83]
-atlas = ExtResource( 3 )
-region = Rect2( 128, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=84]
-atlas = ExtResource( 3 )
-region = Rect2( 160, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=97]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=98]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=99]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=103]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=104]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 0, 32, 32 )
+
 [sub_resource type="AtlasTexture" id=92]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=86]
 atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=97]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=90]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=91]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 10 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 10 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 10 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 10 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 10 )
+region = Rect2( 160, 0, 32, 32 )
+
 [sub_resource type="SpriteFrames" id=34]
 animations = [ {
-"frames": [ SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ) ],
+"frames": [ SubResource( 100 ) ],
 "loop": true,
-"name": "idle",
+"name": "attack",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 87 ) ],
-"loop": true,
-"name": "hit",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 85 ) ],
-"loop": true,
-"name": "fall",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 90 ), SubResource( 91 ) ],
+"frames": [ SubResource( 98 ), SubResource( 99 ) ],
 "loop": false,
-"name": "roll",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 86 ) ],
-"loop": true,
-"name": "jump",
+"name": "crouch",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 103 ), SubResource( 104 ) ],
@@ -135,30 +120,45 @@ animations = [ {
 "name": "crouch_loop",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 100 ) ],
+"frames": [ SubResource( 85 ) ],
 "loop": true,
-"name": "attack",
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 87 ) ],
+"loop": true,
+"name": "hit",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ) ],
+"loop": true,
+"name": "idle",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ) ],
+"frames": [ SubResource( 92 ) ],
 "loop": true,
-"name": "run",
-"speed": 10.0
+"name": "interact",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 86 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 97 ) ],
 "loop": true,
 "name": "look_up",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 98 ), SubResource( 99 ) ],
+"frames": [ SubResource( 90 ), SubResource( 91 ) ],
 "loop": false,
-"name": "crouch",
+"name": "roll",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 92 ) ],
+"frames": [ SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ) ],
 "loop": true,
-"name": "interact",
-"speed": 5.0
+"name": "run",
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=35]

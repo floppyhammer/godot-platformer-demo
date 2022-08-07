@@ -4,6 +4,7 @@ export (Texture) var texture
 export (int, 1, 100) var h_frames := 1
 export (int, 1, 100) var v_frames := 1
 export (int) var fps = 30
+export (bool) var debug_mode = false
 
 var anim_tex = AnimatedTexture.new()
 
@@ -48,13 +49,14 @@ func _ready():
 
 
 # Test
-#func _input(event):
-#	if event is InputEventMouseButton:
-#		if event.pressed:
-#			if event.button_index == BUTTON_LEFT:
-#				disappear()
-#			elif event.button_index == BUTTON_RIGHT:
-#				appear()
+func _input(event):
+	if debug_mode:
+		if event is InputEventMouseButton:
+			if event.pressed:
+				if event.button_index == BUTTON_LEFT:
+					disappear()
+				elif event.button_index == BUTTON_RIGHT:
+					appear()
 
 
 func disappear():

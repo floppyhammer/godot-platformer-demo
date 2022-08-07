@@ -25,10 +25,9 @@ __meta__ = {
 }
 
 [node name="Popup" type="Panel" parent="CenterC"]
-margin_left = 156.0
-margin_top = 576.0
-margin_right = 924.0
-margin_bottom = 1344.0
+margin_left = 256.0
+margin_right = 1024.0
+margin_bottom = 768.0
 rect_min_size = Vector2( 768, 768 )
 size_flags_horizontal = 4
 size_flags_vertical = 4

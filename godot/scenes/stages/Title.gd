@@ -7,8 +7,10 @@ signal start_pressed
 
 
 func _ready():
+	# Image title.
 	#title_rect.texture = load("res://assets/ui/title_%s.png" % TranslationServer.get_locale())
 	
+	# Text title.
 	tip_label.text = tr("TAP_ANYWHERE")
 
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://assets/fonts/vonwaon-bitmap/VonwaonBitmap-16px.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/ui/background_tiles/Purple.png" type="Texture" id=2]
 [ext_resource path="res://scenes/vfx/UVOffset.gdshader" type="Shader" id=3]
+[ext_resource path="res://assets/fonts/Abaddon_Fonts_v1.2/Abaddon Light.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://scenes/ui/ResultPanel.gd" type="Script" id=8]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=10]
 
@@ -26,13 +26,13 @@ _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="DynamicFont" id=7]
 size = 64
-font_data = ExtResource( 1 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 96
 outline_size = 4
 outline_color = Color( 1, 1, 1, 0.0980392 )
-font_data = ExtResource( 1 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "appear"

@@ -1,6 +1,5 @@
 extends AudioStreamPlayer
 
-
 onready var tween = $Tween
 signal volume_decreased_to_zero
 signal volume_increased_to_normal
@@ -41,7 +40,7 @@ func change_bgm(bgm_path):
 	decrease_volume_to_zero()
 	yield(self, "volume_decreased_to_zero")
 	stream = load(bgm_path)
-	increase_volume_to_normal()
+#	increase_volume_to_normal()
 
 
 func _on_Tween_tween_all_completed():
