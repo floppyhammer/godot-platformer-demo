@@ -1,3 +1,3 @@
 extends Node2D
 
-var level_name = "Train"
+var level_name = "Level 0"

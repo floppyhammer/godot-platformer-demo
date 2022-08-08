@@ -27,7 +27,7 @@ onready var anim_sprite = $Flip/AnimatedSprite
 onready var anim_player = $AnimationPlayer
 onready var anim_state_machine = $AnimationTree.get("parameters/playback")
 onready var col_shape = $CollisionShape2D
-onready var pet_position = $Flip/PetPosition
+onready var spirit_position = $Flip/SpiritPosition
 
 var can_evade_damage = false
 var interruptible_anims = ['idle', 'run', 'jump', 'fall', 'crouch_loop']
@@ -273,8 +273,8 @@ func _on_AnimatedSprite_frame_changed():
 #		Engine.time_scale = 1.0
 
 
-func get_pet_position() -> Vector2:
-	return pet_position.get_global_position()
+func get_spirit_position() -> Vector2:
+	return spirit_position.get_global_position()
 
 
 func get_face2() -> int:

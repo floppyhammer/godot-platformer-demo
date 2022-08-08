@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_1/BG_1.png" type="Texture" id=4]
 [ext_resource path="res://scenes/characters/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ui/HUD.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/characters/Pet.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/characters/Spirit.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/levels/factory/background/5.png" type="Texture" id=8]
 [ext_resource path="res://scenes/objects/EndPoint.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/objects/Checkpoint.tscn" type="PackedScene" id=10]
@@ -140,7 +140,7 @@ position = Vector2( 0.60498, 1.02699 )
 shape = SubResource( 2 )
 
 [node name="Checkpoint" parent="FixedBack" instance=ExtResource( 10 )]
-position = Vector2( 546, 104 )
+position = Vector2( 557, 104 )
 
 [node name="EndPoint" parent="FixedBack" instance=ExtResource( 9 )]
 position = Vector2( 268, 94 )
@@ -155,10 +155,10 @@ position = Vector2( 742, 86 )
 
 [node name="Camera2D" type="Camera2D" parent="Dynamic/Player"]
 current = true
-zoom = Vector2( 0.4, 0.4 )
+zoom = Vector2( 0.3, 0.3 )
 offset_v = -0.5
 
-[node name="Pet" parent="Dynamic" instance=ExtResource( 7 )]
+[node name="Spirit" parent="Dynamic" instance=ExtResource( 7 )]
 player_node = NodePath("../Player")
 
 [node name="FixedFront" type="Node2D" parent="."]

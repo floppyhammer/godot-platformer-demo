@@ -89,7 +89,7 @@ func _on_Languages_pressed():
 		Global.change_locale(new_locale)
 		
 		# Change looking of the language button.
-		lang_btn.get_child(0).texture = load("res://assets/ui/flags/%s.png" % new_locale)
+		lang_btn.get_child(0).set_frame(6 + index)
 	else:
 		Logger.error("Failed to change language!", "HUD")
 
