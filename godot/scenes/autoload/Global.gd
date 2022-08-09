@@ -31,6 +31,7 @@ var item_progress = {}
 
 # Runtime nodes.
 var hud
+var current_camera
 
 signal progress_downloaded
 signal locale_changed

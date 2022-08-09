@@ -28,7 +28,9 @@ var touch_points = []
 func _ready():
 	Global.current_camera = self
 	
-	state = STATES.FOLLOW
+	set_state(state)
+	
+	target_zoom = zoom.x
 
 
 func _physics_process(delta):

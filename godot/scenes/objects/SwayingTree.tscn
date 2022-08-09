@@ -2,7 +2,7 @@
 
 [ext_resource path="res://shaders/Sway2D.shader" type="Shader" id=1]
 [ext_resource path="res://scenes/tools/GeometrySprite.gd" type="Script" id=2]
-[ext_resource path="res://assets/maps/sakura.png" type="Texture" id=3]
+[ext_resource path="res://assets/objects/Health_Kit (16 x 16).png" type="Texture" id=3]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true

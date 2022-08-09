@@ -64,7 +64,7 @@ disabled = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -2, -8 )
 frames = SubResource( 6 )
-frame = 8
+frame = 3
 playing = true
 
 [node name="InteractionArea" type="Area2D" parent="."]

@@ -1,5 +1,9 @@
 extends Area2D
 
+"""
+Every time you die, your spirit becomes more powerful.
+"""
+
 export (NodePath) var player_node
 onready var flip = $Flip
 
@@ -37,7 +41,7 @@ func _physics_process(delta):
 		
 		position = position.linear_interpolate(target_position, speed)
 	
-	flip.scale.x = face2 * abs(flip.scale.x)
+#	flip.scale.x = face2 * abs(flip.scale.x)
 
 
 func _on_AttackArea_body_entered(body):
