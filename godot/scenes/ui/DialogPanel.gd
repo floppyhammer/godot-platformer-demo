@@ -50,13 +50,15 @@ func _process(delta):
 		text_label.percent_visible += delta * typing_speed / len(text_label.text)
 		text_label.percent_visible = clamp(text_label.percent_visible, 0.0, 1.0)
 	
-	name_label.rect_size.x = len(name_label.text) * 16
-	
 	if not typing_ended and text_label.percent_visible == 1.0:
 		typing_ended = true
 		emit_signal('typing_ended')
 		
 		if current_step["type"] == "question" and choices.visible == false:
+			# Make the first choice selected, so we can navigate through
+			# the choices by keyboard.
+			choices.get_child(0).grab_focus()
+			
 			choices.show()
 			next_btn.hide()
 

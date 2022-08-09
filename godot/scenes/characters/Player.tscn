@@ -348,7 +348,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Flip"]
 position = Vector2( 0, -4 )
 frames = SubResource( 34 )
-animation = "idle"
+animation = "run"
 frame = 1
 playing = true
 

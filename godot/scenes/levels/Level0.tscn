@@ -146,7 +146,7 @@ position = Vector2( 557, 104 )
 position = Vector2( 268, 94 )
 
 [node name="NPC" parent="FixedBack" instance=ExtResource( 12 )]
-position = Vector2( 476, 95 )
+position = Vector2( 474, 100 )
 
 [node name="Dynamic" type="Node2D" parent="."]
 

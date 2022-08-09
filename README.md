@@ -1,2 +1,2 @@
 # A Summer Trip
-A small platformer game made with Godot
+A platformer demo made with Godot
