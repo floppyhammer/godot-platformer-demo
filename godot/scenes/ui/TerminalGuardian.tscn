@@ -32,9 +32,6 @@ custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxC" type="VBoxContainer" parent="."]
 margin_left = 16.0
@@ -59,9 +56,9 @@ alignment = 1
 
 [node name="Portrait" type="TextureRect" parent="VBoxC/HBoxC/VBoxC"]
 margin_left = 40.0
-margin_top = 55.0
+margin_top = 49.0
 margin_right = 232.0
-margin_bottom = 247.0
+margin_bottom = 241.0
 rect_min_size = Vector2( 192, 192 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -80,9 +77,9 @@ __meta__ = {
 
 [node name="NameLabel" type="Label" parent="VBoxC/HBoxC/VBoxC"]
 margin_left = 40.0
-margin_top = 263.0
+margin_top = 257.0
 margin_right = 232.0
-margin_bottom = 287.0
+margin_bottom = 293.0
 rect_min_size = Vector2( 192, 0 )
 size_flags_horizontal = 4
 text = "KTMK2"

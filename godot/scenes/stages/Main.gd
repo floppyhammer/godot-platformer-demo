@@ -1,5 +1,6 @@
 extends Node
 
+
 onready var loading_panel = $CanvasLayer/LoadingPanel
 onready var bgm_player = $BgmPlayer
 onready var debug = $CanvasLayer/Debug

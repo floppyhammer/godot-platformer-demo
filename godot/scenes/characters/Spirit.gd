@@ -5,7 +5,6 @@ Every time you die, your spirit becomes more powerful.
 """
 
 export (NodePath) var player_node
-onready var flip = $Flip
 
 var target_position : Vector2
 var speed = 0.2

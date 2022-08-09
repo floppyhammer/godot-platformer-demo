@@ -30,9 +30,6 @@ toggle_mode = true
 expand = true
 stretch_mode = 5
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Touch" type="AudioStreamPlayer" parent="."]
 
