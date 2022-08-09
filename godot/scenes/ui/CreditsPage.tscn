@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/vfx/ShaderBlur.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=3]
 [ext_resource path="res://tres/default_font_64.tres" type="DynamicFont" id=4]
-[ext_resource path="res://assets/chars/mugshots/player.jpg" type="Texture" id=5]
+[ext_resource path="res://assets/ui/icon.png" type="Texture" id=5]
 [ext_resource path="res://tres/default_font_32.tres" type="DynamicFont" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -92,9 +92,6 @@ margin_right = 320.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ScrollC" type="ScrollContainer" parent="PanelC"]
 margin_right = 640.0
@@ -110,8 +107,9 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelC/ScrollC"]
 visible = false
+margin_top = -100.0
 margin_right = 640.0
-margin_bottom = 57.0
+margin_bottom = -31.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -121,8 +119,9 @@ text = "Example text"
 fit_content_height = true
 
 [node name="Content" type="Control" parent="PanelC/ScrollC"]
+margin_top = -100.0
 margin_right = 640.0
-margin_bottom = 1920.0
+margin_bottom = 1820.0
 rect_min_size = Vector2( 640, 1920 )
 mouse_filter = 2
 
@@ -133,9 +132,6 @@ margin_right = 329.0
 margin_bottom = 94.0
 custom_fonts/font = ExtResource( 4 )
 text = "CAST"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PlayerPic" type="TextureRect" parent="PanelC/ScrollC/Content"]
 margin_left = 23.0

@@ -1,9 +1,9 @@
 [gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://scenes/characters/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/chars/Twiggy/Looking_Upward (32 x 32).png" type="Texture" id=3]
-[ext_resource path="res://assets/chars/Twiggy/Back_Turned (32 x 32).png" type="Texture" id=4]
-[ext_resource path="res://assets/chars/Adventurer-1.5/adventurer-v1.5-Sheet.png" type="Texture" id=5]
+[ext_resource path="res://assets/characters/Twiggy/Looking_Upward (32 x 32).png" type="Texture" id=3]
+[ext_resource path="res://assets/characters/Twiggy/Back_Turned (32 x 32).png" type="Texture" id=4]
+[ext_resource path="res://assets/characters/Adventurer-1.5/adventurer-v1.5-Sheet.png" type="Texture" id=5]
 
 [sub_resource type="AtlasTexture" id=132]
 atlas = ExtResource( 5 )

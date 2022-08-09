@@ -21,7 +21,7 @@ shader_param/tile_factor1 = 0.243
 shader_param/scroll_direction2 = Vector2( 0.75, 0.25 )
 shader_param/time_scale2 = 0.005
 shader_param/tile_factor2 = 0.1
-shader_param/aspect_ratio = 1.0
+shader_param/aspect_ratio = 0.99927
 shader_param/noise_texture2 = ExtResource( 1 )
 shader_param/gradient_texture = SubResource( 2 )
 

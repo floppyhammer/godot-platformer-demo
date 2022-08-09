@@ -13,9 +13,6 @@ margin_bottom = 11.0
 theme = ExtResource( 3 )
 texture_normal = ExtResource( 5 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PressSound" type="AudioStreamPlayer" parent="."]
 

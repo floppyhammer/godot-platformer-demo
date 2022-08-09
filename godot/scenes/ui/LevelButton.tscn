@@ -37,9 +37,6 @@ texture_disabled = ExtResource( 2 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimPlayer" type="AnimationPlayer" parent="."]
 anims/pressed = SubResource( 1 )
@@ -49,46 +46,48 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.752941, 0.796078, 0.862745, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = SubResource( 2 )
 text = "1"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+margin_left = -52.0
+margin_top = -1.0
+margin_right = 52.0
+margin_bottom = 31.0
 rect_min_size = Vector2( 0, 30 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Star1" type="TextureRect" parent="HBoxContainer"]
-margin_right = 13.0
-margin_bottom = 30.0
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
 size_flags_horizontal = 3
 texture = ExtResource( 6 )
 expand = true
 stretch_mode = 6
 
 [node name="Star2" type="TextureRect" parent="HBoxContainer"]
-margin_left = 17.0
-margin_right = 30.0
-margin_bottom = 30.0
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
 size_flags_horizontal = 3
 texture = ExtResource( 6 )
 expand = true
 stretch_mode = 6
 
 [node name="Star3" type="TextureRect" parent="HBoxContainer"]
-margin_left = 34.0
-margin_right = 48.0
-margin_bottom = 30.0
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
 size_flags_horizontal = 3
 texture = ExtResource( 6 )
 expand = true
