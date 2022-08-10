@@ -8,10 +8,12 @@ var tag_scene = load("res://scenes/ui/NotificationTag.tscn")
 
 export var debug : bool = false
 
+
 # Test
 func _input(event):
-	if debug and Input.is_action_just_pressed("ui_accept"):
-		add_notification("Test notification")
+	if debug:
+		if event is InputEventMouseButton and event.pressed:
+			add_notification("Test notification")
 
 
 func add_notification(text):

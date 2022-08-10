@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/DialogPanel.gd" type="Script" id=2]
 [ext_resource path="res://scenes/vfx/ShaderBlur.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tres/default_font_32.tres" type="DynamicFont" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -188,6 +189,7 @@ margin_right = 1024.0
 margin_bottom = 176.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
 text = "Something that has to be said."
 __meta__ = {
 "_edit_use_anchors_": false

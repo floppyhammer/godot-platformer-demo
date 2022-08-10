@@ -2,10 +2,15 @@
 
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/ui/icons/item_3.png" type="Texture" id=2]
-[ext_resource path="res://tres/default_font_48.tres" type="DynamicFont" id=3]
+[ext_resource path="res://tres/default_font_16.tres" type="DynamicFont" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 1 )
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
 
 [node name="InventoryItem" type="TextureButton"]
 margin_right = 32.0
@@ -26,7 +31,6 @@ mouse_filter = 2
 custom_styles/panel = SubResource( 1 )
 
 [node name="Amount" type="Label" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )

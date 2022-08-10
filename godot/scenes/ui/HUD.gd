@@ -11,7 +11,8 @@ onready var result_panel = $ResultPanel
 onready var tween = $Tween
 onready var lang_btn = $VBoxC/MenuPanel/VBoxC/HBoxCButton/Languages
 onready var dialog = $DialogPanel
-onready var notification_c = $NotificationContainer
+onready var notification_spawner = $NotificationSpawner
+onready var shop_panel = $ShopPanel
 
 
 func _ready():
@@ -30,7 +31,7 @@ func _ready():
 
 
 func add_notification(p_text : String):
-	notification_c.add_notification(p_text)
+	notification_spawner.add_notification(p_text)
 
 
 func show_result_panel():
@@ -63,6 +64,13 @@ func _hide_menu():
 	
 	get_tree().paused = false
 	$BlurShader.change_blur_amount(0, 0.5)
+
+
+func show_shop_panel():
+	$Joystick.hide()
+	shop_panel.show_elegantly()
+	get_tree().paused = true
+	$BlurShader.change_blur_amount(2, 0.5)
 
 
 func _on_Menu_toggled(button_pressed):

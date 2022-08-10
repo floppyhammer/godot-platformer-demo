@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://tres/default_font_24.tres" type="DynamicFont" id=2]
+[ext_resource path="res://tres/default_font_32.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/ui/icons/icon_heart.png" type="Texture" id=3]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=4]
 [ext_resource path="res://scenes/ui/InventoryItem.tscn" type="PackedScene" id=5]
@@ -12,18 +12,18 @@ content_margin_left = 16.0
 content_margin_right = 16.0
 content_margin_top = 16.0
 content_margin_bottom = 16.0
-bg_color = Color( 1, 1, 1, 0.196078 )
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxEmpty" id=1]
-content_margin_left = 32.0
-content_margin_right = 32.0
-content_margin_top = 32.0
-content_margin_bottom = 32.0
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 16.0
+content_margin_bottom = 16.0
 
 [node name="MenuStatusPanel" type="HBoxContainer"]
 margin_right = 1080.0
@@ -34,7 +34,7 @@ theme = ExtResource( 4 )
 custom_constants/separation = 16
 
 [node name="VBoxC" type="VBoxContainer" parent="."]
-margin_right = 380.0
+margin_right = 532.0
 margin_bottom = 532.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -45,13 +45,13 @@ __meta__ = {
 
 [node name="HBox" type="HBoxContainer" parent="VBoxC"]
 margin_top = 166.0
-margin_right = 380.0
+margin_right = 532.0
 margin_bottom = 366.0
 alignment = 1
 
 [node name="Grid" type="GridContainer" parent="VBoxC/HBox"]
-margin_left = 124.0
-margin_right = 256.0
+margin_left = 200.0
+margin_right = 332.0
 margin_bottom = 200.0
 columns = 2
 
@@ -111,13 +111,14 @@ align = 1
 valign = 1
 
 [node name="Collections" type="VBoxContainer" parent="."]
-margin_left = 396.0
-margin_right = 684.0
+margin_left = 548.0
+margin_right = 1080.0
 margin_bottom = 532.0
+size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="Label" type="Label" parent="Collections"]
-margin_right = 288.0
+margin_right = 532.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 0, 48 )
 text = "Collections"
@@ -126,8 +127,8 @@ valign = 1
 
 [node name="PanelC" type="PanelContainer" parent="Collections"]
 margin_top = 48.0
-margin_right = 288.0
-margin_bottom = 532.0
+margin_right = 532.0
+margin_bottom = 404.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 3 )
@@ -135,8 +136,8 @@ custom_styles/panel = SubResource( 3 )
 [node name="ScrollC" type="ScrollContainer" parent="Collections/PanelC"]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 272.0
-margin_bottom = 468.0
+margin_right = 516.0
+margin_bottom = 340.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 __meta__ = {
@@ -144,266 +145,276 @@ __meta__ = {
 }
 
 [node name="GridC" type="GridContainer" parent="Collections/PanelC/ScrollC"]
-margin_right = 256.0
-margin_bottom = 1024.0
+margin_right = 500.0
+margin_bottom = 736.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/vseparation = 32
 custom_constants/hseparation = 32
-columns = 3
+columns = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ArchiveItem1" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_right = 64.0
+margin_left = 18.0
+margin_right = 82.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem2" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 96.0
-margin_right = 160.0
+margin_left = 151.0
+margin_right = 215.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem3" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 192.0
-margin_right = 256.0
+margin_left = 284.0
+margin_right = 348.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem4" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_top = 96.0
-margin_right = 64.0
-margin_bottom = 160.0
+margin_left = 417.0
+margin_right = 481.0
+margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem5" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 96.0
+margin_left = 18.0
 margin_top = 96.0
-margin_right = 160.0
+margin_right = 82.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem6" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 192.0
+margin_left = 151.0
 margin_top = 96.0
-margin_right = 256.0
+margin_right = 215.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem7" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_top = 192.0
-margin_right = 64.0
-margin_bottom = 256.0
+margin_left = 284.0
+margin_top = 96.0
+margin_right = 348.0
+margin_bottom = 160.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem8" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 96.0
-margin_top = 192.0
-margin_right = 160.0
-margin_bottom = 256.0
+margin_left = 417.0
+margin_top = 96.0
+margin_right = 481.0
+margin_bottom = 160.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem9" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 192.0
+margin_left = 18.0
 margin_top = 192.0
-margin_right = 256.0
+margin_right = 82.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem10" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_top = 288.0
-margin_right = 64.0
-margin_bottom = 352.0
+margin_left = 151.0
+margin_top = 192.0
+margin_right = 215.0
+margin_bottom = 256.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem11" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 96.0
-margin_top = 288.0
-margin_right = 160.0
-margin_bottom = 352.0
+margin_left = 284.0
+margin_top = 192.0
+margin_right = 348.0
+margin_bottom = 256.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem12" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 192.0
-margin_top = 288.0
-margin_right = 256.0
-margin_bottom = 352.0
+margin_left = 417.0
+margin_top = 192.0
+margin_right = 481.0
+margin_bottom = 256.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem13" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_top = 384.0
-margin_right = 64.0
-margin_bottom = 448.0
+margin_left = 18.0
+margin_top = 288.0
+margin_right = 82.0
+margin_bottom = 352.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem14" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 96.0
-margin_top = 384.0
-margin_right = 160.0
-margin_bottom = 448.0
+margin_left = 151.0
+margin_top = 288.0
+margin_right = 215.0
+margin_bottom = 352.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem15" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 192.0
-margin_top = 384.0
-margin_right = 256.0
-margin_bottom = 448.0
+margin_left = 284.0
+margin_top = 288.0
+margin_right = 348.0
+margin_bottom = 352.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem16" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_top = 480.0
-margin_right = 64.0
-margin_bottom = 544.0
+margin_left = 417.0
+margin_top = 288.0
+margin_right = 481.0
+margin_bottom = 352.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem17" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 96.0
-margin_top = 480.0
-margin_right = 160.0
-margin_bottom = 544.0
+margin_left = 18.0
+margin_top = 384.0
+margin_right = 82.0
+margin_bottom = 448.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem18" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 192.0
-margin_top = 480.0
-margin_right = 256.0
-margin_bottom = 544.0
+margin_left = 151.0
+margin_top = 384.0
+margin_right = 215.0
+margin_bottom = 448.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem19" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_top = 576.0
-margin_right = 64.0
-margin_bottom = 640.0
+margin_left = 284.0
+margin_top = 384.0
+margin_right = 348.0
+margin_bottom = 448.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem20" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 96.0
-margin_top = 576.0
-margin_right = 160.0
-margin_bottom = 640.0
+margin_left = 417.0
+margin_top = 384.0
+margin_right = 481.0
+margin_bottom = 448.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem21" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 192.0
-margin_top = 576.0
-margin_right = 256.0
-margin_bottom = 640.0
+margin_left = 18.0
+margin_top = 480.0
+margin_right = 82.0
+margin_bottom = 544.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem22" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_top = 672.0
-margin_right = 64.0
-margin_bottom = 736.0
+margin_left = 151.0
+margin_top = 480.0
+margin_right = 215.0
+margin_bottom = 544.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem23" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 96.0
-margin_top = 672.0
-margin_right = 160.0
-margin_bottom = 736.0
+margin_left = 284.0
+margin_top = 480.0
+margin_right = 348.0
+margin_bottom = 544.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem24" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 192.0
-margin_top = 672.0
-margin_right = 256.0
-margin_bottom = 736.0
+margin_left = 417.0
+margin_top = 480.0
+margin_right = 481.0
+margin_bottom = 544.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem25" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_top = 768.0
-margin_right = 64.0
-margin_bottom = 832.0
+margin_left = 18.0
+margin_top = 576.0
+margin_right = 82.0
+margin_bottom = 640.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem26" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 96.0
-margin_top = 768.0
-margin_right = 160.0
-margin_bottom = 832.0
+margin_left = 151.0
+margin_top = 576.0
+margin_right = 215.0
+margin_bottom = 640.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem27" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 192.0
-margin_top = 768.0
-margin_right = 256.0
-margin_bottom = 832.0
+margin_left = 284.0
+margin_top = 576.0
+margin_right = 348.0
+margin_bottom = 640.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem28" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_top = 864.0
-margin_right = 64.0
-margin_bottom = 928.0
+margin_left = 417.0
+margin_top = 576.0
+margin_right = 481.0
+margin_bottom = 640.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem29" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 96.0
-margin_top = 864.0
-margin_right = 160.0
-margin_bottom = 928.0
+margin_left = 18.0
+margin_top = 672.0
+margin_right = 82.0
+margin_bottom = 736.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem30" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 192.0
-margin_top = 864.0
-margin_right = 256.0
-margin_bottom = 928.0
+margin_left = 151.0
+margin_top = 672.0
+margin_right = 215.0
+margin_bottom = 736.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem31" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_top = 960.0
-margin_right = 64.0
-margin_bottom = 1024.0
+margin_left = 284.0
+margin_top = 672.0
+margin_right = 348.0
+margin_bottom = 736.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
 [node name="ArchiveItem32" parent="Collections/PanelC/ScrollC/GridC" instance=ExtResource( 5 )]
-margin_left = 96.0
-margin_top = 960.0
-margin_right = 160.0
-margin_bottom = 1024.0
+margin_left = 417.0
+margin_top = 672.0
+margin_right = 481.0
+margin_bottom = 736.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
-[node name="DescriptionLabel" type="RichTextLabel" parent="."]
-margin_left = 700.0
-margin_right = 1080.0
+[node name="DescriptionLabel" type="RichTextLabel" parent="Collections"]
+margin_top = 404.0
+margin_right = 532.0
 margin_bottom = 532.0
+rect_min_size = Vector2( 0, 128 )
 size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/normal_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
 custom_styles/normal = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "Pupu is a little dragon who aspires to become a chef.

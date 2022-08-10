@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/gameplay/MainCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_3/BG_3.png" type="Texture" id=2]
@@ -11,7 +11,8 @@
 [ext_resource path="res://scenes/objects/EndPoint.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/objects/Checkpoint.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/levels/Level0.gd" type="Script" id=11]
-[ext_resource path="res://scenes/characters/NPC.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/characters/NpcBasserby.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/characters/NpcShopkeeper.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/ui/icon.png" type="Texture" id=14]
 [ext_resource path="res://scenes/vfx/GodRays.gdshader" type="Shader" id=15]
 [ext_resource path="res://assets/levels/factory/background/4.png" type="Texture" id=16]
@@ -139,8 +140,11 @@ position = Vector2( 557, 104 )
 [node name="EndPoint" parent="FixedBack" instance=ExtResource( 9 )]
 position = Vector2( 268, 94 )
 
-[node name="NPC" parent="FixedBack" instance=ExtResource( 12 )]
-position = Vector2( 474, 100 )
+[node name="NpcBasserby" parent="FixedBack" instance=ExtResource( 12 )]
+position = Vector2( 662, 100 )
+
+[node name="NpcShopkeeper" parent="FixedBack" instance=ExtResource( 13 )]
+position = Vector2( 601, 100 )
 
 [node name="Dynamic" type="Node2D" parent="."]
 
