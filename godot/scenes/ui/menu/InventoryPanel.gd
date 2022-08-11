@@ -1,25 +1,26 @@
 extends Panel
 
+
 var is_appearing = false
 
 var tab_btns_group = ButtonGroup.new()
 
-onready var tab_container = $HBoxC/TabC
+onready var tab_container = $HBox/Tabs
 
-onready var guardian_page = $HBoxC/TabC/TerminalGuardian
-onready var items_page = $HBoxC/TabC/TerminalItems
-onready var achievements_page = $HBoxC/TabC/TerminalAchievements
+onready var status_tab = $HBox/Tabs/TabStatus
+onready var items_tab = $HBox/Tabs/TabItems
+onready var achievements_tab = $HBox/Tabs/TabAchievements
 
-onready var guardians_btn = $HBoxC/VBoxC/Guardians
-onready var items_btn = $HBoxC/VBoxC/Items
-onready var achievements_btn = $HBoxC/VBoxC/Achievements
+onready var status_btn = $HBox/TabButtons/Status
+onready var items_btn = $HBox/TabButtons/Items
+onready var achievements_btn = $HBox/TabButtons/Achievements
 
 onready var tween = $Tween
-onready var panel = $HBoxC
+onready var tab_btns = $HBox/TabButtons
 
 
 func _ready():
-	for child in $HBoxC/VBoxC.get_children():
+	for child in tab_btns.get_children():
 		if child.name != "Close":
 			child.group = tab_btns_group
 
@@ -34,12 +35,12 @@ func show_elegantly():
 	tween.interpolate_property(self, "modulate", modulate, Color.white, 0.2)
 	tween.start()
 	
-	guardian_page.reset()
-	items_page.reset()
-	achievements_page.reset()
+	status_tab.reset()
+	items_tab.reset()
+	achievements_tab.reset()
 	
 	tab_container.current_tab = 0
-	guardians_btn.pressed = true
+	status_btn.pressed = true
 
 
 func hide_elegantly():

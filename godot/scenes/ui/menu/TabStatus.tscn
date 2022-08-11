@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://tres/default_font_32.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/ui/menu/TabStatus.gd" type="Script" id=1]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=3]
-[ext_resource path="res://assets/ui/icons/item_3.png" type="Texture" id=5]
-[ext_resource path="res://scenes/ui/TerminalGuardian.gd" type="Script" id=6]
-[ext_resource path="res://tres/default_font_16.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/ui/icons/icon_heart.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/icons/sunflower.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/icons/axe.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/icons/item_3.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.145098, 0.0745098, 0.101961, 1 )
@@ -19,7 +20,7 @@ content_margin_right = 32.0
 content_margin_top = 32.0
 content_margin_bottom = 32.0
 
-[node name="TerminalGuardian" type="MarginContainer"]
+[node name="TabStatus" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 340.0
@@ -31,7 +32,7 @@ custom_constants/margin_right = 16
 custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
-script = ExtResource( 6 )
+script = ExtResource( 1 )
 
 [node name="VBoxC" type="VBoxContainer" parent="."]
 margin_left = 16.0
@@ -44,25 +45,25 @@ __meta__ = {
 
 [node name="HBoxC" type="HBoxContainer" parent="VBoxC"]
 margin_right = 550.0
-margin_bottom = 343.0
+margin_bottom = 200.0
 size_flags_vertical = 3
 
 [node name="VBoxC" type="VBoxContainer" parent="VBoxC/HBoxC"]
 margin_right = 273.0
-margin_bottom = 343.0
+margin_bottom = 200.0
 size_flags_horizontal = 3
 custom_constants/separation = 16
 alignment = 1
 
 [node name="Portrait" type="TextureRect" parent="VBoxC/HBoxC/VBoxC"]
-margin_left = 40.0
-margin_top = 49.0
-margin_right = 232.0
-margin_bottom = 241.0
-rect_min_size = Vector2( 192, 192 )
+margin_left = 72.0
+margin_top = 10.0
+margin_right = 200.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 128, 128 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 expand = true
 stretch_mode = 6
 
@@ -71,15 +72,12 @@ show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NameLabel" type="Label" parent="VBoxC/HBoxC/VBoxC"]
 margin_left = 40.0
-margin_top = 257.0
+margin_top = 154.0
 margin_right = 232.0
-margin_bottom = 293.0
+margin_bottom = 190.0
 rect_min_size = Vector2( 192, 0 )
 size_flags_horizontal = 4
 text = "KTMK2"
@@ -100,13 +98,81 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DescriptionLabel" type="RichTextLabel" parent="VBoxC/HBoxC"]
+[node name="HBox" type="HBoxContainer" parent="VBoxC/HBoxC"]
 margin_left = 277.0
+margin_right = 550.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Grid" type="GridContainer" parent="VBoxC/HBoxC/HBox"]
+margin_left = 70.0
+margin_right = 202.0
+margin_bottom = 200.0
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxC/HBoxC/HBox/Grid"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxC/HBoxC/HBox/Grid"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxC/HBoxC/HBox/Grid"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="Label2" type="Label" parent="VBoxC/HBoxC/HBox/Grid"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxC/HBoxC/HBox/Grid"]
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 64, 64 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="Label3" type="Label" parent="VBoxC/HBoxC/HBox/Grid"]
+margin_left = 68.0
+margin_top = 136.0
+margin_right = 132.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 64, 64 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="VBoxC"]
+margin_top = 204.0
 margin_right = 550.0
 margin_bottom = 343.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/normal_font = ExtResource( 7 )
 custom_styles/normal = SubResource( 3 )
 bbcode_enabled = true
 bbcode_text = "Pupu is a little dragon who aspires to become a chef.
@@ -118,12 +184,12 @@ Skill: x1.5 earned coins"
 
 [node name="HBoxC2" type="HBoxContainer" parent="VBoxC"]
 visible = false
-margin_top = 311.0
-margin_right = 582.0
-margin_bottom = 375.0
+margin_top = 279.0
+margin_right = 550.0
+margin_bottom = 343.0
 
 [node name="Last" type="Button" parent="VBoxC/HBoxC2"]
-margin_right = 191.0
+margin_right = 180.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 3
@@ -134,12 +200,11 @@ __meta__ = {
 }
 
 [node name="NoLabel" type="Label" parent="VBoxC/HBoxC2"]
-margin_left = 195.0
-margin_right = 386.0
+margin_left = 184.0
+margin_right = 365.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
 text = "1"
 align = 1
 valign = 1
@@ -148,8 +213,8 @@ __meta__ = {
 }
 
 [node name="Next" type="Button" parent="VBoxC/HBoxC2"]
-margin_left = 390.0
-margin_right = 582.0
+margin_left = 369.0
+margin_right = 550.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 3

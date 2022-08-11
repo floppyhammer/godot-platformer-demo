@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/ui/InventoryItem.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/ui/TerminalAchievements.gd" type="Script" id=2]
+[ext_resource path="res://scenes/ui/menu/InventoryItem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/menu/TabAchievements.gd" type="Script" id=2]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=3]
 
 [node name="TerminalAchievements" type="MarginContainer"]

@@ -5,14 +5,15 @@ var level_progress = 0
 
 var is_menu_shown = false
 
-onready var menu_btn = $VBoxC/MarginC/HBoxC/Menu
-onready var menu_panel = $VBoxC/MenuPanel
+onready var menu_btn = $MenuAndStatus/VBox/StatusBar/Menu
+onready var menu_panel = $MenuAndStatus/VBox/MenuPanel
 onready var result_panel = $ResultPanel
 onready var tween = $Tween
-onready var lang_btn = $VBoxC/MenuPanel/VBoxC/HBoxCButton/Languages
+onready var lang_btn = $MenuPanel/VBox/Options/Language
 onready var dialog = $DialogPanel
 onready var notification_spawner = $NotificationSpawner
 onready var shop_panel = $ShopPanel
+onready var joystick = $Joystick
 
 
 func _ready():
@@ -35,14 +36,15 @@ func add_notification(p_text : String):
 
 
 func show_result_panel():
-	# Hide menu buttons.
-	menu_btn.hide()
+	# Hide menu panel.
 	menu_panel.hide()
 	result_panel.show_when_level_is_clear("Level 0", 10, 10)
 
 
 func _show_menu():
-	$Joystick.hide()
+	$BlurShader.change_blur_amount(2, 0.5)
+	
+	joystick.hide()
 	
 	# Show menu panel with transition.
 	menu_panel.show()
@@ -51,11 +53,12 @@ func _show_menu():
 	tween.start()
 	
 	get_tree().paused = true
-	$BlurShader.change_blur_amount(2, 0.5)
 
 
 func _hide_menu():
-	$Joystick.show()
+	$BlurShader.change_blur_amount(0, 0.5)
+	
+	joystick.show()
 	
 	# Hide menu panel with transition.
 	tween.remove_all()
@@ -63,14 +66,17 @@ func _hide_menu():
 	tween.start()
 	
 	get_tree().paused = false
-	$BlurShader.change_blur_amount(0, 0.5)
 
 
 func show_shop_panel():
-	$Joystick.hide()
-	shop_panel.show_elegantly()
-	get_tree().paused = true
 	$BlurShader.change_blur_amount(2, 0.5)
+	
+	joystick.hide()
+	
+	menu_panel.hide()
+	shop_panel.show_elegantly()
+	
+	get_tree().paused = true
 
 
 func _on_Menu_toggled(button_pressed):
@@ -107,7 +113,7 @@ func _on_SFX_toggled(button_pressed):
 
 
 func _on_Music_toggled(button_pressed):
-	var bgm_player = get_node_or_null("/root/Main/BGMPlayer")
+	var bgm_player = get_node_or_null("/root/Main/BgmPlayer")
 	
 	if bgm_player:
 		if button_pressed:
@@ -122,7 +128,3 @@ func _when_locale_changed():
 
 func _update_language():
 	pass
-
-
-func _on_Menu_pressed():
-	pass # Replace with function body.
