@@ -19,7 +19,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 1, 1, 1, 1 )
 
-[node name="TerminalItems" type="MarginContainer"]
+[node name="TabItems" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 449.0
@@ -32,9 +32,6 @@ custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ScrollC" type="ScrollContainer" parent="."]
 margin_left = 16.0
@@ -50,7 +47,7 @@ __meta__ = {
 
 [node name="GridC" type="GridContainer" parent="ScrollC"]
 margin_right = 431.0
-margin_bottom = 448.0
+margin_bottom = 340.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/vseparation = 32
@@ -60,159 +57,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ArchiveItem1" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 10.0
-margin_right = 74.0
+[node name="InventoryItem1" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 18.0
+margin_right = 82.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 
-[node name="ArchiveItem2" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 126.0
-margin_right = 190.0
+[node name="InventoryItem2" parent="ScrollC/GridC" instance=ExtResource( 1 )]
+margin_left = 150.0
+margin_right = 214.0
 margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem3" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 242.0
-margin_right = 306.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem4" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 357.0
-margin_right = 421.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem5" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 10.0
-margin_top = 96.0
-margin_right = 74.0
-margin_bottom = 160.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem6" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 126.0
-margin_top = 96.0
-margin_right = 190.0
-margin_bottom = 160.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem7" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 242.0
-margin_top = 96.0
-margin_right = 306.0
-margin_bottom = 160.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem8" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 357.0
-margin_top = 96.0
-margin_right = 421.0
-margin_bottom = 160.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem9" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 10.0
-margin_top = 192.0
-margin_right = 74.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem10" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 126.0
-margin_top = 192.0
-margin_right = 190.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem11" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 242.0
-margin_top = 192.0
-margin_right = 306.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem12" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 357.0
-margin_top = 192.0
-margin_right = 421.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem13" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 10.0
-margin_top = 288.0
-margin_right = 74.0
-margin_bottom = 352.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem14" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 126.0
-margin_top = 288.0
-margin_right = 190.0
-margin_bottom = 352.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem15" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 242.0
-margin_top = 288.0
-margin_right = 306.0
-margin_bottom = 352.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem16" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 357.0
-margin_top = 288.0
-margin_right = 421.0
-margin_bottom = 352.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem17" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 10.0
-margin_top = 384.0
-margin_right = 74.0
-margin_bottom = 448.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem18" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 126.0
-margin_top = 384.0
-margin_right = 190.0
-margin_bottom = 448.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem19" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 242.0
-margin_top = 384.0
-margin_right = 306.0
-margin_bottom = 448.0
-rect_min_size = Vector2( 64, 64 )
-size_flags_vertical = 4
-
-[node name="ArchiveItem20" parent="ScrollC/GridC" instance=ExtResource( 1 )]
-margin_left = 357.0
-margin_top = 384.0
-margin_right = 421.0
-margin_bottom = 448.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_vertical = 4
 

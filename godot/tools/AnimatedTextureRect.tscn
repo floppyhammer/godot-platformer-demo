@@ -1,6 +1,6 @@
 [gd_scene load_steps=64 format=2]
 
-[ext_resource path="res://scenes/tools/AnimatedTextureRect.gd" type="Script" id=1]
+[ext_resource path="res://tools/AnimatedTextureRect.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/emotion_bubbles.png" type="Texture" id=2]
 
 [sub_resource type="Image" id=62]

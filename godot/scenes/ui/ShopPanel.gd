@@ -6,6 +6,8 @@ onready var description_label = $Panel/Margin/VBox/Description
 onready var buy_btn = $Panel/Margin/VBox/VBox/Buy
 onready var coin_label = $Panel/Margin/VBox/VBox/CoinLabel
 
+signal when_hiden
+
 
 func _reload():
 	# Translation
@@ -15,15 +17,15 @@ func _reload():
 	description_label.bbcode_text = ""
 	
 	var db = Global.item_db
-	var progress = Global.item_progress
+	var owned_items = Global.save_data["owned_items"]
 	
-	coin_label.text = str(Global.get_coin())
+	coin_label.text = str(Global.get_coin_count())
 	
 	list.unselect_all()
 	list.clear()
 	
 	for key in db:
-		var amount = progress[key]["amount"]
+		var amount = owned_items[key]["amount"]
 		var item_name = db[key]["name_%s" % TranslationServer.get_locale()] + " (%d)" % amount
 		list.add_item(item_name, load(db[key]["texture"]))
 		list.set_item_metadata(list.get_item_count() - 1, key)
@@ -42,16 +44,15 @@ func _on_Buy_pressed():
 	if list.get_selected_items().size() == 0: return
 	
 	var item_key = list.get_item_metadata(list.get_selected_items()[0])
-	var progress = Global.item_progress
+	var owned_items = Global.save_data["owned_items"]
 	var price = Global.item_db[item_key]["price"]
 	
-	if Global.get_coin() < price:
-		description_label.bbcode_text = "You cannot afford that!"
+	if Global.get_coin_count() < price:
+		description_label.show()
+		Global.hud.add_notification("You can't afford this!")
 	else:
-		Global.update_coin(-price)
-		progress[item_key]["amount"] += 1
-	
-	_reload()
+		Global.update_coin_count(-price)
+		owned_items[item_key]["amount"] += 1
 
 
 func show_elegantly():
@@ -74,3 +75,4 @@ func hide_elegantly():
 
 func _on_ShopPage_pressed():
 	hide_elegantly()
+	emit_signal("when_hiden")

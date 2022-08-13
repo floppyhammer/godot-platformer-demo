@@ -62,8 +62,9 @@ func update_level_buttons():
 		
 		# Get star number.
 		var star_number = 0
-		if Global.level_progress.has(key):
-			star_number = Global.level_progress[key]["stars"]
+		var level_progress = Global.get_level_progress()
+		if level_progress.has(key):
+			star_number = level_progress[key]["stars"]
 		
 		# Disable locked levels.
 		var playable = false

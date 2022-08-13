@@ -3,7 +3,8 @@
 [ext_resource path="res://scenes/ui/GeneralButton.gd" type="Script" id=1]
 [ext_resource path="res://tres/spring.anim" type="Animation" id=2]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=3]
-[ext_resource path="res://assets/ui/buttons/button_bg.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/buttons/level_button_normal.png" type="Texture" id=5]
+
 
 [node name="GeneralButton" type="TextureButton"]
 pause_mode = 2

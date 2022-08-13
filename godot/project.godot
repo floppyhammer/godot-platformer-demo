@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "TextureRect",
 "class": "AnimatedTextureRect",
 "language": "GDScript",
-"path": "res://scenes/tools/AnimatedTextureRect.gd"
+"path": "res://tools/AnimatedTextureRect.gd"
 }, {
 "base": "Reference",
 "class": "Authenticator",
@@ -34,10 +34,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/ui/GeneralButton.gd"
 }, {
-"base": "Node2D",
+"base": "Reference",
 "class": "GeometrySprite",
 "language": "GDScript",
-"path": "res://scenes/tools/GeometrySprite.gd"
+"path": "res://tools/GeometrySprite.gd"
 }, {
 "base": "Reference",
 "class": "NakamaAPI",

@@ -9,7 +9,7 @@ onready var menu_btn = $MenuAndStatus/VBox/StatusBar/Menu
 onready var menu_panel = $MenuAndStatus/VBox/MenuPanel
 onready var result_panel = $ResultPanel
 onready var tween = $Tween
-onready var lang_btn = $MenuPanel/VBox/Options/Language
+onready var lang_btn = $MenuAndStatus/VBox/MenuPanel/Options/Language
 onready var dialog = $DialogPanel
 onready var notification_spawner = $NotificationSpawner
 onready var shop_panel = $ShopPanel
@@ -73,10 +73,21 @@ func show_shop_panel():
 	
 	joystick.hide()
 	
+	menu_btn.hide()
 	menu_panel.hide()
 	shop_panel.show_elegantly()
 	
 	get_tree().paused = true
+
+
+func _on_ShopPanel_when_hiden():
+	$BlurShader.change_blur_amount(0, 0.5)
+	
+	joystick.show()
+	
+	menu_btn.show()
+	
+	get_tree().paused = false
 
 
 func _on_Menu_toggled(button_pressed):

@@ -1,45 +1,28 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tres/default_font_32.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/ui/buttons/button_locked.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/buttons/level_button_locked.png" type="Texture" id=2]
 [ext_resource path="res://scenes/ui/LevelButton.gd" type="Script" id=3]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=4]
-[ext_resource path="res://assets/ui/buttons/button_bg.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/buttons/level_button_normal.png" type="Texture" id=5]
 [ext_resource path="res://assets/ui/level_star.png" type="Texture" id=6]
-
-[sub_resource type="Animation" id=1]
-resource_name = "pressed"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0.9, 1.1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
-}
+[ext_resource path="res://assets/ui/buttons/level_button_pressed.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
 [node name="LevelButton" type="TextureButton"]
-margin_right = 48.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 48, 48 )
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 64, 64 )
 mouse_filter = 1
 size_flags_horizontal = 6
 theme = ExtResource( 4 )
 texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 7 )
 texture_disabled = ExtResource( 2 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 3 )
-
-[node name="AnimPlayer" type="AnimationPlayer" parent="."]
-anims/pressed = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
@@ -53,7 +36,7 @@ text = "1"
 align = 1
 valign = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBox" type="HBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -64,7 +47,7 @@ margin_right = 52.0
 margin_bottom = 31.0
 rect_min_size = Vector2( 0, 30 )
 
-[node name="Star1" type="TextureRect" parent="HBoxContainer"]
+[node name="Star1" type="TextureRect" parent="HBox"]
 margin_right = 32.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
@@ -73,7 +56,7 @@ texture = ExtResource( 6 )
 expand = true
 stretch_mode = 6
 
-[node name="Star2" type="TextureRect" parent="HBoxContainer"]
+[node name="Star2" type="TextureRect" parent="HBox"]
 margin_left = 36.0
 margin_right = 68.0
 margin_bottom = 32.0
@@ -83,7 +66,7 @@ texture = ExtResource( 6 )
 expand = true
 stretch_mode = 6
 
-[node name="Star3" type="TextureRect" parent="HBoxContainer"]
+[node name="Star3" type="TextureRect" parent="HBox"]
 margin_left = 72.0
 margin_right = 104.0
 margin_bottom = 32.0
@@ -92,5 +75,3 @@ size_flags_horizontal = 3
 texture = ExtResource( 6 )
 expand = true
 stretch_mode = 6
-
-[connection signal="pressed" from="." to="." method="_on_LevelButton_pressed"]

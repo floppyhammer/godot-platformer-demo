@@ -36,7 +36,7 @@
 [ext_resource path="res://assets/ui/joystick/left_pressed.png" type="Texture" id=36]
 [ext_resource path="res://assets/ui/joystick/up_pressed.png" type="Texture" id=37]
 [ext_resource path="res://assets/ui/joystick/up.png" type="Texture" id=38]
-[ext_resource path="res://scenes/tools/AnimatedTextureRect.gd" type="Script" id=39]
+[ext_resource path="res://tools/AnimatedTextureRect.gd" type="Script" id=39]
 [ext_resource path="res://assets/ui/heart_points.png" type="Texture" id=40]
 
 [sub_resource type="Animation" id=1]
@@ -847,3 +847,4 @@ size_flags_vertical = 3
 [connection signal="toggled" from="MenuAndStatus/VBox/MenuPanel/Options/SFX" to="." method="_on_SFX_toggled"]
 [connection signal="pressed" from="MenuAndStatus/VBox/MenuPanel/Options/Language" to="." method="_on_Languages_pressed"]
 [connection signal="pressed" from="MenuAndStatus/VBox/MenuPanel/Options/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="when_hiden" from="ShopPanel" to="." method="_on_ShopPanel_when_hiden"]

@@ -17,7 +17,7 @@ func _ready():
 
 func reset():
 	current_page = 0
-	_reload()
+	#_reload()
 
 
 func load_last():
@@ -54,7 +54,7 @@ func _reload():
 		var key = "null"
 		if list_index < db_key_list.size():
 			key = db_key_list[list_index]
-			
+		
 		var child = grid.get_child(i)
 		
 		if db.has(key):

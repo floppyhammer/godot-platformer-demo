@@ -4,30 +4,21 @@ extends Node
 var current_level = "1"
 var items_to_bring = ["", "", ""]
 
-# Databases
-var level_db : Dictionary
-var tips : Dictionary
-var block_db = {}
-var item_db = {}
-var gourmand_db = {}
-
 # Main node
 var main
 
+# Databases
+var level_db : Dictionary
+var item_db : Dictionary
+var tips : Dictionary
+
 # Save data
-var general = {
-	"coin": 0,
+var save_data = {
 	"locale": "en",
-	"selected_gourmand": "PUPU",
+	"coin": 0,
+	"owned_items": {},
 	"level_progress": {},
-	"gourmand_progress": {},
-	"block_progress": {},
-	"item_progress": {}
 }
-var level_progress = {}
-var gourmand_progress = {}
-var block_progress = {}
-var item_progress = {}
 
 # Runtime nodes.
 var hud
@@ -39,51 +30,43 @@ signal locale_changed
 
 func _ready():
 	# Register loggers
-	Logger.add_module("Level")
 	Logger.add_module("AdMob")
+	Logger.add_module("Global", Logger.VERBOSE)
 	
 	# Load dbs
 	level_db = JsonParser.read_data("res://dbs/levels.json")
-	block_db = JsonParser.read_data("res://dbs/blocks.json")
+	Logger.verbose("Level db: " + str(level_db), "Global")
 	item_db = JsonParser.read_data("res://dbs/items.json")
-	gourmand_db = JsonParser.read_data("res://dbs/gourmands.json")
+	Logger.verbose("Item db: " + str(item_db), "Global")
 	
-	# Load settings locally
-	var result = load_general_save_data()
+	# Load save data from file.
+	var result = read_save_data()
 	if result:
-		# Load progress
-		general = result
-		level_progress = general["level_progress"]
-		gourmand_progress = general["gourmand_progress"]
-		block_progress = general["block_progress"]
-		item_progress = general["item_progress"]
+		Logger.info("Loaded local save file.", "Global")
+		save_data = result
 	else:
-		# Create new progress
-		_set_init_progress()
+		Logger.info("Loading local save file failed, created a new one.", "Global")
+		# Create new save data.
+		save_data = _new_save_data()
 	
 	# Set locale
-	change_locale(general["locale"])
+	change_locale(save_data["locale"])
 	
 	#NakamaConnection.connect("user_data_retrived", self, "_when_user_data_retrieved")
 
 
-func _set_init_progress():
+func _new_save_data() -> Dictionary:
+	var new_save_data = save_data
+	
 	# Create new level progress
 	for key in level_db:
-		level_progress[key] = {"stars": 0}
-
-	# Create new block progress
-	for key in block_db:
-		block_progress[key] = {"discovered": false}
+		new_save_data["level_progress"][key] = {"stars": 0}
 	
 	# Create new item progress
 	for key in item_db:
-		item_progress[key] = {"amount": 1}
-	
-	# Create new gourmand progress
-	for key in gourmand_db:
-		gourmand_progress[key] = {"possessed": false}
-	gourmand_progress["PUPU"]["possessed"] = true
+		new_save_data["owned_items"][key] = {"amount": 1}
+		
+	return new_save_data
 
 
 #func _when_user_data_retrieved():
@@ -109,50 +92,38 @@ func _set_init_progress():
 #	emit_signal("progress_downloaded")
 
 
-func update_coin(change):
-	# New coin number
-	general["coin"] += change
+func update_coin_count(change):
+	# New coin number.
+	save_data["coin"] += change
 
 
-func get_coin():
-	return general["coin"]
+func get_coin_count():
+	return save_data["coin"]
 
 
-func get_selected_gourmand():
-	return general["selected_gourmand"]
+func update_level_progress(which_level, star_count):
+	save_data["level_progress"][which_level] = {"stars": star_count}
 
 
-func update_progress(which_level, stars):
-	# If save data does not have such a level included
-	level_progress[which_level] = {"stars": stars}
-
-
-func upload_progress():
-	save_general_save_data()
-#	var user_data = {
-#		"level_progress": level_progress,
-#		"block_progress": block_progress,
-#	}
-#
+func upload_save_data():
+	pass
 #	NakamaConnection.update_data("user_data", "basic", user_data)
 
 
 func change_locale(code):
-	# Set language
+	# Set language.
 	TranslationServer.set_locale(code)
+	save_data["locale"] = TranslationServer.get_locale()
 	emit_signal("locale_changed")
 
 
-func save_general_save_data():
-	general["level_progress"] = level_progress
-	general["gourmand_progress"] = gourmand_progress
-	general["block_progress"] = block_progress
-	general["item_progress"] = item_progress
-	general["locale"] = TranslationServer.get_locale()
-	JsonParser.write_data("user://general.json", general)
+func write_save_data():
+	JsonParser.write_data("user://save.json", save_data)
 
 
-func load_general_save_data():
-	var result = JsonParser.read_data("user://general.json")
-	
-	return result
+func read_save_data():
+	return JsonParser.read_data("user://save.json")
+
+
+func get_level_progress():
+	return save_data["level_progress"]

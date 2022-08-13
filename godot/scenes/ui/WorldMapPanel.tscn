@@ -44,59 +44,52 @@ expand = true
 stretch_mode = 5
 
 [node name="LevelButton1" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
-margin_left = 330.0
-margin_top = 342.0
-margin_right = 378.0
-margin_bottom = 390.0
+margin_left = 349.0
+margin_top = 333.0
+margin_right = 413.0
+margin_bottom = 397.0
 
 [node name="LevelButton2" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
-margin_left = 353.0
-margin_top = 423.0
-margin_right = 401.0
-margin_bottom = 471.0
+margin_left = 389.0
+margin_top = 478.0
+margin_right = 453.0
+margin_bottom = 542.0
 level_id = "2"
 
 [node name="LevelButton3" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
-margin_left = 420.0
-margin_top = 701.0
-margin_right = 468.0
-margin_bottom = 749.0
+margin_left = 413.0
+margin_top = 718.0
+margin_right = 477.0
+margin_bottom = 782.0
 level_id = "3"
 
 [node name="LevelButton4" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
-margin_left = 408.504
-margin_top = 829.746
-margin_right = 456.504
-margin_bottom = 877.746
+margin_left = 650.0
+margin_top = 720.0
+margin_right = 714.0
+margin_bottom = 784.0
 level_id = "4"
 
 [node name="LevelButton5" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
-margin_left = 644.005
-margin_top = 880.835
-margin_right = 692.005
-margin_bottom = 928.835
+margin_left = 848.0
+margin_top = 682.0
+margin_right = 912.0
+margin_bottom = 746.0
 level_id = "5"
 
 [node name="LevelButton6" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
-margin_left = 720.679
-margin_top = 687.029
-margin_right = 768.679
-margin_bottom = 735.029
+margin_left = 534.0
+margin_top = 549.0
+margin_right = 598.0
+margin_bottom = 613.0
 level_id = "6"
 
 [node name="LevelButton7" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
-margin_left = 731.871
-margin_top = 478.272
-margin_right = 779.871
-margin_bottom = 526.272
+margin_left = 552.0
+margin_top = 392.0
+margin_right = 616.0
+margin_bottom = 456.0
 level_id = "7"
-
-[node name="LevelButton8" parent="ScrollC/WorldMap" instance=ExtResource( 1 )]
-margin_left = 888.268
-margin_top = 702.056
-margin_right = 936.268
-margin_bottom = 750.056
-level_id = "8"
 
 [node name="Objects" type="Control" parent="ScrollC"]
 

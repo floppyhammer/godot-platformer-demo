@@ -22,8 +22,6 @@ func _on_LevelsPanelC_level_pressed(level_name):
 	var level_config = Global.level_db[level_name]
 	Global.current_level = level_name
 	
-	var target_score = level_config["score"]
-	
 	# Change scene with transition
 	var main_node = get_node_or_null("/root/Main")
 	if main_node:
