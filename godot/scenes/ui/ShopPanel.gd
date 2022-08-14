@@ -65,8 +65,6 @@ func show_elegantly():
 
 
 func hide_elegantly():
-	Global.save_general_save_data()
-	
 	$Tween.interpolate_property(self, "modulate", modulate, Color.transparent, 0.2)
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
