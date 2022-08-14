@@ -5,18 +5,20 @@ var is_appearing = false
 
 var tab_btns_group = ButtonGroup.new()
 
-onready var tab_container = $HBox/Tabs
+onready var tab_container = $HBox/TabBg/Tabs
 
-onready var status_tab = $HBox/Tabs/TabStatus
-onready var items_tab = $HBox/Tabs/TabItems
-onready var achievements_tab = $HBox/Tabs/TabAchievements
+onready var status_tab = $HBox/TabBg/Tabs/TabStatus
+onready var items_tab = $HBox/TabBg/Tabs/TabItems
+onready var settings_tab = $HBox/TabBg/Tabs/TabSettings
 
 onready var status_btn = $HBox/TabButtons/Status
 onready var items_btn = $HBox/TabButtons/Items
-onready var achievements_btn = $HBox/TabButtons/Achievements
+onready var settings_btn = $HBox/TabButtons/Settings
 
 onready var tween = $Tween
 onready var tab_btns = $HBox/TabButtons
+
+signal when_closed
 
 
 func _ready():
@@ -37,21 +39,20 @@ func show_elegantly():
 	
 	status_tab.reset()
 	items_tab.reset()
-	achievements_tab.reset()
+	settings_tab.reset()
 	
 	tab_container.current_tab = 0
 	status_btn.pressed = true
 
 
 func hide_elegantly():
-	# Save settings locally
-	Global.save_general_save_data()
-	
 	is_appearing = false
 	
 	tween.remove_all()
 	tween.interpolate_property(self, "modulate", modulate, Color.transparent, 0.2)
 	tween.start()
+	
+	emit_signal("when_closed")
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -61,7 +62,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		hide()
 
 
-func _on_Guardians_pressed():
+func _on_Status_pressed():
 	tab_container.current_tab = 0
 
 
@@ -69,7 +70,7 @@ func _on_Items_pressed():
 	tab_container.current_tab = 1
 
 
-func _on_Achievements_pressed():
+func _on_Settings_pressed():
 	tab_container.current_tab = 2
 
 

@@ -47,8 +47,7 @@ func show_when_level_is_clear(level_name, star_count, coin_count):
 	#Global.update_coin(coin_count)
 	
 	# Update offline and online progress.
-	Global.update_progress(level_name, star_count)
-	Global.upload_progress()
+	Global.update_level_progress(level_name, star_count)
 	
 	# Update online leaderboard.
 	#NakamaConnection.update_leaderboard("金币", Global.coin_count)
@@ -65,7 +64,7 @@ func show_when_level_is_clear(level_name, star_count, coin_count):
 	fireworks_right.show()
 	fireworks_right.restart()
 	
-	Global.save_general_save_data()
+	Global.write_save_data()
 	
 	$ReturnTimer.start()
 	yield($ReturnTimer, "timeout")

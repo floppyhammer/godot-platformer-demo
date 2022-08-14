@@ -1,5 +1,6 @@
 extends ColorRect
 
+
 export (float, 0, 5, 0.1) var blur_amount = 2.0
 export (bool) var debug = false
 
