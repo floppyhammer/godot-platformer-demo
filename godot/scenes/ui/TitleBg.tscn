@@ -36,7 +36,7 @@ motion_mirroring = Vector2( 512, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 6 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1014, 256 )
+region_rect = Rect2( 0, 0, 1024, 256 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.2, 0 )
@@ -80,6 +80,8 @@ motion_mirroring = Vector2( 512, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
 texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1024, 256 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 14.9628, 0 )
