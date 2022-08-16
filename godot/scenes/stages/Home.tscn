@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/ui/WorldMapPanel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/gameplay/WorldMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/stages/Home.gd" type="Script" id=5]
 [ext_resource path="res://assets/ui/buttons/exit_pressed.png" type="Texture" id=6]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=7]
@@ -15,11 +15,17 @@ script = ExtResource( 5 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="WorldMapPanel" parent="." instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
 margin_right = 1280.0
 margin_bottom = 720.0
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1280, 720 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="WorldMap" parent="ViewportContainer/Viewport" instance=ExtResource( 2 )]
 
 [node name="MarginC" type="MarginContainer" parent="."]
 margin_right = 1280.0
@@ -51,5 +57,5 @@ texture_pressed = ExtResource( 6 )
 expand = true
 stretch_mode = 5
 
-[connection signal="level_pressed" from="WorldMapPanel" to="." method="_on_LevelsPanelC_level_pressed"]
+[connection signal="level_pressed" from="ViewportContainer/Viewport/WorldMap" to="." method="_on_LevelsPanelC_level_pressed"]
 [connection signal="pressed" from="MarginC/VBoxC/Exit" to="." method="_on_Exit_pressed"]

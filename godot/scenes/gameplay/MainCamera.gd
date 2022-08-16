@@ -77,18 +77,17 @@ func _input(event):
 		STATES.FOCUS:
 			pass
 		STATES.FREE:
-			pass
-#			if event is InputEventMouseButton:
-#				if event.button_index == BUTTON_WHEEL_UP:
-#					target_zoom -= 0.1
-#				elif event.button_index == BUTTON_WHEEL_DOWN:
-#					target_zoom += 0.1
-#
-#				target_zoom = clamp(target_zoom, min_zoom, max_zoom)
-#
-#			if event is InputEventMouseMotion:
-#				if Input.is_mouse_button_pressed(BUTTON_MIDDLE):
-#					position -= event.relative * zoom.x
+			if event is InputEventMouseButton:
+				if event.button_index == BUTTON_WHEEL_UP:
+					target_zoom -= 0.1
+				elif event.button_index == BUTTON_WHEEL_DOWN:
+					target_zoom += 0.1
+
+				target_zoom = clamp(target_zoom, min_zoom, max_zoom)
+
+			if event is InputEventMouseMotion:
+				if Input.is_mouse_button_pressed(BUTTON_MIDDLE):
+					position -= event.relative * zoom.x
 			
 	_limit_camera_position()
 

@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tres/default_font_32.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/ui/buttons/level_button_locked.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/buttons/lock.png" type="Texture" id=2]
 [ext_resource path="res://scenes/ui/LevelButton.gd" type="Script" id=3]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=4]
-[ext_resource path="res://assets/ui/buttons/level_button_normal.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/buttons/blank_pressed.png" type="Texture" id=5]
 [ext_resource path="res://assets/ui/level_star.png" type="Texture" id=6]
-[ext_resource path="res://assets/ui/buttons/level_button_pressed.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/buttons/blank.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -17,8 +17,8 @@ rect_min_size = Vector2( 64, 64 )
 mouse_filter = 1
 size_flags_horizontal = 6
 theme = ExtResource( 4 )
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 7 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 5 )
 texture_disabled = ExtResource( 2 )
 expand = true
 stretch_mode = 5
@@ -29,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/font_color = Color( 0.752941, 0.796078, 0.862745, 1 )
+custom_colors/font_color = Color( 0.768627, 0.603922, 0.423529, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = SubResource( 2 )
 text = "1"

@@ -1,25 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://assets/ui/buttons/play_pressed.png" type="Texture" id=1]
 [ext_resource path="res://scenes/stages/Title.gd" type="Script" id=2]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=3]
 [ext_resource path="res://tres/default_font_128.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/ui/buttons/play.png" type="Texture" id=5]
 [ext_resource path="res://scenes/ui/TitleBg.tscn" type="PackedScene" id=6]
-
-[sub_resource type="Animation" id=3]
-length = 3.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:self_modulate")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.392157 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [node name="Title" type="Control"]
 anchor_right = 1.0
@@ -39,39 +25,34 @@ render_target_update_mode = 3
 
 [node name="TitleBg" parent="ViewportContainer/Viewport" instance=ExtResource( 6 )]
 
-[node name="Title" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -380.0
-margin_top = -72.0
-margin_right = 380.0
-margin_bottom = 72.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 358.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.768627, 0.603922, 0.423529, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.0784314 )
 custom_constants/shadow_offset_x = 4
 custom_constants/shadow_offset_y = 4
 custom_fonts/font = ExtResource( 4 )
 text = "A Summer Trip"
-
-[node name="Tip" type="Label" parent="."]
-self_modulate = Color( 1, 1, 1, 0.392157 )
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -36.0
-text = "Tap anywhere"
 align = 1
-valign = 2
+valign = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Tip"]
-autoplay = "New Anim"
-"anims/New Anim" = SubResource( 3 )
-
-[node name="Start" type="Button" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Play" type="TextureButton" parent="VBoxContainer"]
+margin_left = 544.0
+margin_top = 501.0
+margin_right = 736.0
+margin_bottom = 581.0
+rect_min_size = Vector2( 192, 80 )
 size_flags_horizontal = 6
-flat = true
+size_flags_vertical = 6
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 1 )
+expand = true
 
-[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]

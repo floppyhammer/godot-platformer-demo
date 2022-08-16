@@ -1,6 +1,6 @@
 extends MarginContainer
 
-onready var level_map = $WorldMapPanel
+onready var level_map = $ViewportContainer/Viewport/WorldMap
 
 
 func _ready():
