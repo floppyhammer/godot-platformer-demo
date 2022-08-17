@@ -3,7 +3,7 @@ extends Control
 var thread = Thread.new()
 var is_appearing = false
 
-onready var transition = $Transition
+onready var transition_panel = $TransitionPanel
 
 signal loading_finished
 
@@ -15,15 +15,23 @@ func _ready():
 func load_scene(scene_path):
 	show()
 	
-	transition.appear()
-	yield(transition, "appeared")
+	transition_panel.appear()
+	yield(transition_panel, "appeared")
+	
+	# Change the scene only after the transition panel is fully opaque.
+	var running_node = get_node_or_null("/root/Main/Running")
+	if running_node:
+		for child in running_node.get_children():
+			child.queue_free()
 	
 	# Start background loading.
 	if thread.is_active(): return
 	thread.start(self, "_load_scene_in_thread", scene_path)
-	
 	yield(self, "loading_finished")
-	transition.disappear()
+	
+	transition_panel.disappear()
+	yield(transition_panel, "disappeared")
+	hide()
 
 
 func _when_loading_completed():
@@ -36,7 +44,7 @@ func _when_loading_completed():
 	emit_signal("loading_finished")
 
 
-# Threads always take one userdata argument
+# Threads always take one userdata argument.
 func _load_scene_in_thread(scene_path):
 	# Do heavy work
 	var level_scene = load(scene_path)
@@ -46,14 +54,3 @@ func _load_scene_in_thread(scene_path):
 	call_deferred("_when_loading_completed")
 	
 	return new_level
-
-
-func _on_Transition_appeared():
-	var running_node = get_node_or_null("/root/Main/Running")
-	if running_node:
-		for child in running_node.get_children():
-			child.queue_free()
-
-
-func _on_Transition_disappeared():
-	hide()

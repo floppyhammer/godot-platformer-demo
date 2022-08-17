@@ -46,11 +46,11 @@ custom_constants/separation = 16
 alignment = 2
 
 [node name="Exit" type="TextureButton" parent="MarginC/VBoxC"]
-margin_left = 1184.0
-margin_top = 624.0
+margin_left = 1152.0
+margin_top = 592.0
 margin_right = 1248.0
 margin_bottom = 688.0
-rect_min_size = Vector2( 64, 64 )
+rect_min_size = Vector2( 96, 96 )
 size_flags_horizontal = 8
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 6 )

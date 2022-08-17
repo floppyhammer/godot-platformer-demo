@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/ui/menu/TabStatus.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ui/buttons/tab_active.png" type="Texture" id=2]
 [ext_resource path="res://scenes/ui/menu/TabSettings.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/ui/buttons/blank.png" type="Texture" id=8]
-[ext_resource path="res://assets/ui/buttons/blank_pressed.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/buttons/tab.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/panel.png" type="Texture" id=5]
 [ext_resource path="res://scenes/ui/menu/MenuPanel.gd" type="Script" id=13]
 [ext_resource path="res://scenes/ui/menu/TabItems.tscn" type="PackedScene" id=14]
 
@@ -21,6 +22,13 @@ script = ExtResource( 13 )
 
 [node name="Tween" type="Tween" parent="."]
 
+[node name="LevelLabel" type="Label" parent="."]
+margin_right = 21.0
+margin_bottom = 14.0
+text = "1-1"
+align = 1
+valign = 1
+
 [node name="Close" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -36,13 +44,14 @@ margin_top = -197.5
 margin_right = 274.5
 margin_bottom = 197.5
 mouse_filter = 2
+custom_constants/separation = 0
 
 [node name="TabBg" type="NinePatchRect" parent="HBox"]
-margin_right = 481.0
+margin_right = 485.0
 margin_bottom = 395.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 11 )
+texture = ExtResource( 5 )
 patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
@@ -90,8 +99,8 @@ margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 toggle_mode = true
 pressed = true
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 11 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
 expand = true
 stretch_mode = 5
 
@@ -101,8 +110,8 @@ margin_right = 64.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 64, 64 )
 toggle_mode = true
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 11 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
 expand = true
 stretch_mode = 5
 
@@ -112,8 +121,8 @@ margin_right = 64.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 64, 64 )
 toggle_mode = true
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 11 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
 expand = true
 stretch_mode = 5
 

@@ -1,7 +1,6 @@
 extends Control
 
 onready var play_btn = $VBoxContainer/Play
-onready var tip_label = $Tip
 
 signal start_pressed
 

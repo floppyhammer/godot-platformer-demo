@@ -45,10 +45,10 @@ valign = 1
 
 [node name="Play" type="TextureButton" parent="VBoxContainer"]
 margin_left = 544.0
-margin_top = 501.0
+margin_top = 509.0
 margin_right = 736.0
-margin_bottom = 581.0
-rect_min_size = Vector2( 192, 80 )
+margin_bottom = 573.0
+rect_min_size = Vector2( 192, 64 )
 size_flags_horizontal = 6
 size_flags_vertical = 6
 texture_normal = ExtResource( 5 )

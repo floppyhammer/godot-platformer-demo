@@ -138,11 +138,11 @@ func _control():
 		return
 	
 	# ACT: Roll
-	if is_on_floor() and Input.is_action_just_pressed('roll'):
-		# Can roll only when running fast.
-		if abs(linear_velocity.x) > SPEED * 0.5:
-			anim_state_machine.travel('roll')
-			return
+#	if is_on_floor() and Input.is_action_just_pressed('roll'):
+#		# Can roll only when running fast.
+#		if abs(linear_velocity.x) > SPEED * 0.5:
+#			anim_state_machine.travel('roll')
+#			return
 	
 	# ANIM: Idle or run
 	if anim in interruptible_anims:

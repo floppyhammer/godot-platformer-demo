@@ -31,7 +31,7 @@ signal locale_changed
 func _ready():
 	# Register loggers
 	Logger.add_module("AdMob")
-	Logger.add_module("Global", Logger.VERBOSE)
+	Logger.add_module("Global", Logger.INFO)
 	
 	# Load dbs
 	level_db = JsonParser.read_data("res://dbs/levels.json")

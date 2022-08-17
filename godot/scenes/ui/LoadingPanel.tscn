@@ -1,14 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/ui/LoadingPanel.gd" type="Script" id=1]
-[ext_resource path="res://scenes/ui/TransitionEffect.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui/TransitionPanel.tscn" type="PackedScene" id=2]
 
 [node name="LoadingPanel" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="Transition" parent="." instance=ExtResource( 2 )]
-
-[connection signal="appeared" from="Transition" to="." method="_on_Transition_appeared"]
-[connection signal="disappeared" from="Transition" to="." method="_on_Transition_disappeared"]
+[node name="TransitionPanel" parent="." instance=ExtResource( 2 )]
