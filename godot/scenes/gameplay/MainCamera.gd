@@ -86,7 +86,7 @@ func _input(event):
 				target_zoom = clamp(target_zoom, min_zoom, max_zoom)
 
 			if event is InputEventMouseMotion:
-				if Input.is_mouse_button_pressed(BUTTON_MIDDLE):
+				if Input.is_mouse_button_pressed(BUTTON_LEFT):
 					position -= event.relative * zoom.x
 			
 	_limit_camera_position()

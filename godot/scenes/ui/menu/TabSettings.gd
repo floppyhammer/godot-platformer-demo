@@ -3,7 +3,7 @@ extends MarginContainer
 
 var languages_list = ["zh", "en"]
 
-onready var lang_btn = $VBox/Language
+onready var lang_btn = $HBox/Language
 
 
 func _on_SfxButton_toggled(button_pressed):

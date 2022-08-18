@@ -54,7 +54,7 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.12311
 
-[node name="NPC" type="KinematicBody2D"]
+[node name="Npc" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -64,7 +64,7 @@ disabled = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -2, -8 )
 frames = SubResource( 6 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="InteractionArea" type="Area2D" parent="."]

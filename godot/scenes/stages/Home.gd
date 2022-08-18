@@ -1,4 +1,4 @@
-extends MarginContainer
+extends Panel
 
 onready var level_map = $ViewportContainer/Viewport/WorldMap
 

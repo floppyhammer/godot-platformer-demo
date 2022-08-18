@@ -22,6 +22,7 @@ var save_data = {
 
 # Runtime nodes.
 var hud
+var player
 var current_camera
 
 signal progress_downloaded

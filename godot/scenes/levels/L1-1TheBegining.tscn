@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/gameplay/MainCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_3/BG_3.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_1/BG_1.png" type="Texture" id=4]
 [ext_resource path="res://scenes/characters/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ui/Hud.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/characters/Spirit.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/levels/factory/background/5.png" type="Texture" id=8]
 [ext_resource path="res://scenes/objects/EndPoint.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/objects/Checkpoint.tscn" type="PackedScene" id=10]
@@ -161,6 +160,7 @@ region_rect = Rect2( 0, 0, 1152, 324 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="FixedBack"]
 position = Vector2( 544, 114.973 )
+collision_layer = 3
 
 [node name="Polygon2D" type="Polygon2D" parent="FixedBack/StaticBody2D"]
 position = Vector2( 0, 60.3515 )
@@ -174,6 +174,7 @@ shape = SubResource( 2 )
 
 [node name="Obstacle" type="StaticBody2D" parent="FixedBack"]
 position = Vector2( 506, 92 )
+collision_layer = 3
 
 [node name="Polygon2D" type="Polygon2D" parent="FixedBack/Obstacle"]
 position = Vector2( 0, -1 )
@@ -184,8 +185,10 @@ polygon = PoolVector2Array( -363.395, -10.973, 364.605, -10.973, 364.605, 13.027
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FixedBack/Obstacle"]
 shape = SubResource( 6 )
 
-[node name="MovingPlatform" type="StaticBody2D" parent="FixedBack"]
+[node name="MovingPlatform" type="KinematicBody2D" parent="FixedBack"]
 position = Vector2( 66, -4 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="Polygon2D" type="Polygon2D" parent="FixedBack/MovingPlatform"]
 position = Vector2( 505.962, 82.286 )
@@ -203,9 +206,6 @@ autoplay = "New Anim"
 "anims/New Anim" = SubResource( 8 )
 anims/RESET = SubResource( 9 )
 
-[node name="Checkpoint" parent="FixedBack" instance=ExtResource( 10 )]
-position = Vector2( 557, 104 )
-
 [node name="EndPoint" parent="FixedBack" instance=ExtResource( 9 )]
 position = Vector2( 874, 97 )
 
@@ -220,15 +220,17 @@ position = Vector2( 394, 90 )
 
 [node name="Dynamic" type="Node2D" parent="."]
 
+[node name="Checkpoint" parent="Dynamic" instance=ExtResource( 10 )]
+position = Vector2( 528, 74 )
+collision_layer = 2
+collision_mask = 2
+
 [node name="MainCamera" parent="Dynamic" instance=ExtResource( 1 )]
 zoom = Vector2( 0.3, 0.3 )
 follow_target_path = NodePath("../Player")
 
 [node name="Player" parent="Dynamic" instance=ExtResource( 5 )]
-position = Vector2( 652, 41 )
-
-[node name="Spirit" parent="Dynamic" instance=ExtResource( 7 )]
-player_node = NodePath("../Player")
+position = Vector2( 493, 62 )
 
 [node name="FixedFront" type="Node2D" parent="."]
 

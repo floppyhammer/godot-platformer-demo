@@ -8,7 +8,7 @@ onready var debug = $CanvasLayer/Debug
 
 func _ready():
 	Global.main = self
-	bgm_player.start_bgm("res://assets/music/Dream Static by symphony.mp3")
+	bgm_player.start_bgm("res://assets/music/Talking-Cute-Chiptune-by-Pro-Sensory.ogg")
 
 
 func _process(_delta):

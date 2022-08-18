@@ -36,7 +36,7 @@ func _physics_process(delta):
 	if is_instance_valid(player):
 		face2 = player.get_face2()
 		
-		target_position = player.get_spirit_position()
+		target_position = player.get_lift_position()
 		
 		position = position.linear_interpolate(target_position, speed)
 	

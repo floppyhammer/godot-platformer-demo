@@ -26,11 +26,13 @@ onready var anim_sprite = $Flip/AnimatedSprite
 onready var anim_player = $AnimationPlayer
 onready var anim_state_machine = $AnimationTree.get("parameters/playback")
 onready var col_shape = $CollisionShape2D
-onready var spirit_position = $Flip/SpiritPosition
+onready var lift_position = $LiftPosition
 
 var can_evade_damage = false
 var interruptible_anims = ['idle', 'run', 'jump', 'fall', 'crouch_loop']
 var is_self_jumped = false
+
+var currently_interacting_object = null
 
 signal took_damage
 
@@ -39,13 +41,25 @@ func _ready():
 	_sync_anim()
 	
 	Engine.time_scale = 1
+	
+	Global.player = self
 
 
 func _physics_process(delta):
 	# Flip the sprite according to face direction
 	flip.scale.x = face2 * abs(flip.scale.x)
+	$InteractRay.cast_to.x = face2 * abs($InteractRay.cast_to.x)
 	
 	_control()
+	
+	if Input.is_action_just_pressed("interact"):
+		if is_instance_valid(currently_interacting_object):
+			currently_interacting_object.interact()
+			currently_interacting_object = null
+		else:
+			var collider = $InteractRay.get_collider()
+			if collider and collider.has_method("interact"):
+				collider.interact()
 	
 	# Set the animation according to the tree
 	anim_sprite.play(anim_state_machine.get_current_node())
@@ -117,16 +131,16 @@ func _control():
 			is_self_jumped = false
 	
 	# ACT: Attack
-	if is_on_floor() and Input.is_action_just_pressed('attack'):
-#		if anim == 'attack_1':
-#			anim_state_machine.travel('attack_2')
-#		elif anim == 'attack_2':
-#			anim_state_machine.travel('attack_3')
-#		else:
-#			anim_state_machine.travel('attack_1')
-
-		anim_state_machine.travel('attack')
-		return
+#	if is_on_floor() and Input.is_action_just_pressed('attack'):
+##		if anim == 'attack_1':
+##			anim_state_machine.travel('attack_2')
+##		elif anim == 'attack_2':
+##			anim_state_machine.travel('attack_3')
+##		else:
+##			anim_state_machine.travel('attack_1')
+#
+#		anim_state_machine.travel('attack')
+#		return
 	
 	# ACT: Roll
 #	if is_on_floor() and Input.is_action_just_pressed('roll'):
@@ -264,8 +278,8 @@ func _on_AnimatedSprite_frame_changed():
 #		Engine.time_scale = 1.0
 
 
-func get_spirit_position() -> Vector2:
-	return spirit_position.get_global_position()
+func get_lift_position() -> Vector2:
+	return lift_position.get_global_position()
 
 
 func get_face2() -> int:
