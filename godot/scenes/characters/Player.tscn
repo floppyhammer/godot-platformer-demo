@@ -349,7 +349,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -4 )
 frames = SubResource( 34 )
 animation = "run"
-frame = 1
+frame = 3
 playing = true
 
 [node name="SpiritPosition" type="Position2D" parent="Flip"]
@@ -382,3 +382,7 @@ margin_bottom = 14.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="FloorDetectorRay" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 14 )
