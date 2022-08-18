@@ -441,32 +441,26 @@ custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 script = ExtResource( 2 )
 
-[node name="VBox" type="VBoxContainer" parent="."]
+[node name="HBox" type="HBoxContainer" parent="."]
 margin_left = 16.0
-margin_top = 16.0
+margin_top = 260.0
 margin_right = 389.0
-margin_bottom = 340.0
+margin_bottom = 324.0
 size_flags_vertical = 8
-custom_constants/separation = 32
-alignment = 2
+custom_constants/separation = 0
+alignment = 1
 
-[node name="Grid" type="GridContainer" parent="VBox"]
-margin_left = 131.0
-margin_right = 241.0
-margin_bottom = 132.0
-size_flags_horizontal = 4
-columns = 2
-
-[node name="MusicIcon" type="TextureRect" parent="VBox/Grid"]
-margin_right = 42.0
+[node name="MusicIcon" type="TextureRect" parent="HBox"]
+margin_left = 16.0
+margin_right = 58.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 42, 44 )
 texture = ExtResource( 14 )
 stretch_mode = 6
 
-[node name="MusicButton" type="TextureButton" parent="VBox/Grid"]
-margin_left = 46.0
-margin_right = 110.0
+[node name="MusicButton" type="TextureButton" parent="HBox"]
+margin_left = 58.0
+margin_right = 122.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 toggle_mode = true
@@ -474,30 +468,28 @@ texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 15 )
 expand = true
 
-[node name="SfxIcon" type="TextureRect" parent="VBox/Grid"]
-margin_top = 68.0
-margin_right = 42.0
-margin_bottom = 132.0
+[node name="SfxIcon" type="TextureRect" parent="HBox"]
+margin_left = 122.0
+margin_right = 164.0
+margin_bottom = 64.0
 rect_min_size = Vector2( 42, 44 )
 texture = ExtResource( 13 )
 stretch_mode = 6
 
-[node name="SfxButton" type="TextureButton" parent="VBox/Grid"]
-margin_left = 46.0
-margin_top = 68.0
-margin_right = 110.0
-margin_bottom = 132.0
+[node name="SfxButton" type="TextureButton" parent="HBox"]
+margin_left = 164.0
+margin_right = 228.0
+margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 toggle_mode = true
 texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 15 )
 expand = true
 
-[node name="Language" type="TextureButton" parent="VBox"]
-margin_left = 154.0
-margin_top = 164.0
-margin_right = 218.0
-margin_bottom = 228.0
+[node name="Language" type="TextureButton" parent="HBox"]
+margin_left = 228.0
+margin_right = 292.0
+margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 3
@@ -506,7 +498,7 @@ texture_pressed = ExtResource( 12 )
 expand = true
 stretch_mode = 5
 
-[node name="Icon" type="TextureRect" parent="VBox/Language"]
+[node name="Icon" type="TextureRect" parent="HBox/Language"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -524,11 +516,10 @@ atlas = ExtResource( 11 )
 v_frames = 6
 current_frame = 6
 
-[node name="Exit" type="TextureButton" parent="VBox"]
-margin_left = 154.0
-margin_top = 260.0
-margin_right = 218.0
-margin_bottom = 324.0
+[node name="Exit" type="TextureButton" parent="HBox"]
+margin_left = 292.0
+margin_right = 356.0
+margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 texture_normal = ExtResource( 10 )
@@ -536,7 +527,7 @@ texture_pressed = ExtResource( 6 )
 expand = true
 stretch_mode = 5
 
-[connection signal="toggled" from="VBox/Grid/MusicButton" to="." method="_on_MusicButton_toggled"]
-[connection signal="toggled" from="VBox/Grid/SfxButton" to="." method="_on_SfxButton_toggled"]
-[connection signal="pressed" from="VBox/Language" to="." method="_on_Language_pressed"]
-[connection signal="pressed" from="VBox/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="toggled" from="HBox/MusicButton" to="." method="_on_MusicButton_toggled"]
+[connection signal="toggled" from="HBox/SfxButton" to="." method="_on_SfxButton_toggled"]
+[connection signal="pressed" from="HBox/Language" to="." method="_on_Language_pressed"]
+[connection signal="pressed" from="HBox/Exit" to="." method="_on_Exit_pressed"]

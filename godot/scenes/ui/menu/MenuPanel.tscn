@@ -34,21 +34,61 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 flat = true
 
-[node name="HBox" type="HBoxContainer" parent="."]
+[node name="HBox" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -274.5
-margin_top = -197.5
-margin_right = 274.5
-margin_bottom = 197.5
+margin_left = -200.0
+margin_top = -166.0
+margin_right = 200.0
+margin_bottom = 166.0
 mouse_filter = 2
 custom_constants/separation = 0
 
+[node name="TabButtons" type="HBoxContainer" parent="HBox"]
+margin_right = 400.0
+margin_bottom = 32.0
+custom_constants/separation = 4
+
+[node name="Status" type="TextureButton" parent="HBox/TabButtons"]
+margin_right = 64.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 64, 32 )
+toggle_mode = true
+pressed = true
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="Items" type="TextureButton" parent="HBox/TabButtons"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 64, 32 )
+toggle_mode = true
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="Settings" type="TextureButton" parent="HBox/TabButtons"]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 64, 32 )
+toggle_mode = true
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
 [node name="TabBg" type="NinePatchRect" parent="HBox"]
-margin_right = 485.0
-margin_bottom = 395.0
+margin_top = 32.0
+margin_right = 400.0
+margin_bottom = 332.0
+rect_min_size = Vector2( 400, 300 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 5 )
@@ -83,48 +123,6 @@ size_flags_vertical = 3
 
 [node name="TabSettings" parent="HBox/TabBg/Tabs" instance=ExtResource( 3 )]
 visible = false
-
-[node name="TabButtons" type="VBoxContainer" parent="HBox"]
-margin_left = 485.0
-margin_right = 549.0
-margin_bottom = 395.0
-custom_constants/separation = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Status" type="TextureButton" parent="HBox/TabButtons"]
-margin_right = 64.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-toggle_mode = true
-pressed = true
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 2 )
-expand = true
-stretch_mode = 5
-
-[node name="Items" type="TextureButton" parent="HBox/TabButtons"]
-margin_top = 64.0
-margin_right = 64.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 64, 64 )
-toggle_mode = true
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 2 )
-expand = true
-stretch_mode = 5
-
-[node name="Settings" type="TextureButton" parent="HBox/TabButtons"]
-margin_top = 128.0
-margin_right = 64.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 64, 64 )
-toggle_mode = true
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 2 )
-expand = true
-stretch_mode = 5
 
 [connection signal="pressed" from="Close" to="." method="_on_Close_pressed"]
 [connection signal="pressed" from="HBox/TabButtons/Status" to="." method="_on_Status_pressed"]

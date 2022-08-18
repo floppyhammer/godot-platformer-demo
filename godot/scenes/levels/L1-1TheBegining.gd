@@ -1,6 +1,6 @@
 extends Node2D
 
-var level_name = "Level 0"
+var level_name = "The Begining"
 
 
 func _ready():

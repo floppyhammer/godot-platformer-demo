@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/ui/menu/TabStatus.gd" type="Script" id=1]
 [ext_resource path="res://assets/characters/Adventurer-1.5/adventurer-v1.5-Sheet.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/ui/icons/icon_heart.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/icons/sunflower.png" type="Texture" id=5]
 [ext_resource path="res://assets/ui/icons/axe.png" type="Texture" id=6]
+[ext_resource path="res://tres/default_font_32.tres" type="DynamicFont" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.145098, 0.0745098, 0.101961, 1 )
@@ -41,9 +42,9 @@ alignment = 1
 
 [node name="Portrait" type="TextureRect" parent="HBoxC/VBoxC"]
 margin_left = 72.0
-margin_top = 81.0
+margin_top = 107.0
 margin_right = 200.0
-margin_bottom = 209.0
+margin_bottom = 235.0
 rect_min_size = Vector2( 128, 128 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -57,17 +58,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="NameLabel" type="Label" parent="HBoxC/VBoxC"]
-margin_left = 40.0
-margin_top = 225.0
-margin_right = 232.0
-margin_bottom = 261.0
-rect_min_size = Vector2( 192, 0 )
-size_flags_horizontal = 4
-text = "Player"
-align = 1
-valign = 1
-
 [node name="Center" type="CenterContainer" parent="HBoxC"]
 margin_left = 277.0
 margin_right = 550.0
@@ -76,63 +66,68 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Grid" type="GridContainer" parent="HBoxC/Center"]
-margin_left = 70.0
-margin_top = 71.0
-margin_right = 202.0
-margin_bottom = 271.0
+margin_left = 88.0
+margin_top = 75.0
+margin_right = 184.0
+margin_bottom = 267.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
 columns = 2
 
 [node name="Health" type="TextureRect" parent="HBoxC/Center/Grid"]
-margin_right = 64.0
+margin_right = 32.0
 margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+rect_min_size = Vector2( 32, 32 )
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
 
 [node name="HealthLabel" type="Label" parent="HBoxC/Center/Grid"]
-margin_left = 68.0
-margin_right = 132.0
+margin_left = 32.0
+margin_right = 96.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
+custom_fonts/font = ExtResource( 7 )
 text = "10"
 align = 1
 valign = 1
 
 [node name="Attack" type="TextureRect" parent="HBoxC/Center/Grid"]
-margin_top = 68.0
-margin_right = 64.0
-margin_bottom = 132.0
-rect_min_size = Vector2( 64, 64 )
+margin_top = 64.0
+margin_right = 32.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 32, 32 )
 texture = ExtResource( 6 )
 expand = true
 stretch_mode = 6
 
 [node name="AttackLabel" type="Label" parent="HBoxC/Center/Grid"]
-margin_left = 68.0
-margin_top = 68.0
-margin_right = 132.0
-margin_bottom = 132.0
+margin_left = 32.0
+margin_top = 64.0
+margin_right = 96.0
+margin_bottom = 128.0
 rect_min_size = Vector2( 64, 64 )
+custom_fonts/font = ExtResource( 7 )
 text = "10"
 align = 1
 valign = 1
 
 [node name="Defense" type="TextureRect" parent="HBoxC/Center/Grid"]
-margin_top = 136.0
-margin_right = 64.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 64, 64 )
+margin_top = 128.0
+margin_right = 32.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 32, 32 )
 texture = ExtResource( 5 )
 expand = true
 stretch_mode = 6
 
 [node name="DefenseLabel" type="Label" parent="HBoxC/Center/Grid"]
-margin_left = 68.0
-margin_top = 136.0
-margin_right = 132.0
-margin_bottom = 200.0
+margin_left = 32.0
+margin_top = 128.0
+margin_right = 96.0
+margin_bottom = 192.0
 rect_min_size = Vector2( 64, 64 )
+custom_fonts/font = ExtResource( 7 )
 text = "10"
 align = 1
 valign = 1

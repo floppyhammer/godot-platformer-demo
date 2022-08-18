@@ -3,7 +3,6 @@ extends Control
 
 onready var menu_btn = $Margin/Control/MenuButton
 onready var menu_panel = $MenuPanel
-onready var result_panel = $ResultPanel
 onready var tween = $Tween
 onready var dialog = $DialogPanel
 onready var notification_spawner = $NotificationSpawner
@@ -28,12 +27,6 @@ func _ready():
 
 func add_notification(p_text : String):
 	notification_spawner.add_notification(p_text)
-
-
-func show_result_panel():
-	# Hide menu panel.
-	menu_panel.hide()
-	result_panel.show_when_level_is_clear("Level 0", 10, 10)
 
 
 func _show_menu():

@@ -25,7 +25,7 @@ func _on_LevelsPanelC_level_pressed(level_name):
 	# Change scene with transition
 	var main_node = get_node_or_null("/root/Main")
 	if main_node:
-		main_node.loading_panel.load_scene("res://scenes/levels/Level0.tscn")
+		main_node.loading_panel.load_scene("res://scenes/levels/L1-1TheBegining.tscn")
 		main_node.bgm_player.stop_bgm()
 
 
