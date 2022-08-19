@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scenes/gameplay/WorldMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/ui/world_map.png" type="Texture" id=2]
+[ext_resource path="res://scenes/ui/LevelButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/stages/Home.gd" type="Script" id=5]
 [ext_resource path="res://assets/ui/buttons/exit_pressed.png" type="Texture" id=6]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=7]
@@ -15,17 +16,88 @@ script = ExtResource( 5 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="ViewportContainer" type="ViewportContainer" parent="."]
+[node name="Water" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-stretch = true
+mouse_filter = 2
+color = Color( 0.509804, 0.639216, 0.67451, 1 )
 
-[node name="Viewport" type="Viewport" parent="ViewportContainer"]
-size = Vector2( 1280, 720 )
-handle_input_locally = false
-render_target_update_mode = 3
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 512, 512 )
+scroll_vertical = 283
 
-[node name="WorldMap" parent="ViewportContainer/Viewport" instance=ExtResource( 2 )]
+[node name="CenterContainer" type="CenterContainer" parent="ScrollContainer"]
+margin_top = -283.0
+margin_right = 1280.0
+margin_bottom = 997.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Island" type="TextureRect" parent="ScrollContainer/CenterContainer"]
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 1152.0
+margin_bottom = 1152.0
+rect_min_size = Vector2( 1024, 1024 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="Levels" type="Control" parent="ScrollContainer/CenterContainer"]
+margin_right = 1280.0
+margin_bottom = 1280.0
+rect_min_size = Vector2( 1280, 1280 )
+mouse_filter = 2
+
+[node name="LevelButton1" parent="ScrollContainer/CenterContainer/Levels" instance=ExtResource( 3 )]
+margin_left = 380.0
+margin_top = 386.0
+margin_right = 444.0
+margin_bottom = 450.0
+
+[node name="LevelButton2" parent="ScrollContainer/CenterContainer/Levels" instance=ExtResource( 3 )]
+margin_left = 420.0
+margin_top = 531.0
+margin_right = 484.0
+margin_bottom = 595.0
+level_id = "2"
+
+[node name="LevelButton3" parent="ScrollContainer/CenterContainer/Levels" instance=ExtResource( 3 )]
+margin_left = 444.0
+margin_top = 771.0
+margin_right = 508.0
+margin_bottom = 835.0
+level_id = "3"
+
+[node name="LevelButton4" parent="ScrollContainer/CenterContainer/Levels" instance=ExtResource( 3 )]
+margin_left = 681.0
+margin_top = 773.0
+margin_right = 745.0
+margin_bottom = 837.0
+level_id = "4"
+
+[node name="LevelButton5" parent="ScrollContainer/CenterContainer/Levels" instance=ExtResource( 3 )]
+margin_left = 879.0
+margin_top = 735.0
+margin_right = 943.0
+margin_bottom = 799.0
+level_id = "5"
+
+[node name="LevelButton6" parent="ScrollContainer/CenterContainer/Levels" instance=ExtResource( 3 )]
+margin_left = 565.0
+margin_top = 602.0
+margin_right = 629.0
+margin_bottom = 666.0
+level_id = "6"
+
+[node name="LevelButton7" parent="ScrollContainer/CenterContainer/Levels" instance=ExtResource( 3 )]
+margin_left = 583.0
+margin_top = 445.0
+margin_right = 647.0
+margin_bottom = 509.0
+level_id = "7"
 
 [node name="MarginC" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -57,9 +129,4 @@ texture_pressed = ExtResource( 6 )
 expand = true
 stretch_mode = 5
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[connection signal="level_pressed" from="ViewportContainer/Viewport/WorldMap" to="." method="_on_LevelsPanelC_level_pressed"]
 [connection signal="pressed" from="MarginC/VBoxC/Exit" to="." method="_on_Exit_pressed"]

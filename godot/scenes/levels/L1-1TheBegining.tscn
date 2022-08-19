@@ -83,7 +83,7 @@ script = ExtResource( 11 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HUD" parent="CanvasLayer" instance=ExtResource( 6 )]
+[node name="Hud" parent="CanvasLayer" instance=ExtResource( 6 )]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 visible = false

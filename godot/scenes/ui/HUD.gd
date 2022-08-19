@@ -8,6 +8,7 @@ onready var dialog = $DialogPanel
 onready var notification_spawner = $NotificationSpawner
 onready var shop_panel = $ShopPanel
 onready var joystick = $Joystick
+onready var level_label = $Margin/Control/LevelTag/Label
 
 
 func _ready():
@@ -20,9 +21,7 @@ func _ready():
 	
 	Global.connect("locale_changed", self, "_when_locale_changed")
 	
-	#var level_name = get_parent().get_parent().get("level_name")
-	#if level_name is String:
-	#	$MapLabel.text = level_name
+	level_label.text = Global.current_level_name
 
 
 func add_notification(p_text : String):

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/ui/background_tiles/Gray.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/background_tiles/Brown.png" type="Texture" id=1]
 [ext_resource path="res://scenes/vfx/UVOffset.gdshader" type="Shader" id=4]
 [ext_resource path="res://scenes/ui/TransitionPanel.gd" type="Script" id=5]
 
@@ -12,7 +12,7 @@ shader_param/speed = 0.4
 [sub_resource type="Animation" id=36]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/path = NodePath("Pattern:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -27,7 +27,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=35]
 resource_name = "appear"
 tracks/0/type = "value"
-tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/path = NodePath("Pattern:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -45,13 +45,13 @@ anchor_bottom = 1.0
 mouse_filter = 2
 script = ExtResource( 5 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Pattern" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 34 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 expand = true
 stretch_mode = 2
 

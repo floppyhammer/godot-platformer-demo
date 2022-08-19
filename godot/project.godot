@@ -29,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/network/ExceptionHandler.gd"
 }, {
-"base": "TextureButton",
+"base": "Button",
 "class": "GeneralButton",
 "language": "GDScript",
 "path": "res://scenes/ui/GeneralButton.gd"
@@ -142,7 +142,7 @@ _global_script_class_icons={
 
 config/name="Into Summer"
 run/main_scene="res://scenes/stages/Main.tscn"
-boot_splash/image="res://assets/ui/level_star.png"
+boot_splash/image="res://assets/ui/godot_logo.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )

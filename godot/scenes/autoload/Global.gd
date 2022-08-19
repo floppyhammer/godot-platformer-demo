@@ -1,7 +1,7 @@
 extends Node
 
 # For passing parameters to the level scene when changing scene
-var current_level = "1"
+
 var items_to_bring = ["", "", ""]
 
 # Main node
@@ -24,6 +24,7 @@ var save_data = {
 var hud
 var player
 var current_camera
+var current_level_name = "unknown"
 
 signal progress_downloaded
 signal locale_changed

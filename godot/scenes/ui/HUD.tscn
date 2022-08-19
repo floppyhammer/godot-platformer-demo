@@ -183,9 +183,10 @@ current_frame = 4
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -78.0
-margin_right = 78.0
+margin_left = -96.0
+margin_right = 96.0
 margin_bottom = 64.0
+rect_min_size = Vector2( 192, 64 )
 custom_styles/panel = SubResource( 13 )
 
 [node name="Label" type="Label" parent="Margin/Control/LevelTag"]
