@@ -5,7 +5,7 @@ extends KinematicBody2D
 
 const SPEED = 70.0
 const IN_WATER_SPEED = SPEED / 2
-const JUMP_SPEED = 150.0
+const JUMP_SPEED = 170.0
 const GRAVITY = 500.0
 const ACCEL = 10.0
 
@@ -20,6 +20,7 @@ var velx2reach = 0
 var face2 = 1
 
 var bodies_in_sight = []
+var is_dead = false
 
 onready var flip = $Flip
 onready var anim_sprite = $Flip/AnimatedSprite
@@ -35,6 +36,8 @@ var is_self_jumped = false
 var currently_interacting_object = null
 
 signal took_damage
+signal when_respawned
+
 
 func _ready():
 	#col_shape.disabled = true
@@ -43,13 +46,21 @@ func _ready():
 	Engine.time_scale = 1
 	
 	Global.player = self
-
-
-func _physics_process(delta):
-	# Flip the sprite according to face direction
+	
+	
+func _process(delta):
+		# Flip the sprite according to face direction
 	flip.scale.x = face2 * abs(flip.scale.x)
 	$InteractRay.cast_to.x = face2 * abs($InteractRay.cast_to.x)
 	
+	# Set the animation according to the tree
+	anim_sprite.play(anim_state_machine.get_current_node())
+	
+	$Label.text = anim_state_machine.get_current_node()
+	$Label.text += '-' + str(anim_sprite.frame)
+
+
+func _physics_process(delta):
 	_control()
 	
 	if Input.is_action_just_pressed("interact"):
@@ -60,12 +71,6 @@ func _physics_process(delta):
 			var collider = $InteractRay.get_collider()
 			if collider and collider.has_method("interact"):
 				collider.interact()
-	
-	# Set the animation according to the tree
-	anim_sprite.play(anim_state_machine.get_current_node())
-	
-	$Label.text = anim_state_machine.get_current_node()
-	$Label.text += '-' + str(anim_sprite.frame)
 	
 	linear_velocity.x = lerp(linear_velocity.x, velx2reach * face2, delta * ACCEL)
 	
@@ -212,8 +217,22 @@ func take_damage(damage):
 
 
 func die():
-	$SFX/Die.play()
-	print('Game Over')
+	if is_dead: return
+	
+	is_dead = true
+	
+	set_physics_process(false)
+	
+	#$SFX/Die.play()
+	anim_state_machine.travel('die')
+
+
+func respawn():
+	set_physics_process(true)
+	is_dead = false
+	anim_state_machine.travel('idle')
+	linear_velocity = Vector2.ZERO
+	emit_signal("when_respawned")
 
 
 # Loop should be properly set for both anim_player and anim_sprite.
@@ -293,3 +312,8 @@ func _on_AttackBonusTimer_timeout():
 func _on_ImmortalTimer_timeout():
 	pass
 	#$AdditionalAnimationPlayer.play('normal')
+
+
+func _on_AnimatedSprite_animation_finished():
+	if anim_sprite.animation == "die":
+		respawn()

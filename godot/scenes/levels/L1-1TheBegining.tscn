@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scenes/gameplay/MainCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_3/BG_3.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_1/BG_1.png" type="Texture" id=4]
 [ext_resource path="res://scenes/characters/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ui/Hud.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/objects/TrapSpike.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/levels/factory/background/5.png" type="Texture" id=8]
 [ext_resource path="res://scenes/objects/EndPoint.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/objects/Checkpoint.tscn" type="PackedScene" id=10]
@@ -19,12 +20,13 @@
 [ext_resource path="res://assets/levels/factory/background/1.png" type="Texture" id=18]
 [ext_resource path="res://assets/levels/factory/background/3.png" type="Texture" id=19]
 [ext_resource path="res://scenes/objects/Crate.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/objects/TrapFallingPlatform.tscn" type="PackedScene" id=21]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 364, 12 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 23, 12 )
+extents = Vector2( 24, 12 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 23.1975, 2.5 )
@@ -159,30 +161,31 @@ region_rect = Rect2( 0, 0, 1152, 324 )
 [node name="FixedBack" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="FixedBack"]
-position = Vector2( 544, 114.973 )
+position = Vector2( 544, 114 )
 collision_layer = 3
 
 [node name="Polygon2D" type="Polygon2D" parent="FixedBack/StaticBody2D"]
-position = Vector2( 0, 60.3515 )
-scale = Vector2( 1, 6.5 )
-color = Color( 0.133333, 0.133333, 0.133333, 1 )
+position = Vector2( -0.598391, 66.811 )
+scale = Vector2( 0.989011, 7 )
+color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( -363.395, -10.973, 364.605, -10.973, 364.605, 13.027, -363.395, 13.027 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FixedBack/StaticBody2D"]
-position = Vector2( 0.60498, 1.02699 )
+position = Vector2( 0.60498, 2 )
 shape = SubResource( 2 )
 
 [node name="Obstacle" type="StaticBody2D" parent="FixedBack"]
-position = Vector2( 506, 92 )
+position = Vector2( 512, 88 )
 collision_layer = 3
 
 [node name="Polygon2D" type="Polygon2D" parent="FixedBack/Obstacle"]
-position = Vector2( 0, -1 )
-scale = Vector2( 0.0631868, 1 )
-color = Color( 0.133333, 0.133333, 0.133333, 1 )
+position = Vector2( -0.039896, 2.973 )
+scale = Vector2( 0.0659341, 1 )
+color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( -363.395, -10.973, 364.605, -10.973, 364.605, 13.027, -363.395, 13.027 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FixedBack/Obstacle"]
+position = Vector2( 0, 4 )
 shape = SubResource( 6 )
 
 [node name="MovingPlatform" type="KinematicBody2D" parent="FixedBack"]
@@ -193,7 +196,7 @@ collision_mask = 3
 [node name="Polygon2D" type="Polygon2D" parent="FixedBack/MovingPlatform"]
 position = Vector2( 505.962, 82.286 )
 scale = Vector2( 0.0631868, 0.208333 )
-color = Color( 0.133333, 0.133333, 0.133333, 1 )
+color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( -363.395, -10.973, 364.605, -10.973, 364.605, 13.027, -363.395, 13.027 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FixedBack/MovingPlatform"]
@@ -210,13 +213,25 @@ anims/RESET = SubResource( 9 )
 position = Vector2( 874, 97 )
 
 [node name="NpcBasserby" parent="FixedBack" instance=ExtResource( 12 )]
-position = Vector2( 662, 100 )
+position = Vector2( 668, 96 )
 
 [node name="NpcShopkeeper" parent="FixedBack" instance=ExtResource( 13 )]
-position = Vector2( 601, 100 )
+position = Vector2( 599, 97 )
 
 [node name="Crate" parent="FixedBack" instance=ExtResource( 20 )]
-position = Vector2( 394, 90 )
+position = Vector2( 289, 92 )
+
+[node name="TrapSpike" parent="FixedBack" instance=ExtResource( 7 )]
+position = Vector2( 544, 104 )
+
+[node name="StartPoint" type="Position2D" parent="FixedBack"]
+position = Vector2( 496, 80 )
+
+[node name="TrapFallingPlatform" parent="FixedBack" instance=ExtResource( 21 )]
+position = Vector2( 456, 84 )
+
+[node name="TrapFallingPlatform2" parent="FixedBack" instance=ExtResource( 21 )]
+position = Vector2( 392, 84 )
 
 [node name="Dynamic" type="Node2D" parent="."]
 
@@ -239,3 +254,5 @@ material = SubResource( 5 )
 position = Vector2( 243, -4 )
 scale = Vector2( 1.44141, 1.69141 )
 texture = ExtResource( 14 )
+
+[connection signal="when_respawned" from="Dynamic/Player" to="." method="_on_Player_when_respawned"]

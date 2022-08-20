@@ -13,7 +13,7 @@ func _ready():
 func increase_volume_to_normal():
 	is_increasing = true
 	tween.remove_all()
-	tween.interpolate_property(self, "volume_db", volume_db, 0, 2)
+	#tween.interpolate_property(self, "volume_db", volume_db, 0, 2)
 	tween.start()
 
 

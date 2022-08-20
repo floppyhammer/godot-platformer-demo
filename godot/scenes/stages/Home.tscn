@@ -26,12 +26,13 @@ color = Color( 0.509804, 0.639216, 0.67451, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 512, 512 )
-scroll_vertical = 283
+scroll_vertical = 100
 
 [node name="CenterContainer" type="CenterContainer" parent="ScrollContainer"]
-margin_top = -283.0
+margin_top = -100.0
 margin_right = 1280.0
-margin_bottom = 997.0
+margin_bottom = 1180.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -41,6 +42,7 @@ margin_top = 128.0
 margin_right = 1152.0
 margin_bottom = 1152.0
 rect_min_size = Vector2( 1024, 1024 )
+mouse_filter = 2
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6

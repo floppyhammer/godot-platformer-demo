@@ -100,6 +100,7 @@ position = Vector2( 0, -8 )
 shape = SubResource( 87 )
 
 [node name="Debug" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = -19.0
 margin_top = -32.0
 margin_right = 21.0
