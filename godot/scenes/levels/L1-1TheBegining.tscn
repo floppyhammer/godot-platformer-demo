@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/gameplay/MainCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_3/BG_3.png" type="Texture" id=2]
@@ -21,12 +21,7 @@
 [ext_resource path="res://assets/levels/factory/background/3.png" type="Texture" id=19]
 [ext_resource path="res://scenes/objects/Crate.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/objects/TrapFallingPlatform.tscn" type="PackedScene" id=21]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 364, 12 )
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 24, 12 )
+[ext_resource path="res://assets/levels/Typical_2D_platformer_example.ldtk" type="PackedScene" id=22]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 23.1975, 2.5 )
@@ -160,33 +155,22 @@ region_rect = Rect2( 0, 0, 1152, 324 )
 
 [node name="FixedBack" type="Node2D" parent="."]
 
+[node name="Typical_2D_platformer_example" parent="FixedBack" instance=ExtResource( 22 )]
+
 [node name="StaticBody2D" type="StaticBody2D" parent="FixedBack"]
 position = Vector2( 544, 114 )
 collision_layer = 3
 
-[node name="Polygon2D" type="Polygon2D" parent="FixedBack/StaticBody2D"]
-position = Vector2( -0.598391, 66.811 )
-scale = Vector2( 0.989011, 7 )
-color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( -363.395, -10.973, 364.605, -10.973, 364.605, 13.027, -363.395, 13.027 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
+polygon = PoolVector2Array( -239, 46, -145, 46, -145, 125, -193, 124, -193, 63, -208, 54, -241, 52 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FixedBack/StaticBody2D"]
-position = Vector2( 0.60498, 2 )
-shape = SubResource( 2 )
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
+polygon = PoolVector2Array( -128, 46, -128, 126, 32, 127, 33, 46 )
 
-[node name="Obstacle" type="StaticBody2D" parent="FixedBack"]
-position = Vector2( 512, 88 )
-collision_layer = 3
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
+polygon = PoolVector2Array( 0, 46, 0, 14, 80, 14, 80, 30, 192, 30, 193, 78, 0, 77 )
 
-[node name="Polygon2D" type="Polygon2D" parent="FixedBack/Obstacle"]
-position = Vector2( -0.039896, 2.973 )
-scale = Vector2( 0.0659341, 1 )
-color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( -363.395, -10.973, 364.605, -10.973, 364.605, 13.027, -363.395, 13.027 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FixedBack/Obstacle"]
-position = Vector2( 0, 4 )
-shape = SubResource( 6 )
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
 
 [node name="MovingPlatform" type="KinematicBody2D" parent="FixedBack"]
 position = Vector2( 66, -4 )
@@ -245,7 +229,7 @@ zoom = Vector2( 0.3, 0.3 )
 follow_target_path = NodePath("../Player")
 
 [node name="Player" parent="Dynamic" instance=ExtResource( 5 )]
-position = Vector2( 493, 62 )
+position = Vector2( 501, 129 )
 
 [node name="FixedFront" type="Node2D" parent="."]
 
