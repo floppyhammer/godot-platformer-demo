@@ -1,9 +1,9 @@
 [gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/gameplay/MainCamera.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_3/BG_3.png" type="Texture" id=2]
-[ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_2/BG_2.png" type="Texture" id=3]
-[ext_resource path="res://assets/levels/Fantasy Swamp Forest/BG_1/BG_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/levels/seasonal tilesets/winter world/Background/3 - Big_mountain_BG.png" type="Texture" id=2]
+[ext_resource path="res://assets/levels/seasonal tilesets/winter world/Background/2 - Smaller_mountains.png" type="Texture" id=3]
+[ext_resource path="res://assets/levels/seasonal tilesets/winter world/Background/1 - Snowy_foreground_area.png" type="Texture" id=4]
 [ext_resource path="res://scenes/characters/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ui/Hud.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/objects/TrapSpike.tscn" type="PackedScene" id=7]
@@ -21,7 +21,7 @@
 [ext_resource path="res://assets/levels/factory/background/3.png" type="Texture" id=19]
 [ext_resource path="res://scenes/objects/Crate.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/objects/TrapFallingPlatform.tscn" type="PackedScene" id=21]
-[ext_resource path="res://assets/levels/Typical_2D_platformer_example.ldtk" type="PackedScene" id=22]
+[ext_resource path="res://assets/levels/level.ldtk" type="PackedScene" id=22]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 23.1975, 2.5 )
@@ -40,7 +40,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 66, -4 ), Vector2( 148, -4 ) ]
+"values": [ Vector2( -376, -73 ), Vector2( -299, -65 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -155,22 +155,17 @@ region_rect = Rect2( 0, 0, 1152, 324 )
 
 [node name="FixedBack" type="Node2D" parent="."]
 
-[node name="Typical_2D_platformer_example" parent="FixedBack" instance=ExtResource( 22 )]
+[node name="level" parent="FixedBack" instance=ExtResource( 22 )]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="FixedBack"]
-position = Vector2( 544, 114 )
 collision_layer = 3
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
-polygon = PoolVector2Array( -239, 46, -145, 46, -145, 125, -193, 124, -193, 63, -208, 54, -241, 52 )
-
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
-polygon = PoolVector2Array( -128, 46, -128, 126, 32, 127, 33, 46 )
+polygon = PoolVector2Array( 0, 80, 0, 128, 416, 128, 416, 64, 352, 64, 352, 48, 240, 48, 240, 80 )
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
-polygon = PoolVector2Array( 0, 46, 0, 14, 80, 14, 80, 30, 192, 30, 193, 78, 0, 77 )
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
+polygon = PoolVector2Array( 160, 64, 160, 80, 208, 80, 208, 64 )
+one_way_collision = true
 
 [node name="MovingPlatform" type="KinematicBody2D" parent="FixedBack"]
 position = Vector2( 66, -4 )
@@ -194,33 +189,30 @@ autoplay = "New Anim"
 anims/RESET = SubResource( 9 )
 
 [node name="EndPoint" parent="FixedBack" instance=ExtResource( 9 )]
-position = Vector2( 874, 97 )
+position = Vector2( 404, 57 )
 
 [node name="NpcBasserby" parent="FixedBack" instance=ExtResource( 12 )]
-position = Vector2( 668, 96 )
+position = Vector2( 339, 40 )
 
 [node name="NpcShopkeeper" parent="FixedBack" instance=ExtResource( 13 )]
-position = Vector2( 599, 97 )
+position = Vector2( 247, 41 )
 
 [node name="Crate" parent="FixedBack" instance=ExtResource( 20 )]
-position = Vector2( 289, 92 )
+position = Vector2( 227, 67 )
 
 [node name="TrapSpike" parent="FixedBack" instance=ExtResource( 7 )]
-position = Vector2( 544, 104 )
+position = Vector2( 318, 48 )
 
 [node name="StartPoint" type="Position2D" parent="FixedBack"]
 position = Vector2( 496, 80 )
 
 [node name="TrapFallingPlatform" parent="FixedBack" instance=ExtResource( 21 )]
-position = Vector2( 456, 84 )
-
-[node name="TrapFallingPlatform2" parent="FixedBack" instance=ExtResource( 21 )]
-position = Vector2( 392, 84 )
+position = Vector2( 369, 54 )
 
 [node name="Dynamic" type="Node2D" parent="."]
 
 [node name="Checkpoint" parent="Dynamic" instance=ExtResource( 10 )]
-position = Vector2( 528, 74 )
+position = Vector2( 199, 59 )
 collision_layer = 2
 collision_mask = 2
 
@@ -229,7 +221,7 @@ zoom = Vector2( 0.3, 0.3 )
 follow_target_path = NodePath("../Player")
 
 [node name="Player" parent="Dynamic" instance=ExtResource( 5 )]
-position = Vector2( 501, 129 )
+position = Vector2( 65, 74 )
 
 [node name="FixedFront" type="Node2D" parent="."]
 
