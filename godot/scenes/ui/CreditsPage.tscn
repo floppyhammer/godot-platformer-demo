@@ -61,9 +61,6 @@ anchor_bottom = 1.0
 theme = ExtResource( 3 )
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BlurShader" parent="." instance=ExtResource( 2 )]
 

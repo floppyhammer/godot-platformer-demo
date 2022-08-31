@@ -10,7 +10,7 @@ var is_sfx_on = true
 
 var languages_list = ["zh", "en"]
 
-onready var lang_btn = $PanelContainer/MarginContainer/HBox/Language
+onready var lang_btn = $TextureRect/MarginContainer/VBoxContainer/GridContainer/Language
 
 signal when_closed
 

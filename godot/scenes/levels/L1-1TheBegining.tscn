@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/characters/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/ui/Hud.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/objects/TrapSpike.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/objects/MovingPlatform.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/objects/EndPoint.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/objects/Checkpoint.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/levels/L1-1TheBegining.gd" type="Script" id=11]
@@ -18,16 +19,13 @@
 [ext_resource path="res://scenes/objects/TrapFallingPlatform.tscn" type="PackedScene" id=21]
 [ext_resource path="res://assets/levels/level.ldtk" type="PackedScene" id=22]
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 23.1975, 2.5 )
-
 [sub_resource type="Animation" id=8]
 resource_name = "New Anim"
 length = 4.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -35,7 +33,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -376, -73 ), Vector2( -299, -65 ) ]
+"values": [ Vector2( 224, 77 ), Vector2( 224, 50 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -114,21 +112,13 @@ polygon = PoolVector2Array( 0, 80, 0, 128, 416, 128, 416, 64, 352, 64, 352, 48, 
 polygon = PoolVector2Array( 160, 64, 160, 80, 208, 80, 208, 64 )
 one_way_collision = true
 
-[node name="MovingPlatform" type="KinematicBody2D" parent="FixedBack"]
-position = Vector2( 66, -4 )
-collision_layer = 3
-collision_mask = 3
-
-[node name="Polygon2D" type="Polygon2D" parent="FixedBack/MovingPlatform"]
-position = Vector2( 505.962, 82.286 )
-scale = Vector2( 0.0631868, 0.208333 )
-color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( -363.395, -10.973, 364.605, -10.973, 364.605, 13.027, -363.395, 13.027 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FixedBack/MovingPlatform"]
-position = Vector2( 506, 82.5 )
-shape = SubResource( 7 )
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
+position = Vector2( -44, 0 )
+polygon = PoolVector2Array( 160, 71, 160, 80, 200, 80, 200, 71 )
 one_way_collision = true
+
+[node name="MovingPlatform" parent="FixedBack" instance=ExtResource( 8 )]
+position = Vector2( 66, -4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FixedBack/MovingPlatform"]
 autoplay = "New Anim"
@@ -136,7 +126,7 @@ autoplay = "New Anim"
 anims/RESET = SubResource( 9 )
 
 [node name="EndPoint" parent="FixedBack" instance=ExtResource( 9 )]
-position = Vector2( 404, 57 )
+position = Vector2( 403, 64 )
 
 [node name="NpcBasserby" parent="FixedBack" instance=ExtResource( 12 )]
 position = Vector2( 339, 40 )
@@ -145,7 +135,7 @@ position = Vector2( 339, 40 )
 position = Vector2( 247, 41 )
 
 [node name="Crate" parent="FixedBack" instance=ExtResource( 20 )]
-position = Vector2( 227, 67 )
+position = Vector2( 275, 48 )
 
 [node name="TrapSpike" parent="FixedBack" instance=ExtResource( 7 )]
 position = Vector2( 318, 48 )
