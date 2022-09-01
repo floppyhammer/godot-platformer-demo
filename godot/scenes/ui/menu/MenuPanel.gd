@@ -13,6 +13,7 @@ var languages_list = ["zh", "en"]
 onready var lang_btn = $TextureRect/MarginContainer/VBoxContainer/GridContainer/Language
 
 signal when_closed
+signal level_restarted
 
 
 func show_elegantly():
@@ -68,10 +69,6 @@ func _on_Sfx_pressed():
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), not is_sfx_on)
 
 
-func _on_Exit_pressed():
-	get_node("/root/Main").loading_panel.load_scene("res://scenes/stages/Home.tscn")
-
-
 func _when_locale_changed():
 	_update_language()
 
@@ -96,3 +93,11 @@ func _on_Language_pressed():
 		lang_btn.find_node("Icon").set_frame(6 + index)
 	else:
 		Logger.error("Failed to change language!", "HUD")
+
+
+func _on_Restart_pressed():
+	emit_signal("level_restarted")
+
+
+func _on_Exit_pressed():
+	get_node("/root/Main").loading_panel.load_scene("res://scenes/stages/Home.tscn")

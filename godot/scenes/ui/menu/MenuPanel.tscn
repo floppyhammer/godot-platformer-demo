@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://scenes/ui/GeneralButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/ui/buttons/home.png" type="Texture" id=2]
@@ -10,8 +10,11 @@
 [ext_resource path="res://assets/ui/buttons/check_button_green_unchecked.png" type="Texture" id=8]
 [ext_resource path="res://assets/ui/settings_panel.png" type="Texture" id=9]
 [ext_resource path="res://tools/AnimatedTextureRect.gd" type="Script" id=10]
+[ext_resource path="res://assets/ui/buttons/restart.png" type="Texture" id=11]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=12]
 [ext_resource path="res://scenes/ui/menu/MenuPanel.gd" type="Script" id=13]
+[ext_resource path="res://assets/ui/buttons/restart_pressed.png" type="Texture" id=14]
+[ext_resource path="res://assets/ui/buttons/language.png" type="Texture" id=15]
 
 [sub_resource type="StyleBoxEmpty" id=8]
 
@@ -533,7 +536,7 @@ margin_top = 136.0
 margin_right = 64.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 64, 64 )
-texture = ExtResource( 4 )
+texture = ExtResource( 15 )
 expand = true
 
 [node name="Language" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource( 1 )]
@@ -548,8 +551,14 @@ icon = null
 flat = true
 
 [node name="Icon" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer/Language"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 32, 32 )
 texture = SubResource( 57 )
 expand = true
@@ -575,8 +584,8 @@ rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 12 )
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 3 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 14 )
 expand = true
 
 [node name="Exit" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -597,4 +606,5 @@ expand = true
 [connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/GridContainer/Music" to="." method="_on_Music_pressed"]
 [connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/GridContainer/Sfx" to="." method="_on_Sfx_pressed"]
 [connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/GridContainer/Language" to="." method="_on_Language_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/Exit" to="." method="_on_Exit_pressed"]
