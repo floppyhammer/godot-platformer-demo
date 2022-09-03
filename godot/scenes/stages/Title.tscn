@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/ui/buttons/play_pressed.png" type="Texture" id=1]
 [ext_resource path="res://scenes/stages/Title.gd" type="Script" id=2]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=3]
-[ext_resource path="res://tres/default_font_128.tres" type="DynamicFont" id=4]
+[ext_resource path="res://tres/default_font_64.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/ui/buttons/play.png" type="Texture" id=5]
 [ext_resource path="res://scenes/ui/TitleBg.tscn" type="PackedScene" id=6]
 
@@ -56,7 +56,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 0.196078 )
 custom_constants/shadow_offset_x = 4
 custom_constants/shadow_offset_y = 4
 custom_fonts/font = ExtResource( 4 )
-text = "Into Summer"
+text = "The Door into Summer"
 align = 1
 valign = 1
 

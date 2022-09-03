@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/gameplay/MainCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/levels/seasonal tilesets/winter world/Background/3 - Big_mountain_BG.png" type="Texture" id=2]
@@ -12,7 +12,7 @@
 [ext_resource path="res://scenes/objects/Checkpoint.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/levels/L1-1TheBegining.gd" type="Script" id=11]
 [ext_resource path="res://scenes/characters/NpcBasserby.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/characters/NpcShopkeeper.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/characters/VendingMachine.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/ui/icon.png" type="Texture" id=14]
 [ext_resource path="res://scenes/vfx/GodRays.gdshader" type="Shader" id=15]
 [ext_resource path="res://scenes/gameplay/DayCycle.tscn" type="PackedScene" id=16]
@@ -35,7 +35,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 224, 77 ), Vector2( 224, 50 ) ]
+"values": [ Vector2( 224, 98 ), Vector2( 224, 125 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -69,6 +69,14 @@ shader_param/color = Color( 1, 0.9, 0.65, 0.8 )
 shader_param/hdr = false
 shader_param/seed = 5.0
 
+[sub_resource type="ParticlesMaterial" id=10]
+emission_shape = 2
+emission_box_extents = Vector3( 640, 0, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 9.8, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
 [node name="Level0" type="Node2D"]
 pause_mode = 1
 script = ExtResource( 11 )
@@ -80,6 +88,7 @@ script = ExtResource( 11 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="DayCycle2" parent="ParallaxBackground" instance=ExtResource( 16 )]
+visible = false
 day_duration = 10.0
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -111,14 +120,16 @@ texture = ExtResource( 4 )
 collision_layer = 3
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
+position = Vector2( 0, 48 )
 polygon = PoolVector2Array( 0, 80, 0, 128, 416, 128, 416, 64, 352, 64, 352, 48, 240, 48, 240, 80 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
+position = Vector2( 0, 47.8 )
 polygon = PoolVector2Array( 160, 64, 160, 80, 208, 80, 208, 64 )
 one_way_collision = true
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
-position = Vector2( -44, 0 )
+position = Vector2( -44, 47.8 )
 polygon = PoolVector2Array( 160, 71, 160, 80, 200, 80, 200, 71 )
 one_way_collision = true
 
@@ -134,16 +145,16 @@ anims/RESET = SubResource( 9 )
 position = Vector2( 403, 64 )
 
 [node name="NpcBasserby" parent="FixedBack" instance=ExtResource( 12 )]
-position = Vector2( 339, 40 )
+position = Vector2( 331, 88 )
 
-[node name="NpcShopkeeper" parent="FixedBack" instance=ExtResource( 13 )]
-position = Vector2( 247, 41 )
+[node name="VendingMachine" parent="FixedBack" instance=ExtResource( 13 )]
+position = Vector2( 259, 96 )
 
 [node name="Crate" parent="FixedBack" instance=ExtResource( 20 )]
-position = Vector2( 275, 48 )
+position = Vector2( 288, 96 )
 
 [node name="TrapSpike" parent="FixedBack" instance=ExtResource( 7 )]
-position = Vector2( 318, 48 )
+position = Vector2( 310, 96 )
 
 [node name="StartPoint" type="Position2D" parent="FixedBack"]
 position = Vector2( 32, 80 )
@@ -165,9 +176,10 @@ drag_margin_bottom = 0.4
 follow_target_path = NodePath("../Player")
 
 [node name="Player" parent="Dynamic" instance=ExtResource( 5 )]
-position = Vector2( 65, 74 )
+position = Vector2( 64, 128 )
 
 [node name="Light2D" type="Light2D" parent="Dynamic/Player"]
+visible = false
 position = Vector2( 0, -12 )
 texture = ExtResource( 17 )
 texture_scale = 0.32
@@ -183,6 +195,12 @@ scale = Vector2( 1.44141, 1.69141 )
 texture = ExtResource( 14 )
 
 [node name="DayCycle" parent="." instance=ExtResource( 16 )]
+visible = false
 day_duration = 10.0
+
+[node name="Particles2D" type="Particles2D" parent="."]
+amount = 100
+lifetime = 5.0
+process_material = SubResource( 10 )
 
 [connection signal="when_respawned" from="Dynamic/Player" to="." method="_on_Player_when_respawned"]

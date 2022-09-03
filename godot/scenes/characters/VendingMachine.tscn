@@ -1,34 +1,25 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scenes/characters/NpcShopkeeper.gd" type="Script" id=1]
-[ext_resource path="res://assets/characters/Geralt/Idle (32 x 32).png" type="Texture" id=2]
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 32, 32 )
+[ext_resource path="res://scenes/characters/VendingMachine.gd" type="Script" id=1]
+[ext_resource path="res://assets/levels/misc/Snack_machine_Bench_Trash_bin (16 x 16).png" type="Texture" id=2]
 
 [sub_resource type="SpriteFrames" id=19]
 animations = [ {
-"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"frames": [  ],
 "loop": true,
 "name": "default",
 "speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 6, 7 )
+extents = Vector2( 11, 15.5 )
 
-[sub_resource type="CircleShape2D" id=18]
-radius = 4.12311
+[sub_resource type="RectangleShape2D" id=21]
 
 [sub_resource type="StreamTexture" id=20]
 load_path = "res://.import/emotion_bubbles.png-68becb5e6a566b9ba19020ac15b4e8dd.stex"
 
-[node name="NpcShopkeeper" type="KinematicBody2D"]
+[node name="VendingMachine" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -36,21 +27,29 @@ position = Vector2( 0, -9 )
 frames = SubResource( 19 )
 playing = true
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -16 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 17, 13, 29, 37 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -15.5 )
 shape = SubResource( 16 )
 disabled = true
 
 [node name="InteractionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-shape = SubResource( 18 )
+position = Vector2( 0, -13 )
+shape = SubResource( 21 )
 
 [node name="Bubble" type="Sprite" parent="."]
-position = Vector2( 0, -31 )
+position = Vector2( 0, -42 )
 texture = SubResource( 20 )
 hframes = 5
 vframes = 6
-frame = 8
+frame = 9
 
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_InteractionArea_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_InteractionArea_body_exited"]
