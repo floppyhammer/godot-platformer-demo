@@ -140,7 +140,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Into Summer"
+config/name="The Door into Summer"
 run/main_scene="res://scenes/stages/Main.tscn"
 boot_splash/image="res://assets/ui/godot_logo.png"
 boot_splash/fullsize=false
@@ -169,7 +169,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/LDtk-Importer/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/Todo_Manager/plugin.cfg" )
 
 [global]
 

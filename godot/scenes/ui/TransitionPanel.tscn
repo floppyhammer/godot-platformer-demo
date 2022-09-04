@@ -198,7 +198,6 @@ stretch_mode = 2
 script = ExtResource( 1 )
 atlas = ExtResource( 2 )
 v_frames = 2
-current_frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 36 )
