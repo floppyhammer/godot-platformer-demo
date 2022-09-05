@@ -117,7 +117,7 @@ margin_right = 224.0
 margin_bottom = 480.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "1-7"
+level_id = "1-8"
 
 [node name="Label" type="Label" parent="HBoxC/ChapterWinter"]
 margin_right = 40.0

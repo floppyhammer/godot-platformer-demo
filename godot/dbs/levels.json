@@ -1,34 +1,42 @@
 {
 	"1-1":{
-		"scene": "res://scenes/levels/L1-1TheBegining.tscn",
+		"name": "Winter Came",
+		"scene": "res://scenes/levels/Level1-1WinterCame.tscn",
 		"next":"1-2",
 	},
 	"1-2":{
-		"scene": "res://scenes/levels/L1-1TheBegining.tscn",
+		"name": "The Bleakness",
+		"scene": "res://scenes/levels/Level1-2TheBleakness.tscn",
 		"next":"1-3",
 	},
 	"1-3":{
-		"scene": "res://scenes/levels/L1-1TheBegining.tscn",
+		"name": "The Forest",
+		"scene": "res://scenes/levels/Level1-1WinterCame.tscn",
 		"next":"1-4",
 	},
 	"1-4":{
-		"scene": "res://scenes/levels/L1-1TheBegining.tscn",
+		"name": "The Bungalow",
+		"scene": "res://scenes/levels/Level1-1WinterCame.tscn",
 		"next":"1-5",
 	},
 	"1-5":{
-		"scene": "res://scenes/levels/L1-1TheBegining.tscn",
+		"name": "The Spiral",
+		"scene": "res://scenes/levels/Level1-1WinterCame.tscn",
 		"next":"1-6",
 	},
 	"1-6":{
-		"scene": "res://scenes/levels/L1-1TheBegining.tscn",
+		"name": "The City",
+		"scene": "res://scenes/levels/Level1-1WinterCame.tscn",
 		"next":"1-7",
 	},
 	"1-7":{
-		"scene": "res://scenes/levels/L1-1TheBegining.tscn",
+		"name": "The Dock",
+		"scene": "res://scenes/levels/Level1-1WinterCame.tscn",
 		"next":"1-8",
 	},
 	"1-8":{
-		"scene": "res://scenes/levels/L1-1TheBegining.tscn",
+		"name": "The Train",
+		"scene": "res://scenes/levels/Level1-1WinterCame.tscn",
 		"next":null,
 	}
 }

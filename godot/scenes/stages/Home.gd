@@ -46,6 +46,8 @@ func _ready():
 	chapter_panel_width = rect_size.x
 	
 	last_button.hide()
+	
+	_on_Home_item_rect_changed()
 
 
 # When a button in the group is pressed.
@@ -60,7 +62,7 @@ func update_level_buttons():
 	
 	# Traverse level buttons.
 	for btn in level_group.get_buttons():
-		# Get level name from the button.
+		# Get level id from the button.
 		var key = btn.level_id
 		
 		# Get star number.
@@ -70,13 +72,13 @@ func update_level_buttons():
 			star_number = level_progress[key]["stars"]
 		
 		# Disable locked levels.
-		var playable = false
-		if star_number == 0:
-			incomplete_count += 1
-		if incomplete_count > 1:
-			playable = false
-		else:
-			playable = true
+		var playable = true
+#		if star_number == 0:
+#			incomplete_count += 1
+#		if incomplete_count > 1:
+#			playable = false
+#		else:
+#			playable = true
 
 		# Update the button
 		btn.update_looking(star_number, playable)

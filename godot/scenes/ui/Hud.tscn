@@ -203,9 +203,9 @@ autoplay = "New Anim"
 [node name="MenuButton" type="TextureButton" parent="Margin/Control"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -64.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+margin_left = -96.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 96, 96 )
 size_flags_horizontal = 10
 texture_normal = ExtResource( 36 )
 texture_pressed = ExtResource( 31 )

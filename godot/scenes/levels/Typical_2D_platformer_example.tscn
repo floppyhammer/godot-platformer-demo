@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://assets/levels/Typical_2D_platformer_example.ldtk" type="PackedScene" id=1]
-
-[node name="Typical_2D_platformer_example" instance=ExtResource( 1 )]
