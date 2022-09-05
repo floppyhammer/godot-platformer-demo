@@ -84,10 +84,12 @@ func update_level_buttons():
 		btn.update_looking(star_number, playable)
 
 
-func _start_level(level_name):
+func _start_level(level_id):
+	Global.current_level_id = level_id
+	
 	# Retrieve level info
-	var level_config = Global.level_db[level_name]
-	Global.current_level_name = level_name
+	var level_config = Global.level_db[level_id]
+	var level_name = level_config["name"]
 	
 	var scene_path = level_config["scene"]
 	

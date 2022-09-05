@@ -1,6 +1,5 @@
 extends Node2D
 
-var level_name = "The Begining"
 
 var start_point : Vector2
 

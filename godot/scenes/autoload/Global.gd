@@ -24,7 +24,7 @@ var save_data = {
 var hud
 var player
 var current_camera
-var current_level_name = "unknown"
+var current_level_id = "1-1"
 
 signal progress_downloaded
 signal locale_changed

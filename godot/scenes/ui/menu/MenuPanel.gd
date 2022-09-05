@@ -96,6 +96,11 @@ func _on_Language_pressed():
 
 
 func _on_Restart_pressed():
+	get_tree().paused = false
+	
+	var level_scene_path = Global.level_db[Global.current_level_id]["scene"]
+	get_node("/root/Main").loading_panel.load_scene(level_scene_path)
+	
 	emit_signal("level_restarted")
 
 

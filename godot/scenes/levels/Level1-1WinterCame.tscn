@@ -1,14 +1,12 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/levels/Level1-1WinterCame.gd" type="Script" id=1]
 [ext_resource path="res://assets/levels/level/simplified/Level_1_1_Winter_Came/Terrain.png" type="Texture" id=2]
 [ext_resource path="res://assets/levels/1-1/Plants.png" type="Texture" id=3]
 [ext_resource path="res://assets/levels/level/simplified/Level_1_1_Winter_Came/ForegroundObjects.png" type="Texture" id=4]
 [ext_resource path="res://assets/vfx/light_1.png" type="Texture" id=5]
-[ext_resource path="res://assets/levels/seasonal tilesets/winter world/Background/1 - Snowy_foreground_area.png" type="Texture" id=6]
+[ext_resource path="res://scenes/levels/ParallaxWinter.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/ui/icon.png" type="Texture" id=7]
-[ext_resource path="res://assets/levels/seasonal tilesets/winter world/Background/2 - Smaller_mountains.png" type="Texture" id=8]
-[ext_resource path="res://assets/levels/seasonal tilesets/winter world/Background/3 - Big_mountain_BG.png" type="Texture" id=9]
 [ext_resource path="res://scenes/vfx/GodRays.gdshader" type="Shader" id=10]
 [ext_resource path="res://scenes/objects/MovingPlatform.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/gameplay/MainCamera.tscn" type="PackedScene" id=12]
@@ -87,32 +85,7 @@ script = ExtResource( 1 )
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource( 15 )]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="DayCycle2" parent="ParallaxBackground" instance=ExtResource( 21 )]
-visible = false
-day_duration = 10.0
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0, 0 )
-motion_mirroring = Vector2( 288, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 9 )
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.5, 0 )
-motion_mirroring = Vector2( 288, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource( 8 )
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.6, 0 )
-motion_mirroring = Vector2( 288, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource( 6 )
+[node name="ParallaxWinter" parent="." instance=ExtResource( 6 )]
 
 [node name="FixedBack" type="Node2D" parent="."]
 
@@ -139,11 +112,6 @@ position = Vector2( -32, 48 )
 polygon = PoolVector2Array( 160, 64, 160, 80, 208, 80, 208, 64 )
 one_way_collision = true
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="FixedBack/StaticBody2D"]
-position = Vector2( 52, 48 )
-polygon = PoolVector2Array( 160, 71, 160, 80, 200, 80, 200, 71 )
-one_way_collision = true
-
 [node name="MovingPlatform" parent="FixedBack" instance=ExtResource( 11 )]
 position = Vector2( 66, -4 )
 
@@ -157,7 +125,7 @@ position = Vector2( 381, 128 )
 next_level_id = "1-2"
 
 [node name="NpcBasserby" parent="FixedBack" instance=ExtResource( 19 )]
-position = Vector2( 331, 88 )
+position = Vector2( 115, 128 )
 
 [node name="VendingMachine" parent="FixedBack" instance=ExtResource( 16 )]
 position = Vector2( 259, 96 )
@@ -178,8 +146,6 @@ position = Vector2( 326, 104 )
 
 [node name="Checkpoint" parent="Dynamic" instance=ExtResource( 18 )]
 position = Vector2( 199, 59 )
-collision_layer = 2
-collision_mask = 2
 
 [node name="MainCamera" parent="Dynamic" instance=ExtResource( 12 )]
 zoom = Vector2( 0.25, 0.25 )

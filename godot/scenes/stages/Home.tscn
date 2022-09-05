@@ -152,6 +152,7 @@ margin_right = 96.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
+level_id = "2-1"
 
 [node name="LevelButton2" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
 margin_left = 128.0
@@ -159,7 +160,7 @@ margin_right = 224.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "2"
+level_id = "2-2"
 
 [node name="LevelButton3" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
 margin_top = 128.0
@@ -167,7 +168,7 @@ margin_right = 96.0
 margin_bottom = 224.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "3"
+level_id = "2-3"
 
 [node name="LevelButton4" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
 margin_left = 128.0
@@ -176,7 +177,7 @@ margin_right = 224.0
 margin_bottom = 224.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "4"
+level_id = "2-4"
 
 [node name="LevelButton5" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
 margin_top = 256.0
@@ -184,7 +185,7 @@ margin_right = 96.0
 margin_bottom = 352.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "5"
+level_id = "2-5"
 
 [node name="LevelButton6" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
 margin_left = 128.0
@@ -193,7 +194,7 @@ margin_right = 224.0
 margin_bottom = 352.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "6"
+level_id = "2-6"
 
 [node name="LevelButton7" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
 margin_top = 384.0
@@ -201,7 +202,7 @@ margin_right = 96.0
 margin_bottom = 480.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "7"
+level_id = "2-7"
 
 [node name="LevelButton8" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
 margin_left = 128.0
@@ -210,7 +211,7 @@ margin_right = 224.0
 margin_bottom = 480.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "7"
+level_id = "2-8"
 
 [node name="Label" type="Label" parent="HBoxC/ChapterSpring"]
 margin_right = 292.0
@@ -245,6 +246,7 @@ margin_right = 96.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
+level_id = "3-1"
 
 [node name="LevelButton2" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
 margin_left = 128.0
@@ -252,7 +254,7 @@ margin_right = 224.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "2"
+level_id = "3-2"
 
 [node name="LevelButton3" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
 margin_left = 256.0
@@ -260,7 +262,7 @@ margin_right = 352.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "3"
+level_id = "3-3"
 
 [node name="LevelButton4" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
 margin_left = 384.0
@@ -268,7 +270,7 @@ margin_right = 480.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "4"
+level_id = "3-4"
 
 [node name="LevelButton5" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
 margin_top = 128.0
@@ -276,7 +278,7 @@ margin_right = 96.0
 margin_bottom = 224.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "5"
+level_id = "3-5"
 
 [node name="LevelButton6" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
 margin_left = 128.0
@@ -285,7 +287,7 @@ margin_right = 224.0
 margin_bottom = 224.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "6"
+level_id = "3-6"
 
 [node name="LevelButton7" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
 margin_left = 256.0
@@ -294,7 +296,7 @@ margin_right = 352.0
 margin_bottom = 224.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "7"
+level_id = "3-7"
 
 [node name="LevelButton8" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
 margin_left = 384.0
@@ -303,7 +305,7 @@ margin_right = 480.0
 margin_bottom = 224.0
 rect_min_size = Vector2( 96, 96 )
 toggle_mode = true
-level_id = "7"
+level_id = "3-8"
 
 [node name="Label" type="Label" parent="HBoxC/ChapterSummer"]
 margin_right = 292.0

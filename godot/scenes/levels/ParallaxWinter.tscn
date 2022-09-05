@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/levels/seasonal tilesets/winter world/Background/1 - Snowy_foreground_area.png" type="Texture" id=1]
+[ext_resource path="res://assets/levels/seasonal tilesets/winter world/Background/2 - Smaller_mountains.png" type="Texture" id=2]
+[ext_resource path="res://assets/levels/seasonal tilesets/winter world/Background/3 - Big_mountain_BG.png" type="Texture" id=3]
+[ext_resource path="res://scenes/gameplay/DayCycle.tscn" type="PackedScene" id=5]
+
+[node name="ParallaxWinter" type="ParallaxBackground"]
+
+[node name="DayCycle2" parent="." instance=ExtResource( 5 )]
+visible = false
+day_duration = 10.0
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0, 0 )
+motion_mirroring = Vector2( 576, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer1"]
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 576, 208 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.2, 0 )
+motion_mirroring = Vector2( 576, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer2"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 576, 208 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.4, 0 )
+motion_mirroring = Vector2( 576, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer3"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 576, 208 )

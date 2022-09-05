@@ -21,7 +21,7 @@ func _ready():
 	
 	Global.connect("locale_changed", self, "_when_locale_changed")
 	
-	level_label.text = Global.current_level_name
+	level_label.text = Global.level_db[Global.current_level_id]["name"]
 
 
 func add_notification(p_text : String):

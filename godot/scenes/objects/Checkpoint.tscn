@@ -87,7 +87,8 @@ radius = 8.0
 
 [node name="Checkpoint" type="KinematicBody2D"]
 position = Vector2( 600, 72 )
-collision_mask = 0
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 4 )
 
 [node name="AnimSprite" type="AnimatedSprite" parent="."]
