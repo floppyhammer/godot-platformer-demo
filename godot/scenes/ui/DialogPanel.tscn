@@ -3,7 +3,7 @@
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/DialogPanel.gd" type="Script" id=2]
 [ext_resource path="res://scenes/vfx/ShaderBlur.tscn" type="PackedScene" id=3]
-[ext_resource path="res://tres/default_font_32.tres" type="DynamicFont" id=4]
+[ext_resource path="res://tres/default_font_middle.tres" type="DynamicFont" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 

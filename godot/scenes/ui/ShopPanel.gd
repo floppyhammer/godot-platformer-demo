@@ -1,25 +1,23 @@
 extends Control
 
+"""
+Health points are the currency!
+"""
+
 
 onready var list = $Panel/Margin/VBox/ItemList
 onready var description_label = $Panel/Margin/VBox/Description
 onready var buy_btn = $Panel/Margin/VBox/VBox/Buy
-onready var coin_label = $Panel/Margin/VBox/VBox/CoinLabel
 
 signal when_hiden
 
 
 func _reload():
-	# Translation
-	buy_btn.text = tr("BUY")
-	
 	# Reset
 	description_label.bbcode_text = ""
 	
 	var db = Global.item_db
 	var owned_items = Global.save_data["owned_items"]
-	
-	coin_label.text = str(Global.get_coin_count())
 	
 	list.unselect_all()
 	list.clear()

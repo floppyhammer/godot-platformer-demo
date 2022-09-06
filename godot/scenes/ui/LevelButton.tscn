@@ -1,12 +1,13 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://tres/default_font_32.tres" type="DynamicFont" id=1]
+[ext_resource path="res://tres/default_font_middle.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/ui/buttons/lock.png" type="Texture" id=2]
 [ext_resource path="res://scenes/ui/LevelButton.gd" type="Script" id=3]
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=4]
 [ext_resource path="res://assets/ui/buttons/blank_pressed.png" type="Texture" id=5]
 [ext_resource path="res://assets/ui/level_star.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/buttons/blank.png" type="Texture" id=7]
+
 
 [sub_resource type="StyleBoxEmpty" id=2]
 

@@ -8,7 +8,7 @@ onready var dialog = $DialogPanel
 onready var notification_spawner = $NotificationSpawner
 onready var shop_panel = $ShopPanel
 onready var joystick = $Joystick
-onready var level_label = $Margin/Control/LevelTag/Label
+onready var level_label = $Margin/Control/LevelLabel
 
 
 func _ready():

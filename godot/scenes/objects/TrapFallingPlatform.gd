@@ -23,5 +23,6 @@ func _on_Area2D_body_entered(body):
 func _on_Timer_timeout():
 	set_physics_process(true)
 	$AnimatedSprite.play("off")
+	$Particles2D.emitting = false
 	set_collision_mask_bit(0, false)
 #	$CollisionShape2D.set_deferred("disabled", true)

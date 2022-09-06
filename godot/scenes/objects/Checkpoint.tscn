@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/objects/Computer (32 x 16).png" type="Texture" id=1]
-[ext_resource path="res://tres/default_font_16.tres" type="DynamicFont" id=2]
+[ext_resource path="res://tres/default_font_small.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/objects/Checkpoint.gd" type="Script" id=4]
 
 [sub_resource type="AtlasTexture" id=82]
