@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/ui/level_star.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/buttons/blank.png" type="Texture" id=7]
 
-
 [sub_resource type="StyleBoxEmpty" id=2]
 
 [node name="LevelButton" type="TextureButton"]

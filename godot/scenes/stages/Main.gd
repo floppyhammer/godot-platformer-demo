@@ -1,9 +1,10 @@
 extends Node
 
 
-onready var loading_panel = $CanvasLayer/LoadingPanel
+onready var running_node = $HBoxContainer/ViewportContainer/Viewport/Running
+onready var loading_panel = $HBoxContainer/ViewportContainer/Viewport/CanvasLayer/LoadingPanel
 onready var bgm_player = $BgmPlayer
-onready var debug = $CanvasLayer/Debug
+onready var debug = $HBoxContainer/ViewportContainer/Viewport/CanvasLayer/Debug
 
 
 func _ready():
@@ -16,4 +17,17 @@ func _process(_delta):
 
 
 func _on_TitleStage_start_pressed():
-	loading_panel.load_scene("res://scenes/stages/Home.tscn")
+	change_stage_by_path("res://scenes/stages/Home.tscn")
+
+
+func change_stage_by_path(scene_path):
+	loading_panel.load_scene(scene_path)
+
+
+func add_stage(child):
+	running_node.add_child(child)
+
+
+func clear_stages():
+	for child in running_node.get_children():
+		child.queue_free()

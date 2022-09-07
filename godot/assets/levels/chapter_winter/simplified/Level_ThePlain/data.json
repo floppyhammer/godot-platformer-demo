@@ -1,0 +1,17 @@
+{
+	"x": 496,
+	"y": 0,
+	"width": 1296,
+	"height": 544,
+	"iid": "b49f6ba0-2a00-11ed-922a-33d62f345b94",
+	"layers": [
+		"Background1.png",
+		"Background2.png",
+		"Background3.png",
+		"Terrain.png",
+		"BackgroundObjects.png",
+		"ForegroundObjects.png",
+		"Marks.png"
+	],
+	"entities" : {}
+}

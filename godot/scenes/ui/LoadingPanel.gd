@@ -19,10 +19,7 @@ func load_scene(scene_path):
 	yield(transition_panel, "appeared")
 	
 	# Change the scene only after the transition panel is fully opaque.
-	var running_node = get_node_or_null("/root/Main/Running")
-	if running_node:
-		for child in running_node.get_children():
-			child.queue_free()
+	Global.main.clear_stages()
 	
 	# Start background loading.
 	if thread.is_active(): return
@@ -37,9 +34,7 @@ func load_scene(scene_path):
 func _when_loading_completed():
 	var level = thread.wait_to_finish()
 	
-	var running_node = get_node_or_null("/root/Main/Running")
-	if running_node:
-		running_node.add_child(level)
+	Global.main.add_stage(level)
 	
 	emit_signal("loading_finished")
 

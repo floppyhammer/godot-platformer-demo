@@ -94,10 +94,8 @@ func _start_level(level_id):
 	var scene_path = level_config["scene"]
 	
 	# Change scene with transition
-	var main_node = get_node_or_null("/root/Main")
-	if main_node:
-		main_node.loading_panel.load_scene(scene_path)
-		main_node.bgm_player.stop_bgm()
+	Global.main.change_stage_by_path(scene_path)
+	Global.main.bgm_player.stop_bgm()
 
 
 func _when_locale_changed():

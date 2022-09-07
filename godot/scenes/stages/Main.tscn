@@ -12,21 +12,49 @@ script = ExtResource( 6 )
 
 [node name="BgmPlayer" parent="." instance=ExtResource( 3 )]
 
-[node name="Running" type="Node" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
 
-[node name="Title" parent="Running" instance=ExtResource( 2 )]
+[node name="MarginL" type="ColorRect" parent="HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 32, 0 )
+color = Color( 0, 0, 0, 1 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="ViewportContainer" type="ViewportContainer" parent="HBoxContainer"]
+margin_left = 32.0
+margin_right = 1248.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+stretch = true
 
-[node name="LoadingPanel" parent="CanvasLayer" instance=ExtResource( 4 )]
+[node name="Viewport" type="Viewport" parent="HBoxContainer/ViewportContainer"]
+size = Vector2( 1216, 720 )
+handle_input_locally = false
+render_target_update_mode = 3
 
-[node name="Debug" type="Control" parent="CanvasLayer"]
+[node name="Running" type="Node" parent="HBoxContainer/ViewportContainer/Viewport"]
+
+[node name="Title" parent="HBoxContainer/ViewportContainer/Viewport/Running" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1216.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="HBoxContainer/ViewportContainer/Viewport"]
+
+[node name="LoadingPanel" parent="HBoxContainer/ViewportContainer/Viewport/CanvasLayer" instance=ExtResource( 4 )]
+
+[node name="Debug" type="Control" parent="HBoxContainer/ViewportContainer/Viewport/CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 theme = ExtResource( 1 )
 
-[node name="FpsLabel" type="Label" parent="CanvasLayer/Debug"]
+[node name="FpsLabel" type="Label" parent="HBoxContainer/ViewportContainer/Viewport/CanvasLayer/Debug"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -36.0
@@ -36,4 +64,11 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "FPS 60"
 valign = 1
 
-[connection signal="start_pressed" from="Running/Title" to="." method="_on_TitleStage_start_pressed"]
+[node name="MarginR" type="ColorRect" parent="HBoxContainer"]
+margin_left = 1248.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 32, 0 )
+color = Color( 0, 0, 0, 1 )
+
+[connection signal="start_pressed" from="HBoxContainer/ViewportContainer/Viewport/Running/Title" to="." method="_on_TitleStage_start_pressed"]
