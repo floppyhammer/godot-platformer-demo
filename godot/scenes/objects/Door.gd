@@ -22,10 +22,10 @@ func _on_AnimatedSprite_animation_finished():
 func _go_to_level():
 	if Global.level_db.has(next_level_id):
 		var level_scene_path = Global.level_db[next_level_id]["scene"]
-		get_node("/root/Main").loading_panel.load_scene(level_scene_path)
+		Global.main.change_stage_by_path(level_scene_path)
 	else:
 		_go_to_home()
 
 
 func _go_to_home():
-	get_node("/root/Main").loading_panel.load_scene("res://scenes/stages/Home.tscn")
+	Global.main.change_stage_by_path("res://scenes/stages/Home.tscn")

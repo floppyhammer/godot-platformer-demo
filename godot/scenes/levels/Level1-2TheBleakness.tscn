@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://assets/levels/level/simplified/Level_Winter/Terrain.png" type="Texture" id=1]
+[ext_resource path="res://assets/levels/level/simplified/Level_1_1_Winter_Came/Terrain.png" type="Texture" id=1]
 [ext_resource path="res://scenes/levels/ParallaxWinter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/icon.png" type="Texture" id=6]
 [ext_resource path="res://scenes/levels/Level1-2TheBleakness.gd" type="Script" id=7]
@@ -11,7 +11,7 @@
 [ext_resource path="res://scenes/characters/VendingMachine.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/objects/Checkpoint.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/characters/NpcBasserby.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/objects/EndPoint.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/objects/Door.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 160, 48 )

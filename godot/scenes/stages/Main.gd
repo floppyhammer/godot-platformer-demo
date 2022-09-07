@@ -31,3 +31,7 @@ func add_stage(child):
 func clear_stages():
 	for child in running_node.get_children():
 		child.queue_free()
+
+
+func _on_ViewportContainer_resized():
+	$HBoxContainer/ViewportContainer/Viewport.size = $HBoxContainer/ViewportContainer.rect_size

@@ -132,14 +132,14 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=11]
-radius = 12.0
-
 [sub_resource type="CircleShape2D" id=14]
 radius = 15.0
 
 [sub_resource type="CircleShape2D" id=15]
 radius = 15.0
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 12.0
 
 [node name="Hud" type="Control"]
 pause_mode = 2
@@ -228,6 +228,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
+[node name="L" type="Control" parent="Joystick"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 40.0
+
+[node name="Left" type="TouchScreenButton" parent="Joystick/L"]
+position = Vector2( 81, -200 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 33 )
+pressed = ExtResource( 29 )
+shape = SubResource( 14 )
+action = "ui_left"
+
+[node name="Right" type="TouchScreenButton" parent="Joystick/L"]
+position = Vector2( 251, -200 )
+scale = Vector2( 5, 5 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 28 )
+shape = SubResource( 15 )
+action = "ui_right"
+
 [node name="R" type="Control" parent="Joystick"]
 anchor_left = 1.0
 anchor_top = 1.0
@@ -237,7 +259,7 @@ margin_left = -40.0
 margin_top = -40.0
 
 [node name="A" type="TouchScreenButton" parent="Joystick/R"]
-position = Vector2( -265, -184 )
+position = Vector2( -284, -182 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 24 )
 pressed = ExtResource( 12 )
@@ -245,34 +267,12 @@ shape = SubResource( 11 )
 action = "interact"
 
 [node name="B" type="TouchScreenButton" parent="Joystick/R"]
-position = Vector2( -179, -268 )
+position = Vector2( -179, -286 )
 scale = Vector2( 5, 5 )
 normal = ExtResource( 20 )
 pressed = ExtResource( 19 )
 shape = SubResource( 11 )
 action = "jump"
-
-[node name="L" type="Control" parent="Joystick"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -40.0
-margin_right = 40.0
-
-[node name="Left" type="TouchScreenButton" parent="Joystick/L"]
-position = Vector2( 107, -200 )
-scale = Vector2( 5, 5 )
-normal = ExtResource( 33 )
-pressed = ExtResource( 29 )
-shape = SubResource( 14 )
-action = "ui_left"
-
-[node name="Right" type="TouchScreenButton" parent="Joystick/L"]
-position = Vector2( 277, -200 )
-scale = Vector2( 5, 5 )
-normal = ExtResource( 10 )
-pressed = ExtResource( 28 )
-shape = SubResource( 15 )
-action = "ui_right"
 
 [node name="MenuPanel" parent="." instance=ExtResource( 2 )]
 visible = false
