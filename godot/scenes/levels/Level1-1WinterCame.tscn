@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/levels/Level1-1WinterCame.gd" type="Script" id=1]
 [ext_resource path="res://assets/levels/level/simplified/Level_1_1_Winter_Came/Terrain.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://assets/vfx/light_1.png" type="Texture" id=5]
 [ext_resource path="res://scenes/levels/ParallaxWinter.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/ui/icon.png" type="Texture" id=7]
+[ext_resource path="res://scenes/objects/Coin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/characters/GunMount.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/vfx/GodRays.gdshader" type="Shader" id=10]
 [ext_resource path="res://scenes/objects/MovingPlatform.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/gameplay/MainCamera.tscn" type="PackedScene" id=12]
@@ -147,6 +149,11 @@ position = Vector2( 326, 104 )
 [node name="Checkpoint" parent="Dynamic" instance=ExtResource( 18 )]
 position = Vector2( 199, 59 )
 
+[node name="Coin" parent="Dynamic" instance=ExtResource( 8 )]
+position = Vector2( 192, 77 )
+collision_layer = 2
+collision_mask = 2
+
 [node name="MainCamera" parent="Dynamic" instance=ExtResource( 12 )]
 zoom = Vector2( 0.25, 0.25 )
 drag_margin_top = 0.4
@@ -162,6 +169,9 @@ position = Vector2( 0, -12 )
 texture = ExtResource( 5 )
 texture_scale = 0.32
 color = Color( 1, 0.980392, 0.592157, 1 )
+
+[node name="GunMount" parent="Dynamic" instance=ExtResource( 9 )]
+player_node = NodePath("../Player")
 
 [node name="FixedFront" type="Node2D" parent="."]
 

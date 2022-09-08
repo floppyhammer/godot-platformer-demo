@@ -17,6 +17,8 @@ var bullet_scene = preload("res://scenes/objects/Bullet.tscn")
 
 var can_fire = true
 
+onready var flip = $Flip
+
 
 func _physics_process(delta):
 	var player = get_node_or_null(player_node)
@@ -36,11 +38,11 @@ func _physics_process(delta):
 	if is_instance_valid(player):
 		face2 = player.get_face2()
 		
-		target_position = player.get_lift_position()
+		target_position = player.get_gun_position()
 		
 		position = position.linear_interpolate(target_position, speed)
 	
-#	flip.scale.x = face2 * abs(flip.scale.x)
+	flip.scale.x = face2 * abs(flip.scale.x)
 
 
 func _on_AttackArea_body_entered(body):

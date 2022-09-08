@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://tres/default_theme.tres" type="Theme" id=1]
-[ext_resource path="res://tres/central_panel_style.tres" type="StyleBox" id=2]
 [ext_resource path="res://scenes/ui/TutorialsPage.gd" type="Script" id=5]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id=3]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 1, 1, 1 )
@@ -13,11 +12,8 @@ bg_color = Color( 1, 1, 1, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 3 )
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -30,20 +26,19 @@ __meta__ = {
 }
 
 [node name="Panel" type="PanelContainer" parent="CenterC"]
-margin_left = 446.0
-margin_top = 198.0
-margin_right = 834.0
-margin_bottom = 522.0
-custom_styles/panel = ExtResource( 2 )
+margin_left = 440.0
+margin_top = 192.0
+margin_right = 840.0
+margin_bottom = 528.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxC" type="VBoxContainer" parent="CenterC/Panel"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 386.0
-margin_bottom = 322.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 392.0
+margin_bottom = 328.0
 rect_min_size = Vector2( 384, 320 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -62,7 +57,7 @@ valign = 1
 [node name="ScrollC" type="ScrollContainer" parent="CenterC/Panel/VBoxC"]
 margin_top = 68.0
 margin_right = 384.0
-margin_bottom = 280.0
+margin_bottom = 284.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -73,14 +68,14 @@ __meta__ = {
 
 [node name="HBoxC" type="HBoxContainer" parent="CenterC/Panel/VBoxC/ScrollC"]
 margin_right = 2688.0
-margin_bottom = 212.0
+margin_bottom = 216.0
 mouse_filter = 2
 size_flags_vertical = 3
 custom_constants/separation = 0
 
 [node name="RichTextLabel1" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_right = 384.0
-margin_bottom = 212.0
+margin_bottom = 216.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -93,7 +88,7 @@ __meta__ = {
 [node name="RichTextLabel2" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_left = 384.0
 margin_right = 768.0
-margin_bottom = 212.0
+margin_bottom = 216.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -106,7 +101,7 @@ __meta__ = {
 [node name="RichTextLabel3" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_left = 768.0
 margin_right = 1152.0
-margin_bottom = 212.0
+margin_bottom = 216.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -119,7 +114,7 @@ __meta__ = {
 [node name="RichTextLabel4" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_left = 1152.0
 margin_right = 1536.0
-margin_bottom = 212.0
+margin_bottom = 216.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -132,7 +127,7 @@ __meta__ = {
 [node name="RichTextLabel5" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_left = 1536.0
 margin_right = 1920.0
-margin_bottom = 212.0
+margin_bottom = 216.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -145,7 +140,7 @@ __meta__ = {
 [node name="RichTextLabel6" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_left = 1920.0
 margin_right = 2304.0
-margin_bottom = 212.0
+margin_bottom = 216.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -158,7 +153,7 @@ __meta__ = {
 [node name="RichTextLabel7" type="RichTextLabel" parent="CenterC/Panel/VBoxC/ScrollC/HBoxC"]
 margin_left = 2304.0
 margin_right = 2688.0
-margin_bottom = 212.0
+margin_bottom = 216.0
 rect_min_size = Vector2( 384, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
@@ -169,7 +164,7 @@ __meta__ = {
 }
 
 [node name="PageNumber" type="Label" parent="CenterC/Panel/VBoxC"]
-margin_top = 284.0
+margin_top = 288.0
 margin_right = 384.0
 margin_bottom = 320.0
 text = "1/7"

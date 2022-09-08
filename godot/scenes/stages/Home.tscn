@@ -44,10 +44,13 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Levels" type="GridContainer" parent="HBoxC/ChapterWinter"]
-margin_left = 955.0
-margin_top = 109.0
-margin_right = 1179.0
-margin_bottom = 589.0
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -224.0
+margin_top = -240.0
+margin_bottom = 240.0
 mouse_filter = 2
 custom_constants/vseparation = 32
 custom_constants/hseparation = 32
@@ -138,10 +141,11 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Levels" type="GridContainer" parent="HBoxC/ChapterSpring"]
-margin_left = 122.0
-margin_top = 106.0
-margin_right = 346.0
-margin_bottom = 586.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -240.0
+margin_right = 224.0
+margin_bottom = 240.0
 mouse_filter = 2
 custom_constants/vseparation = 32
 custom_constants/hseparation = 32
@@ -232,10 +236,14 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Levels" type="GridContainer" parent="HBoxC/ChapterSummer"]
-margin_left = 394.0
-margin_top = 244.0
-margin_right = 874.0
-margin_bottom = 468.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -112.0
+margin_right = 240.0
+margin_bottom = 112.0
 mouse_filter = 2
 custom_constants/vseparation = 32
 custom_constants/hseparation = 32

@@ -28,6 +28,7 @@ onready var anim_player = $AnimationPlayer
 onready var anim_state_machine = $AnimationTree.get("parameters/playback")
 onready var col_shape = $CollisionShape2D
 onready var lift_position = $LiftPosition
+onready var gun_position = $GunPosition
 
 var can_evade_damage = false
 var interruptible_anims = ['idle', 'run', 'jump', 'fall', 'crouch_loop']
@@ -298,7 +299,17 @@ func _on_AnimatedSprite_frame_changed():
 
 
 func get_lift_position() -> Vector2:
+	if Input.is_action_pressed('ui_down'):
+		return lift_position.get_global_position() + Vector2.DOWN * 4
+		
 	return lift_position.get_global_position()
+
+
+func get_gun_position() -> Vector2:
+	if Input.is_action_pressed('ui_down'):
+		return gun_position.get_global_position() + Vector2.DOWN * 4
+		
+	return gun_position.get_global_position()
 
 
 func get_face2() -> int:
