@@ -79,7 +79,7 @@ gravity = Vector3( 0, 9.8, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
-[node name="Level0" type="Node2D"]
+[node name="Level1-1" type="Node2D"]
 pause_mode = 1
 script = ExtResource( 1 )
 

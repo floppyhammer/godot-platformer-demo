@@ -23,8 +23,9 @@ var save_data = {
 # Runtime nodes.
 var hud
 var player
-var current_camera
+var current_camera: Camera2D
 var current_level_id = "1-1"
+var current_level: Node2D
 
 signal progress_downloaded
 signal locale_changed

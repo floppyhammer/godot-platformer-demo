@@ -12,10 +12,9 @@ onready var anim_player = $AnimationPlayer
 
 func _ready():
 	connect("body_entered", self, "_when_hit")
-	connect("timeout", life_timer, "_on_LifeTimer_timeout")
 
 
-func prepare(init_pos, init_vel, col_exception_body=null):
+func prepare(init_pos: Vector2, init_vel: Vector2, col_exception_body = null):
 	if col_exception_body:
 		#faction = col_exception_body.faction
 		col_exceptions.append(col_exception_body)
@@ -34,6 +33,8 @@ func _physics_process(delta):
 func _when_hit(body):
 	# If the body is in collision exceptions.
 	if body in col_exceptions: return
+	
+	if body.is_in_group("player"): return
 	
 	# Prevent repetitive hitting
 	if not hit:

@@ -43,6 +43,7 @@ func _physics_process(delta):
 		position = position.linear_interpolate(target_position, speed)
 	
 	flip.scale.x = face2 * abs(flip.scale.x)
+	$Flip/Gun.face_to = face2
 
 
 func _on_AttackArea_body_entered(body):
