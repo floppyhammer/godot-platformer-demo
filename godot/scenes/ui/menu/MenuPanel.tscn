@@ -484,28 +484,30 @@ custom_constants/separation = 8
 alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
-margin_left = 94.0
-margin_top = 17.0
-margin_right = 290.0
-margin_bottom = 313.0
+margin_left = 134.0
+margin_top = 77.0
+margin_right = 250.0
+margin_bottom = 277.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 2
 
 [node name="MusicIcon" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer"]
-margin_right = 96.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_top = 8.0
+margin_right = 48.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_vertical = 4
 texture = ExtResource( 5 )
 expand = true
 
 [node name="Music" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer"]
 pause_mode = 2
 modulate = Color( 1, 0.992157, 0.992157, 1 )
-margin_left = 100.0
-margin_right = 196.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 52.0
+margin_right = 116.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
 theme = ExtResource( 12 )
 toggle_mode = true
 texture_normal = ExtResource( 8 )
@@ -513,21 +515,22 @@ texture_pressed = ExtResource( 6 )
 expand = true
 
 [node name="SfxIcon" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer"]
-margin_top = 100.0
-margin_right = 96.0
-margin_bottom = 196.0
-rect_min_size = Vector2( 96, 96 )
+margin_top = 76.0
+margin_right = 48.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_vertical = 4
 texture = ExtResource( 4 )
 expand = true
 
 [node name="Sfx" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer"]
 pause_mode = 2
 modulate = Color( 1, 0.992157, 0.992157, 1 )
-margin_left = 100.0
-margin_top = 100.0
-margin_right = 196.0
-margin_bottom = 196.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 52.0
+margin_top = 68.0
+margin_right = 116.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
 theme = ExtResource( 12 )
 toggle_mode = true
 texture_normal = ExtResource( 8 )
@@ -535,19 +538,20 @@ texture_pressed = ExtResource( 6 )
 expand = true
 
 [node name="LanguageIcon" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer"]
-margin_top = 200.0
-margin_right = 96.0
-margin_bottom = 296.0
-rect_min_size = Vector2( 96, 96 )
+margin_top = 144.0
+margin_right = 48.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_vertical = 4
 texture = ExtResource( 15 )
 expand = true
 
 [node name="Language" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource( 1 )]
-margin_left = 100.0
-margin_top = 200.0
-margin_right = 196.0
-margin_bottom = 296.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 52.0
+margin_top = 136.0
+margin_right = 116.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 64, 64 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 icon = null
@@ -572,18 +576,18 @@ v_frames = 6
 current_frame = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
-margin_top = 321.0
+margin_top = 285.0
 margin_right = 384.0
-margin_bottom = 417.0
+margin_bottom = 357.0
 alignment = 1
 
 [node name="Restart" type="TextureButton" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
 pause_mode = 2
 modulate = Color( 1, 0.992157, 0.992157, 1 )
-margin_left = 94.0
+margin_left = 118.0
 margin_right = 190.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 12 )
@@ -595,9 +599,9 @@ expand = true
 pause_mode = 2
 modulate = Color( 1, 0.992157, 0.992157, 1 )
 margin_left = 194.0
-margin_right = 290.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_right = 266.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 12 )

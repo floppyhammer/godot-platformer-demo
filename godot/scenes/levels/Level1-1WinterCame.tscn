@@ -37,7 +37,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 224, 98 ), Vector2( 224, 125 ) ]
+"values": [ Vector2( 208, 98 ), Vector2( 208, 125 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -147,7 +147,7 @@ position = Vector2( 326, 104 )
 [node name="Dynamic" type="Node2D" parent="."]
 
 [node name="Checkpoint" parent="Dynamic" instance=ExtResource( 18 )]
-position = Vector2( 199, 59 )
+position = Vector2( 231, 96 )
 
 [node name="Coin" parent="Dynamic" instance=ExtResource( 8 )]
 position = Vector2( 192, 77 )

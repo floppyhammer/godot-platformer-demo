@@ -64,7 +64,7 @@ margin_bottom = 500.0
 
 [node name="ItemList" type="ItemList" parent="Panel/Margin/VBox"]
 margin_right = 488.0
-margin_bottom = 256.0
+margin_bottom = 280.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/font_color = Color( 0.192157, 0.176471, 0.180392, 1 )
@@ -75,16 +75,16 @@ items = [ "Item 0", null, false, "Item 1", null, false ]
 fixed_icon_size = Vector2( 64, 64 )
 
 [node name="Description" type="RichTextLabel" parent="Panel/Margin/VBox"]
-margin_top = 260.0
+margin_top = 284.0
 margin_right = 488.0
-margin_bottom = 388.0
+margin_bottom = 412.0
 rect_min_size = Vector2( 0, 128 )
 size_flags_horizontal = 3
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 
 [node name="VBox" type="HBoxContainer" parent="Panel/Margin/VBox"]
-margin_top = 392.0
+margin_top = 416.0
 margin_right = 488.0
 margin_bottom = 488.0
 __meta__ = {
@@ -92,10 +92,10 @@ __meta__ = {
 }
 
 [node name="Buy" type="TextureButton" parent="Panel/Margin/VBox/VBox"]
-margin_left = 392.0
+margin_left = 416.0
 margin_right = 488.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
 size_flags_horizontal = 10
 size_flags_vertical = 0
 texture_normal = ExtResource( 6 )

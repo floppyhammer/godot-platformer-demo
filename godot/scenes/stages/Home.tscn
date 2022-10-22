@@ -57,68 +57,72 @@ custom_constants/hseparation = 32
 columns = 2
 
 [node name="LevelButton1" parent="HBoxC/ChapterWinter/Levels" instance=ExtResource( 3 )]
-margin_right = 96.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 12.0
+margin_right = 84.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "1-1"
 
 [node name="LevelButton2" parent="HBoxC/ChapterWinter/Levels" instance=ExtResource( 3 )]
-margin_left = 128.0
-margin_right = 224.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 140.0
+margin_right = 212.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "1-2"
 
 [node name="LevelButton3" parent="HBoxC/ChapterWinter/Levels" instance=ExtResource( 3 )]
-margin_top = 128.0
-margin_right = 96.0
-margin_bottom = 224.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 12.0
+margin_top = 104.0
+margin_right = 84.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "1-3"
 
 [node name="LevelButton4" parent="HBoxC/ChapterWinter/Levels" instance=ExtResource( 3 )]
-margin_left = 128.0
-margin_top = 128.0
-margin_right = 224.0
-margin_bottom = 224.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 140.0
+margin_top = 104.0
+margin_right = 212.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "1-4"
 
 [node name="LevelButton5" parent="HBoxC/ChapterWinter/Levels" instance=ExtResource( 3 )]
-margin_top = 256.0
-margin_right = 96.0
-margin_bottom = 352.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 12.0
+margin_top = 208.0
+margin_right = 84.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "1-5"
 
 [node name="LevelButton6" parent="HBoxC/ChapterWinter/Levels" instance=ExtResource( 3 )]
-margin_left = 128.0
-margin_top = 256.0
-margin_right = 224.0
-margin_bottom = 352.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 140.0
+margin_top = 208.0
+margin_right = 212.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "1-6"
 
 [node name="LevelButton7" parent="HBoxC/ChapterWinter/Levels" instance=ExtResource( 3 )]
-margin_top = 384.0
-margin_right = 96.0
-margin_bottom = 480.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 12.0
+margin_top = 312.0
+margin_right = 84.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "1-7"
 
 [node name="LevelButton8" parent="HBoxC/ChapterWinter/Levels" instance=ExtResource( 3 )]
-margin_left = 128.0
-margin_top = 384.0
-margin_right = 224.0
-margin_bottom = 480.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 140.0
+margin_top = 312.0
+margin_right = 212.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "1-8"
 
@@ -152,68 +156,72 @@ custom_constants/hseparation = 32
 columns = 2
 
 [node name="LevelButton1" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
-margin_right = 96.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 12.0
+margin_right = 84.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "2-1"
 
 [node name="LevelButton2" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
-margin_left = 128.0
-margin_right = 224.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 140.0
+margin_right = 212.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "2-2"
 
 [node name="LevelButton3" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
-margin_top = 128.0
-margin_right = 96.0
-margin_bottom = 224.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 12.0
+margin_top = 104.0
+margin_right = 84.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "2-3"
 
 [node name="LevelButton4" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
-margin_left = 128.0
-margin_top = 128.0
-margin_right = 224.0
-margin_bottom = 224.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 140.0
+margin_top = 104.0
+margin_right = 212.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "2-4"
 
 [node name="LevelButton5" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
-margin_top = 256.0
-margin_right = 96.0
-margin_bottom = 352.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 12.0
+margin_top = 208.0
+margin_right = 84.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "2-5"
 
 [node name="LevelButton6" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
-margin_left = 128.0
-margin_top = 256.0
-margin_right = 224.0
-margin_bottom = 352.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 140.0
+margin_top = 208.0
+margin_right = 212.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "2-6"
 
 [node name="LevelButton7" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
-margin_top = 384.0
-margin_right = 96.0
-margin_bottom = 480.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 12.0
+margin_top = 312.0
+margin_right = 84.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "2-7"
 
 [node name="LevelButton8" parent="HBoxC/ChapterSpring/Levels" instance=ExtResource( 3 )]
-margin_left = 128.0
-margin_top = 384.0
-margin_right = 224.0
-margin_bottom = 480.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 140.0
+margin_top = 312.0
+margin_right = 212.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "2-8"
 
@@ -250,68 +258,70 @@ custom_constants/hseparation = 32
 columns = 4
 
 [node name="LevelButton1" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
-margin_right = 96.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 12.0
+margin_right = 84.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "3-1"
 
 [node name="LevelButton2" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
-margin_left = 128.0
-margin_right = 224.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 140.0
+margin_right = 212.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "3-2"
 
 [node name="LevelButton3" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
-margin_left = 256.0
-margin_right = 352.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 268.0
+margin_right = 340.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "3-3"
 
 [node name="LevelButton4" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
-margin_left = 384.0
-margin_right = 480.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 396.0
+margin_right = 468.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "3-4"
 
 [node name="LevelButton5" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
-margin_top = 128.0
-margin_right = 96.0
-margin_bottom = 224.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 12.0
+margin_top = 104.0
+margin_right = 84.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "3-5"
 
 [node name="LevelButton6" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
-margin_left = 128.0
-margin_top = 128.0
-margin_right = 224.0
-margin_bottom = 224.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 140.0
+margin_top = 104.0
+margin_right = 212.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "3-6"
 
 [node name="LevelButton7" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
-margin_left = 256.0
-margin_top = 128.0
-margin_right = 352.0
-margin_bottom = 224.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 268.0
+margin_top = 104.0
+margin_right = 340.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "3-7"
 
 [node name="LevelButton8" parent="HBoxC/ChapterSummer/Levels" instance=ExtResource( 3 )]
-margin_left = 384.0
-margin_top = 128.0
-margin_right = 480.0
-margin_bottom = 224.0
-rect_min_size = Vector2( 96, 96 )
+margin_left = 396.0
+margin_top = 104.0
+margin_right = 468.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 72, 72 )
 toggle_mode = true
 level_id = "3-8"
 
@@ -331,11 +341,11 @@ custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 
 [node name="Exit" type="TextureButton" parent="MarginC"]
-margin_left = 592.0
-margin_top = 608.0
-margin_right = 688.0
+margin_left = 604.0
+margin_top = 632.0
+margin_right = 676.0
 margin_bottom = 704.0
-rect_min_size = Vector2( 96, 96 )
+rect_min_size = Vector2( 72, 72 )
 size_flags_horizontal = 6
 size_flags_vertical = 8
 texture_normal = ExtResource( 8 )
@@ -345,7 +355,7 @@ stretch_mode = 5
 
 [node name="HBoxC" type="HBoxContainer" parent="MarginC"]
 margin_left = 16.0
-margin_top = 608.0
+margin_top = 632.0
 margin_right = 1264.0
 margin_bottom = 704.0
 mouse_filter = 2
@@ -353,9 +363,9 @@ size_flags_vertical = 8
 custom_constants/separation = 16
 
 [node name="LastChapter" type="TextureButton" parent="MarginC/HBoxC"]
-margin_right = 96.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_right = 72.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
 size_flags_horizontal = 8
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 2 )
@@ -363,10 +373,10 @@ expand = true
 stretch_mode = 5
 
 [node name="NextChapter" type="TextureButton" parent="MarginC/HBoxC"]
-margin_left = 1152.0
+margin_left = 1176.0
 margin_right = 1248.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 96, 96 )
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
 size_flags_horizontal = 10
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 9 )

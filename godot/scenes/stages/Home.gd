@@ -8,13 +8,7 @@ var chapter_panel_width = 720
 
 onready var tween = $Tween
 
-onready var winter_panel = $HBoxC/ChapterWinter
-onready var spring_panel = $HBoxC/ChapterSpring
-onready var summer_panel = $HBoxC/ChapterSummer
-
-onready var winter_levels = $HBoxC/ChapterWinter/Levels
-onready var spring_levels = $HBoxC/ChapterSpring/Levels
-onready var summer_levels = $HBoxC/ChapterSummer/Levels
+onready var chapter_container = $HBoxC
 
 onready var last_button = $MarginC/HBoxC/LastChapter
 onready var next_button = $MarginC/HBoxC/NextChapter
@@ -28,14 +22,9 @@ func _ready():
 	_when_locale_changed()
 	Global.connect("locale_changed", self, "_when_locale_changed")
 
-	for btn in winter_levels.get_children():
-		btn.set_button_group(level_group)
-	
-	for btn in spring_levels.get_children():
-		btn.set_button_group(level_group)
-	
-	for btn in summer_levels.get_children():
-		btn.set_button_group(level_group)
+	for panel in chapter_container.get_children():
+		for btn in panel.get_node("Levels").get_children():
+			btn.set_button_group(level_group)
 
 	# Buttons in the group have to be in toggle mode to trigger this signal.
 	level_group.connect("pressed", self, "_when_button_pressed")
@@ -140,9 +129,9 @@ func _shift_chapter_panel():
 
 
 func _on_Home_item_rect_changed():
-	if not winter_panel: return
+	if not chapter_container: return
 	
 	chapter_panel_width = rect_size.x
-	winter_panel.rect_min_size = rect_size
-	spring_panel.rect_min_size = rect_size
-	summer_panel.rect_min_size = rect_size
+	
+	for panel in chapter_container.get_children():
+		panel.rect_min_size = rect_size

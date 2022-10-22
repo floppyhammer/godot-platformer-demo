@@ -12,6 +12,11 @@ onready var buy_btn = $Panel/Margin/VBox/VBox/Buy
 signal when_hiden
 
 
+func _input(event):
+	if Input.is_action_just_pressed("jump"):
+		_on_ShopPage_pressed()
+
+
 func _reload():
 	# Reset
 	description_label.bbcode_text = ""
