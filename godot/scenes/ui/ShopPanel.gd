@@ -13,7 +13,7 @@ signal when_hiden
 
 
 func _input(event):
-	if Input.is_action_just_pressed("jump"):
+	if visible and Input.is_action_just_pressed("jump"):
 		_on_ShopPage_pressed()
 
 
@@ -59,6 +59,8 @@ func _on_Buy_pressed():
 
 
 func show_elegantly():
+	Global.player_input_enabled = false
+	
 	_reload()
 	
 	show()
@@ -72,6 +74,8 @@ func hide_elegantly():
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
 	hide()
+	
+	Global.player_input_enabled = true
 
 
 func _on_ShopPage_pressed():

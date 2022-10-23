@@ -14,12 +14,12 @@ bg_color = Color( 0, 0, 0, 1 )
 bg_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=9]
-draw_center = false
+bg_color = Color( 1, 1, 1, 1 )
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -91,6 +91,7 @@ margin_right = 256.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 256, 48 )
 size_flags_horizontal = 8
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
@@ -107,6 +108,7 @@ margin_right = 256.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 256, 48 )
 size_flags_horizontal = 8
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
@@ -123,6 +125,7 @@ margin_right = 256.0
 margin_bottom = 152.0
 rect_min_size = Vector2( 256, 48 )
 size_flags_horizontal = 8
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
@@ -155,14 +158,14 @@ custom_constants/separation = 0
 
 [node name="Mugshot" type="TextureRect" parent="VBoxC/MarginC/VBoxC/HBoxC/PanelC/VBoxC"]
 margin_right = 192.0
-margin_bottom = 117.0
+margin_bottom = 125.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
 stretch_mode = 7
 
 [node name="NameLabel" type="Label" parent="VBoxC/MarginC/VBoxC/HBoxC/PanelC/VBoxC"]
-margin_top = 117.0
+margin_top = 125.0
 margin_right = 192.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 0, 24 )
@@ -211,6 +214,6 @@ color = Color( 0, 0, 0, 1 )
 
 [connection signal="typing_ended" from="." to="." method="_on_Dialog_typing_ended"]
 [connection signal="pressed" from="VBoxC/MarginC/VBoxC/ChoicesVBoxC/Choice1" to="." method="_on_Choice1_pressed"]
-[connection signal="pressed" from="VBoxC/MarginC/VBoxC/ChoicesVBoxC/Choice2" to="." method="_on_Choice2_pressed"]
-[connection signal="pressed" from="VBoxC/MarginC/VBoxC/ChoicesVBoxC/Choice3" to="." method="_on_Choice3_pressed"]
+[connection signal="pressed" from="VBoxC/MarginC/VBoxC/ChoicesVBoxC/Choice2" to="." method="_on_Choice1_pressed"]
+[connection signal="pressed" from="VBoxC/MarginC/VBoxC/ChoicesVBoxC/Choice3" to="." method="_on_Choice1_pressed"]
 [connection signal="pressed" from="VBoxC/MarginC/VBoxC/HBoxC/BgPanel/TextLabel/Next" to="." method="_on_Next_pressed"]

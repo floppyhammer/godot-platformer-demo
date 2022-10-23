@@ -67,7 +67,7 @@ func show_shop_panel():
 	menu_panel.hide()
 	shop_panel.show_elegantly()
 	
-	get_tree().paused = true
+#	get_tree().paused = true
 
 
 func _on_ShopPanel_when_hiden():
@@ -77,7 +77,7 @@ func _on_ShopPanel_when_hiden():
 	
 	menu_btn.show()
 	
-	get_tree().paused = false
+#	get_tree().paused = false
 
 
 func _on_MenuButton_pressed():

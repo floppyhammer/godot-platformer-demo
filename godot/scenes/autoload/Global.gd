@@ -26,6 +26,7 @@ var player
 var current_camera: Camera2D
 var current_level_id = "1-1"
 var current_level: Node2D
+var player_input_enabled: bool = true
 
 signal progress_downloaded
 signal locale_changed

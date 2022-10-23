@@ -64,7 +64,10 @@ func _process(delta):
 
 
 func activate(dialog_name):
-	get_tree().paused = true
+	Logger.debug("Activated dialog", "Dialog")
+	
+#	get_tree().paused = true
+	Global.player_input_enabled = false
 	
 	# Hide choices
 	choices.hide()
@@ -182,7 +185,9 @@ func next():
 		hide()
 		text_label.text = ""
 		
-		get_tree().paused = false
+#		get_tree().paused = false
+		Global.player_input_enabled = true
+		
 		return
 	
 	# Reset typing status

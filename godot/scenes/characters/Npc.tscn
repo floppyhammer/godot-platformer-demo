@@ -60,16 +60,16 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -2, -8 )
 frames = SubResource( 6 )
-frame = 8
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 16 )
 disabled = true
 
-[node name="InteractionArea" type="Area2D" parent="."]
+[node name="ReactionArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReactionArea"]
 shape = SubResource( 1 )
 
 [node name="Bubble" type="Sprite" parent="."]
@@ -79,5 +79,5 @@ hframes = 5
 vframes = 6
 frame = 8
 
-[connection signal="body_entered" from="InteractionArea" to="." method="_on_InteractionArea_body_entered"]
-[connection signal="body_exited" from="InteractionArea" to="." method="_on_InteractionArea_body_exited"]
+[connection signal="body_entered" from="ReactionArea" to="." method="_on_ReactionArea_body_entered"]
+[connection signal="body_exited" from="ReactionArea" to="." method="_on_ReactionArea_body_exited"]

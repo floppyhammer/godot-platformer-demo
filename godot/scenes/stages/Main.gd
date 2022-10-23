@@ -14,6 +14,7 @@ func _ready():
 
 func _process(_delta):
 	debug.get_node("FpsLabel").text = "FPS %d" % round(Engine.get_frames_per_second())
+	debug.get_node("General").text = str(Global.player_input_enabled)
 
 
 func _on_TitleStage_start_pressed():

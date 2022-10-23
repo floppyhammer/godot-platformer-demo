@@ -47,8 +47,8 @@ func _ready():
 	Engine.time_scale = 1
 	
 	Global.player = self
-	
-	
+
+
 func _process(delta):
 		# Flip the sprite according to face direction
 	flip.scale.x = face2 * abs(flip.scale.x)
@@ -64,7 +64,7 @@ func _process(delta):
 func _physics_process(delta):
 	_control()
 	
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") and Global.player_input_enabled:
 		if is_instance_valid(currently_interacting_object):
 			currently_interacting_object.interact()
 			currently_interacting_object = null
@@ -78,7 +78,7 @@ func _physics_process(delta):
 	if linear_velocity.y > 0:
 		linear_velocity.y += grav * delta
 	else:
-		if is_self_jumped and Input.is_action_pressed("ui_accept"):
+		if is_self_jumped and Input.is_action_pressed("ui_accept") and Global.player_input_enabled:
 			linear_velocity.y += grav * 0.5 * delta
 		else:
 			linear_velocity.y += grav * delta
@@ -100,6 +100,9 @@ func _deal_with_sliding_on_slopes():
 
 func _control():
 	velx2reach = 0.0
+	
+	if not Global.player_input_enabled:
+		return
 	
 	var anim : String = anim_state_machine.get_current_node()
 	

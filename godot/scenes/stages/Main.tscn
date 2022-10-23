@@ -64,6 +64,10 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "FPS 60"
 valign = 1
 
+[node name="General" type="Label" parent="HBoxContainer/ViewportContainer/Viewport/CanvasLayer/Debug"]
+margin_right = 40.0
+margin_bottom = 32.0
+
 [node name="MarginR" type="ColorRect" parent="HBoxContainer"]
 margin_left = 1200.0
 margin_right = 1280.0

@@ -140,7 +140,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="The Door into Summer"
+config/name="A Summer Trip"
 run/main_scene="res://scenes/stages/Main.tscn"
 boot_splash/image="res://assets/ui/godot_logo.png"
 boot_splash/fullsize=false
