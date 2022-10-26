@@ -11,6 +11,8 @@ var typing_speed = DEFAULT_TYPING_SPEED
 var typing_ended = false
 export (bool) var debug = false
 
+var choice_group = ButtonGroup.new()
+
 onready var dialog_c = $VBoxC/MarginC
 onready var choices = $VBoxC/MarginC/VBoxC/ChoicesVBoxC
 onready var text_label = $VBoxC/MarginC/VBoxC/HBoxC/BgPanel/TextLabel
@@ -25,17 +27,20 @@ signal typing_ended
 
 func _ready():
 	# Debug
-	if debug: activate("test_dialog")
+	if debug:
+		activate("test_dialog")
+	
+	next_btn.hide()
 
 
 func _input(event):
 	# 下一步
-	if Input.is_action_just_pressed("ui_accept") and typing_ended:
+	if Input.is_action_just_pressed("B") and typing_ended:
 		# 当前步为非问题时才能到下一步
 		if current_step["type"] != "question":
 			next()
 	
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("B"):
 		typing_speed = DEFAULT_TYPING_SPEED * 5
 	else:
 		typing_speed = DEFAULT_TYPING_SPEED
@@ -203,13 +208,23 @@ func question(text, options, next):
 	text_label.percent_visible = 0.0
 	text_label.text = text
 	
-	# Set the choices but not to show them yet
 	choices.hide()
+	
+	# Reset all choices.
 	for child in choices.get_children():
 		child.hide()
+		child.group = null
+	
+	# Show valid choices.
 	for i in range(len(options)):
-		choices.get_child(i).text = options[i]
-		choices.get_child(i).show()
+		var choice = choices.get_child(i)
+		
+		choice.text = options[i]
+		
+		# Only set valid choice buttons to the same group.
+		choice.group = choice_group
+		
+		choice.show()
 
 
 func _choice_pressed(id):

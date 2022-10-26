@@ -65,6 +65,7 @@ text = "FPS 60"
 valign = 1
 
 [node name="General" type="Label" parent="HBoxContainer/ViewportContainer/Viewport/CanvasLayer/Debug"]
+visible = false
 margin_right = 40.0
 margin_bottom = 32.0
 
