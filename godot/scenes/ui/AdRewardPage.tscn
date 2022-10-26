@@ -48,7 +48,7 @@ __meta__ = {
 
 [node name="PageTitle" type="Label" parent="Panel/VBoxC"]
 margin_right = 640.0
-margin_bottom = 72.0
+margin_bottom = 64.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 2 )
 custom_styles/normal = SubResource( 3 )
@@ -57,7 +57,7 @@ align = 1
 valign = 1
 
 [node name="VBoxC" type="VBoxContainer" parent="Panel/VBoxC"]
-margin_top = 76.0
+margin_top = 68.0
 margin_right = 640.0
 margin_bottom = 640.0
 size_flags_vertical = 3
@@ -65,9 +65,9 @@ alignment = 1
 
 [node name="Item1" type="Button" parent="Panel/VBoxC/VBoxC"]
 margin_left = 192.0
-margin_top = 218.0
+margin_top = 222.0
 margin_right = 448.0
-margin_bottom = 346.0
+margin_bottom = 350.0
 rect_min_size = Vector2( 256, 128 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
