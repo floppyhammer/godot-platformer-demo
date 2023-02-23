@@ -1,30 +1,58 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/characters/NpcBasserby.gd" type="Script" id=1]
-[ext_resource path="res://assets/characters/Gum Bot/Idle (32 x 32).png" type="Texture" id=2]
+[ext_resource path="res://assets/characters/Skeleton/Skeleton Idle.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 6, 8 )
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 6, 11.5 )
 
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 32, 32 )
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 24, 32 )
 
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 32, 32 )
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 24, 0, 24, 32 )
 
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 0, 32, 32 )
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 24, 32 )
 
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 2 )
-region = Rect2( 96, 0, 32, 32 )
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 3 )
+region = Rect2( 72, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 3 )
+region = Rect2( 120, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 3 )
+region = Rect2( 144, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 3 )
+region = Rect2( 168, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 3 )
+region = Rect2( 216, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 3 )
+region = Rect2( 240, 0, 24, 32 )
 
 [sub_resource type="SpriteFrames" id=20]
 animations = [ {
-"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
@@ -42,13 +70,13 @@ collision_mask = 2
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -8 )
-shape = SubResource( 16 )
+position = Vector2( 0, -11.5 )
+shape = SubResource( 27 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -16 )
+position = Vector2( 3, -16 )
 frames = SubResource( 20 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="ReactionArea" type="Area2D" parent="."]
@@ -58,7 +86,7 @@ position = Vector2( 0, -9 )
 shape = SubResource( 21 )
 
 [node name="Bubble" type="Sprite" parent="."]
-position = Vector2( 0, -31 )
+position = Vector2( 0, -35 )
 texture = SubResource( 19 )
 hframes = 5
 vframes = 6

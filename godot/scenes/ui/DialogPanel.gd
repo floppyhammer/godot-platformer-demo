@@ -11,7 +11,6 @@ var typing_speed = DEFAULT_TYPING_SPEED
 var typing_ended = false
 export (bool) var debug = false
 
-var choice_group = ButtonGroup.new()
 
 onready var dialog_c = $VBoxC/MarginC
 onready var choices = $VBoxC/MarginC/VBoxC/ChoicesVBoxC
@@ -213,16 +212,12 @@ func question(text, options, next):
 	# Reset all choices.
 	for child in choices.get_children():
 		child.hide()
-		child.group = null
 	
 	# Show valid choices.
 	for i in range(len(options)):
 		var choice = choices.get_child(i)
 		
 		choice.text = options[i]
-		
-		# Only set valid choice buttons to the same group.
-		choice.group = choice_group
 		
 		choice.show()
 
