@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/ui/buttons/next.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/buttons/next_pressed.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/buttons/last.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/buttons/last_pressed.png" type="Texture" id=5]
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=6]
+[ext_resource path="res://scenes/ui/ExchangePanel.gd" type="Script" id=7]
+[ext_resource path="res://scenes/ui/InventoryPanel.tscn" type="PackedScene" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="ExchangePanel" type="Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 512, 512 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 6 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+script = ExtResource( 7 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+margin_left = 344.0
+margin_top = 104.0
+margin_right = 936.0
+margin_bottom = 616.0
+
+[node name="Panel" parent="CenterContainer/HBoxContainer" instance=ExtResource( 8 )]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+margin_left = 260.0
+margin_right = 332.0
+margin_bottom = 512.0
+alignment = 1
+
+[node name="Buy" type="TextureButton" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+margin_top = 182.0
+margin_right = 72.0
+margin_bottom = 254.0
+rect_min_size = Vector2( 72, 72 )
+size_flags_horizontal = 10
+size_flags_vertical = 0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+
+[node name="Sell" type="TextureButton" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+margin_top = 258.0
+margin_right = 72.0
+margin_bottom = 330.0
+rect_min_size = Vector2( 72, 72 )
+size_flags_horizontal = 10
+size_flags_vertical = 0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="Panel2" parent="CenterContainer/HBoxContainer" instance=ExtResource( 8 )]
+margin_left = 336.0
+margin_right = 592.0
+
+[connection signal="pressed" from="." to="." method="_on_ShopPage_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/Buy" to="." method="_on_Buy_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/Sell" to="." method="_on_Buy_pressed"]

@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://tres/default_theme.tres" type="Theme" id=6]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 0.196078 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="Panel" type="Panel"]
+margin_right = 256.0
+margin_bottom = 512.0
+rect_min_size = Vector2( 256, 512 )
+theme = ExtResource( 6 )
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 156 )
+mouse_filter = 2
+custom_constants/margin_right = 12
+custom_constants/margin_top = 12
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 244.0
+margin_bottom = 500.0
+
+[node name="Label" type="Label" parent="Margin/VBox"]
+margin_right = 232.0
+margin_bottom = 32.0
+text = "Shop"
+align = 1
+
+[node name="ItemList" type="ItemList" parent="Margin/VBox"]
+margin_top = 36.0
+margin_right = 232.0
+margin_bottom = 352.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.192157, 0.176471, 0.180392, 1 )
+custom_styles/selected_focus = SubResource( 4 )
+custom_styles/selected = SubResource( 4 )
+custom_styles/bg = SubResource( 3 )
+items = [ "Item 0", null, false, "Item 1", null, false ]
+fixed_icon_size = Vector2( 64, 64 )
+
+[node name="Description" type="RichTextLabel" parent="Margin/VBox"]
+margin_top = 356.0
+margin_right = 232.0
+margin_bottom = 484.0
+rect_min_size = Vector2( 0, 128 )
+size_flags_horizontal = 3
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+
+[node name="VBox" type="HBoxContainer" parent="Margin/VBox"]
+margin_top = 488.0
+margin_right = 232.0
+margin_bottom = 488.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

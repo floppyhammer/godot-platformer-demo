@@ -77,6 +77,9 @@ func _start_level(level_id):
 	Global.current_level_id = level_id
 	
 	# Retrieve level info
+	if not Global.level_db.has(level_id):
+		return
+	
 	var level_config = Global.level_db[level_id]
 	var level_name = level_config["name"]
 	
